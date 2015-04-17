@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Draw Call Batching</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/DrawCallBatching.html">English</a></li>
+<li><a href="/es/current/Manual/DrawCallBatching.html">Español</a></li>
+<li><a href="/ru/current/Manual/DrawCallBatching.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsOverview.html">Graphics Overview</a></li>
+<li><a href="OptimizingGraphicsPerformance.html"> Optimizing Graphics Performance</a></li>
+<li>Draw Call Batching</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="OptimizingGraphicsPerformance.html"></a></span><div class="tip"> Optimizing Graphics Performance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ModelingOptimizedCharacters.html"></a></span><div class="tip">Modeling Characters for Optimal Performance</div>
+</div>
+</div></div>
+<h1>Draw Call Batching</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>To draw an object on the screen, the engine has to issue a draw call to the graphics API (e.g. OpenGL or Direct3D). Draw calls are often seen as expensive, with the graphics API doing significant work for every draw call, causing performance overhead on the CPU side. However this is not the case. The expensive part is the changing of the resources accessed by the GPU between the draw calls as it triggers a graphics driver validation each time. The emphasis should be on reducing the batch count, rather than the draw call count.</p>
+
+<p>Unity uses static batching to address this. The goal of the static batching is to regroup as many meshes in less buffers to get better performance, rendering giant meshes instead of a lot of small meshes which is inefficient. Unity will only loop on the same resources to render different ranges of these resources. Effectively it executes a series of fast draw calls for each staticcally batched mesh.</p>
+
+<p>Built-in batching support in Unity has significant benefit over simply combining geometry in the modeling tool (or using the <span class="doc-prop">CombineChildren</span> script from the Standard Assets package). In Unity 5.0, there is only one build of the index buffer on start and then a draw call is submitted for each sub mesh of that big mesh for each visible sub mesh.</p>
+
+<h2>Materials</h2>
+
+<p>Only objects sharing the same material can be batched together. Therefore, if you want to achieve good batching, you need to share as many materials among different objects as possible.</p>
+
+<p>If you have two identical materials which differ only in textures, you can combine those textures into a single big texture - a process often called <a href="http://en.wikipedia.org/wiki/Texture_atlas"><em>texture atlasing</em></a>. Once textures are in the same atlas, you can use a single material instead.</p>
+
+<p>If you need to access shared material properties from the scripts, then it is important to note that modifying <a href="../ScriptReference/Renderer-material.html">Renderer.material</a> will create a copy of the material. Instead, you should use <a href="../ScriptReference/Renderer-sharedMaterial.html">Renderer.sharedMaterial</a> to keep material shared.</p>
+
+<h2>Dynamic Batching</h2>
+
+<p>Unity can automatically batch moving objects into the same draw call if they share the same material and fulfill other criteria. Dynamic batching is done automatically and does not require any additional effort on your side.</p>
+
+<p>Tips:</p>
+
+<ul>
+<li>Batching dynamic objects has certain overhead <strong>per vertex</strong>, so batching is applied only to meshes containing less than <strong>900</strong> vertex attributes in total.
+
+<ul>
+<li>If your shader is using Vertex Position, Normal and single UV, then you can batch up to 300 verts; whereas if your shader is using Vertex Position, Normal, UV0, UV1 and Tangent, then only 180 verts.</li>
+<li><strong>Please note: attribute count limit might be changed in future</strong></li>
+</ul>
+</li>
+<li>Generally, objects should be using the same transform scale.
+
+<ul>
+<li>The exception is non-uniform scaled objects; if several objects all have different non-uniform scale then they can still be batched.</li>
+</ul>
+</li>
+<li>Using different material instances - even if they are essentially the same - will make objects not batched together.</li>
+<li>Objects with lightmaps have additional renderer parameter: lightmap index and offset/scale into the lightmap. So generally dynamic lightmapped objects should point to exactly the same lightmap location to be batched.</li>
+<li>Multi-pass shaders will break batching. Almost all unity shaders supports several lights in forward rendering, effectively doing additional pass for them. The draw calls for “additional per-pixel lights” will not be batched.</li>
+<li>Objects that receive real-time shadows will not be batched.</li>
+</ul>
+
+<h2>Static Batching</h2>
+
+<p>Static batching, on the other hand, allows the engine to reduce draw calls for geometry of any size (provided it does not move and shares the same material). Static batching is significantly more efficient than dynamic batching. You should choose static batching as it will require less CPU power. </p>
+
+<p>In order to take advantage of static batching, you need explicitly specify that certain objects are static and will <strong>not</strong> move, rotate or scale in the game. To do so, you can mark objects as static using the Static checkbox in the Inspector:</p>
+
+<figure>
+<img src="../uploads/Main/StaticTagInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Using static batching will require additional memory for storing the combined geometry. If several objects shared the same geometry before static batching, then a copy of geometry will be created for each object, either in the Editor or at runtime. This might not always be a good idea - sometimes you will have to sacrifice rendering performance by avoiding static batching for some objects to keep a smaller memory footprint. For example, marking trees as static in a dense forest level can have serious memory impact.</p>
+
+<p>Static batching does not reduce batches instead of draw calls. Their number stays the same, but they are a lot faster with static batching.</p>
+
+<h2>Other batching tips</h2>
+
+<p>Currently, only <a href="class-MeshRenderer.html">Mesh Renderers</a> and <a href="ParticleSystems.html">Particle Systems</a> are batched. This means that skinned meshes, cloth, trail renderers and other types of rendering components are <strong>not</strong> batched.</p>
+
+<p>Semitransparent shaders most often require objects to be rendered in back-to-front order for transparency to work. Unity first orders objects in this order, and then tries to batch them - but because the order must be strictly satisfied, this often means less batching can be achieved than with opaque objects.</p>
+
+<p>Some parts of Unity’s rendering do not have batching implemented yet; for example rendering shadow casters, camera’s depth textures or GUI will not do batching.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="OptimizingGraphicsPerformance.html"></a></span><div class="tip"> Optimizing Graphics Performance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ModelingOptimizedCharacters.html"></a></span><div class="tip">Modeling Characters for Optimal Performance</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

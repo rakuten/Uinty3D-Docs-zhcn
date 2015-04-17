@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: iOS Player Settings</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-PlayerSettingsiOS.html">English</a></li>
+<li><a href="/es/current/Manual/class-PlayerSettingsiOS.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-PlayerSettingsiOS.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="iphone.html">iOS</a></li>
+<li>iOS Player Settings</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="iphone-Hardware.html"></a></span><div class="tip">iOS Hardware Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TextureImporterIos.html"></a></span><div class="tip">iOS 2D Texture Overrides</div>
+</div>
+</div></div>
+<h1>iOS Player Settings</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page details the <span class="doc-keyword">Player Settings</span> specific to iOS. A description of the general Player Settings can be found <a href="class-PlayerSettings.html">here</a>.</p>
+
+<h2>Resolution And Presentation</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSResPres.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Resolution</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Orientation</span></td>
+	<td style="text-align:left;">(This setting is shared between iOS and Android devices)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Orientation</span></td>
+	<td style="text-align:left;">The game’s screen orientation. The options are <strong>Portrait</strong> (home button at the bottom), <strong>Portrait Upside Down</strong> (home button at the top), <strong>Landscape Left</strong> (home button on the right side), <strong>Landscape Right</strong> (home button on the left side) and <strong>Auto Rotation</strong> (screen orientation changes with device orientation).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use Animated Autorotation</span></td>
+	<td style="text-align:left;">Should orientation changes animate the screen rotation rather than just switch? (Only visible when the <em>Default Orientation</em> is set to <em>Auto Rotation</em>.)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Allowed Orientations for Auto Rotation</strong></td>
+	<td style="text-align:left;">(Only visible when the <em>Default Orientation</em> is set to <em>Auto Rotation</em>.)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Portrait</span></td>
+	<td style="text-align:left;">Allow portrait orientation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Portrait Upside Down</span></td>
+	<td style="text-align:left;">Allow portrait upside down orientation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Landscape Right</span></td>
+	<td style="text-align:left;">Allow landscape right orientation (ie, home button on the <strong>left</strong> side).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Landscape Left</span></td>
+	<td style="text-align:left;">Allow landscape left orientation (home button is on the <strong>right</strong> side).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Status Bar</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Status Bar Hidden</span></td>
+	<td style="text-align:left;">Specifies whether the status bar is initially hidden when the application launches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Status Bar Style</span></td>
+	<td style="text-align:left;">Specifies the style of the status bar as the application launches. The options are <strong>Default</strong>, <strong>Black Translucent</strong> and <strong>Black Opaque</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use 32-bit Display Buffer</span></td>
+	<td style="text-align:left;">Specifies if Display Buffer should be created to hold 32-bit color values (by default, it uses 16-bit values). Use it if you see banding or need alpha in your Image Effects, as they will create RTs in the same format as the Display Buffer.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Disable Depth and Stencil</span></td>
+	<td style="text-align:left;">Should the depth and stencil buffers be disabled?</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Show Loading Indicator</span></td>
+	<td style="text-align:left;">How should the loading indicator be displayed? The options are <strong>Don’t Show</strong>, <strong>White Large</strong>, <strong>White</strong> and <strong>Gray</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Icon</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSIcon.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override for iOS</span></td>
+	<td style="text-align:left;">Check if you want to assign a custom icon you would like to be used for your iPhone/iPad game. Different sizes of the icon should fill in the squares below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Prerendered icon</span></td>
+	<td style="text-align:left;">If unchecked iOS applies sheen and bevel effects to the application icon.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Splash Image</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSSplash.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mobile Splash Screen (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS Splash Screen. Standard Splash Screen size is 320x480.(This is shared between Android and iOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPhone 3.5&quot;/Retina (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS 3.5&quot; Retina Splash Screen. Splash Screen size is 640x960.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPhone 4&quot;/Retina (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS 4&quot; Retina Splash Screen. Splash Screen size is 640x1136.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPad Portrait (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as iPad Portrait orientation Splash Screen. Standard Splash Screen size is 768x1024.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High Res. iPad Portrait</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as the high res iPad Portrait orientation Splash Screen. Standard Splash Screen size is 1536x2048.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPad Landscape (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as iPad Landscape orientation Splash Screen. Standard Splash Screen size is 1024x768.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High res. iPad Landscape (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as the high res iPad Landscape orientation Splash Screen. Standard Splash Screen size is 2048x1536.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Debugging and Crash Reporting</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSDebugCrash.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable Internal Profiler</span></td>
+	<td style="text-align:left;">Enables an internal profiler which collects performance data of the application and prints a report to the console. The report contains the number of milliseconds that it took for each Unity subsystem to execute on each frame. The data is averaged across 30 frames.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">On .Net UnhandledException</span></td>
+	<td style="text-align:left;">The action taken on .NET unhandled exception. The options are <strong>Crash</strong> (the application crashes hardly and forces iOS to generate a crash report that can be submitted to iTunes by app users and inspected by developers), <strong>Silent Exit</strong> (the application exits gracefully).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Log ObjC uncaught exceptions</span></td>
+	<td style="text-align:left;">Enables a custom Objective-C Uncaught Exception handler, which will print exception information to console.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable Crash Report API</span></td>
+	<td style="text-align:left;">Enables a custom crash reporter to capture crashes. Crash logs will be available to scripts via CrashReport API.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Other Settings</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSOther.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Rendering</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Rendering Path</span></td>
+	<td style="text-align:left;">The <a href="RenderingPaths.html">rendering path</a> enabled for the game.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Static Batching</span></td>
+	<td style="text-align:left;">Set this to use Static batching on your build (enabled by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Batching</span></td>
+	<td style="text-align:left;">Set this to use Dynamic Batching on your build (enabled by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">GPU Skinning</span></td>
+	<td style="text-align:left;">Should DX11/ES3 GPU skinning be enabled?</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Identification</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Identifier</span></td>
+	<td style="text-align:left;">The string used in your provisioning certificate from your Apple Developer Network account(This is shared between iOS and Android)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Version</span></td>
+	<td style="text-align:left;">Specifies the build version number of the bundle, which identifies an iteration (released or unreleased) of the bundle. The version is specified in the common format of a string containing numbers separated by dots (eg, 4.3.2).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Configuration</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Device</span></td>
+	<td style="text-align:left;">Which devices are targeted by the game? The options are <strong>iPhone Only</strong>, <strong>iPad Only</strong> and <strong>iPhone + iPad</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Resolution</span></td>
+	<td style="text-align:left;">What resolution should be used for the game? (This setting does not have any effect on devices with a maximum resolution of 480x320.) The options are <strong>Native(Default Device Resolution)</strong>, <strong>Auto (Best Performance)</strong>, <strong>Auto (Best Quality)</strong>, <strong>320p (iPhone)</strong>, <strong>640p (iPhone Retina Display)</strong> and <strong>768p (iPad)</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Graphics Level</span></td>
+	<td style="text-align:left;">Select OpenGL ES level to use.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Accelerometer Frequency</span></td>
+	<td style="text-align:left;">How often is the accelerometer sampled? The options are <strong>Disabled</strong> (ie, no samples are taken), <strong>15Hz</strong>, <strong>30Hz</strong>, <strong>60Hz</strong> and <strong>100Hz</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override iPod Music</span></td>
+	<td style="text-align:left;">If selected, the application will silence user’s iPod music. Otherwise user’s iPod music will continue playing in the background.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Prepare iOS for Recording</span></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Requires Persistent WiFi</span></td>
+	<td style="text-align:left;">Specifies whether the application requires a Wi-Fi connection. iOS maintains the active Wi-Fi connection while the application is running.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Exit on Suspend</span></td>
+	<td style="text-align:left;">Specifies whether the application should quit when suspended to background on iOS versions that support multitasking.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Define Symbols</span></td>
+	<td style="text-align:left;">Custom compilation flags (see the <a href="PlatformDependentCompilation.html">platform dependent compilation</a> page for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Optimization</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Api Compatibility Level</span></td>
+	<td style="text-align:left;">Specifies active .NET API profile. See below</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0</span>
+</td>
+	<td style="text-align:left;">.Net 2.0 libraries. Maximum .net compatibility, biggest file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0 Subset</span>
+</td>
+	<td style="text-align:left;">Subset of full .net compatibility, smaller file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">AOT compilation options</span></td>
+	<td style="text-align:left;">Additional AOT compiler options.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">SDK Version</span></td>
+	<td style="text-align:left;">Specifies iPhone OS SDK version to use for building in Xcode</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Device SDK</span>
+</td>
+	<td style="text-align:left;">SDK to run on actual hardware.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Simulator SDK</span>
+</td>
+	<td style="text-align:left;">SDK to run only on the simulator.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target iOS Version</span></td>
+	<td style="text-align:left;">Specifies lowest iOS version where final application will able to run. The options are <strong>6.0</strong>, <strong>7.0</strong> and <strong>Unknown</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Stripping Level</span></td>
+	<td style="text-align:left;">Options to strip out scripting features to reduce built player size(This setting is shared between iOS and Android Platforms)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Disabled</span>
+</td>
+	<td style="text-align:left;">No reduction is done.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip Assemblies</span>
+</td>
+	<td style="text-align:left;">Level 1 size reduction.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip ByteCode</span>
+</td>
+	<td style="text-align:left;">Level 2 size reduction (includes reductions from Level 1).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Use micro mscorlib</span>
+</td>
+	<td style="text-align:left;">Level 3 size reduction (includes reductions from Levels 1 and 2).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Script Call Optimization</span></td>
+	<td style="text-align:left;">Optionally disable exception handling for a speed boost at runtime</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Slow and Safe</span>
+</td>
+	<td style="text-align:left;">Full exception handling will occur with some performance impact on the device</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Fast but no Exceptions</span>
+</td>
+	<td style="text-align:left;">No data provided for exceptions on the device, but the game will run faster</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Optimize Mesh Data</span></td>
+	<td style="text-align:left;">Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable Verbose Memory Stats</span></td>
+	<td style="text-align:left;">Allow detailed memory usage information to be recorded (at the expense of performance).</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<strong>Note:</strong> Be sure to select the correct SDK - if you select <em>Device</em>, say, but then target the Simulator in Xcode then the build will fail with a lot of error messages.</p>
+
+<h3>API Compatibility Level</h3>
+
+<p>You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get “Reflector” on windows. </p>
+
+<ol>
+<li>Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/</li>
+<li>Also drag in your 3rd party assembly.</li>
+<li>Right click your 3rd party assembly, and select “Analyze”.</li>
+<li>In the analysis report, inspect the “Depends on” section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.</li>
+</ol>
+
+<h2>Details</h2>
+
+<h3>Bundle Identifier</h3>
+
+<p>The <span class="doc-prop">Bundle Identifier</span> string must match the provisioning profile of the game you are building. The basic structure of the identifier is <span class="doc-prop">com.CompanyName.GameName</span>. This structure may vary internationally based on where you live, so always default to the string provided to you by Apple for your Developer Account. Your GameName is set up in your provisioning certificates, that are manageable from the Apple iPhone Developer Center website. Please refer to the <a href="http://developer.apple.com/iphone/">Apple iPhone Developer Center website</a> for more information on how this is performed.</p>
+
+<h3>Stripping Level</h3>
+
+<p>Most games don’t use all necessary dlls. With this option, you can strip out unused parts to reduce the size of the built player on iOS devices. If your game is using classes that would normally be stripped out by the option you currently have selected, you’ll be presented with a Debug message when you make a build.</p>
+
+<h3>Script Call Optimization</h3>
+
+<p>A good development practice on iOS is to never rely on exception handling (either internally or through the use of try/catch blocks). When using the default <span class="doc-prop">Slow and Safe</span> option, any exceptions that occur on the device will be caught and a stack trace will be provided. When using the <span class="doc-prop">Fast but no Exceptions</span> option, any exceptions that occur will crash the game, and no stack trace will be provided. However, the game will run faster since the processor is not diverting power to handle exceptions. When releasing your game to the world, it’s best to publish with the <span class="doc-prop">Fast but no Exceptions</span> option.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="iphone-Hardware.html"></a></span><div class="tip">iOS Hardware Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-TextureImporterIos.html"></a></span><div class="tip">iOS 2D Texture Overrides</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

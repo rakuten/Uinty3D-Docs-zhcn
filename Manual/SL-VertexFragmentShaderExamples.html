@@ -1,0 +1,698 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Vertex and Fragment Shader Examples</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SL-VertexFragmentShaderExamples.html">English</a></li>
+<li><a href="/es/current/Manual/SL-VertexFragmentShaderExamples.html">Español</a></li>
+<li><a href="/ru/current/Manual/SL-VertexFragmentShaderExamples.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="SL-Reference.html"> Shader Reference</a></li>
+<li><a href="SL-ShaderPrograms.html">Writing vertex and fragment shaders</a></li>
+<li>Vertex and Fragment Shader Examples</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-ShaderPrograms.html"></a></span><div class="tip">Writing vertex and fragment shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PropertiesInPrograms.html"></a></span><div class="tip"> Accessing shader properties in Cg/HLSL</div>
+</div>
+</div></div>
+<h1>Vertex and Fragment Shader Examples</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This section describes how to setup a basic scene in Unity that you can work with. The initial examples you are going to use are a plane and a camera pointing at the plane to show the different functionality of the fragment shaders. The setup of the plane and the camera is explained, moreover the shaders can work with any geometry without major modifications.</p>
+
+<h3>Configuring a Unity Project</h3>
+
+<p>After starting Unity, you will probably be viewing an empty project. If not, create a new project by choosing <span class="doc-menu">File &gt; New Project…</span> from the menu. If you are not familiar with Unity’s Scene View, Hierarchy View, Project View and Inspector View, now would be a good time to read the first two sections (<a href="UnityBasics.html">Unity Basics</a> and <a href="BuildingScenes.html">Building Scenes</a>) of the User Manual.</p>
+
+<h3>Creating a Mesh</h3>
+
+<p>The first step in this scene setup is to create a plane. Click on <span class="doc-menu">Create &gt; Plane</span> in the menu Hierarchy View, or try out one of the other methods to do this in Unity. Then position the camera so it can show the plane. Double-click the Main Camera Object from the Hierarchy view and get a Scene View of the plane. Then select the <strong>Align with View</strong> option from the menu <strong>GameObject</strong>. Make sure the plane does not cover the entire screen so you can see the difference between rendering with a shader and without it. you should now see a gray sphere in the Preview section of the Inspector View for the material.</p>
+
+<h3>Creating a Material</h3>
+
+<p>Create a new Material by clicking Create in the Project View and choosing Material. A new material called <em>New Material</em> will appear in the Project View. Change the name of the Material to something more descriptive like <em>Material-ShaderLab</em>.</p>
+
+<h3>Creating a Shader</h3>
+
+<p>Create a Shader in the same way as a Material, but selecting Shader in the menu. Change the name of the Shader to something more descriptive like <em>Shader-ShaderLab</em>.</p>
+
+<pre><code>    Shader &quot;Custom/NewShader&quot; {
+        Properties {
+            _MainTex (&quot;Base (RGB)&quot;, 2D) = &quot;white&quot; {}
+        }
+        SubShader {
+            Tags { &quot;RenderType&quot; = &quot;Opaque&quot; }
+            LOD 200
+
+            CGPROGRAM
+            #pragma surface surf Lambert
+
+            sampler2D _MainTex;
+
+            struct Input {
+                float2 uv_MainTex;
+            };
+
+            void surf (Input IN, inout SurfaceOutput o) {
+                half4 c = tex2D (_MainTex, IN.uv_MainTex);
+                o.Albedo = c.rgb;
+                o.Alpha = c.a;
+            }
+            ENDCG
+        }
+        FallBack &quot;Diffuse&quot;
+    }
+</code></pre>
+
+<p>The default <a href="SL-SurfaceShaders.html">surface shader</a> is generated after the creation of a new shader. The text can be replaced by a new version of a vertex-fragment shader.</p>
+
+<h3>Linking the Mesh, Material and Shader</h3>
+
+<p>Link the Shader with the <a href="Materials.html">material</a> in the inspector windows of the material. You can drag and drop the shader in the Project View over the material, or you can select the material in the Project View and then choose the shader from the drop-down list labeled <em>Material-ShaderLab</em> in the Inspector View. In either case, you should now see a gray sphere in the Preview section of the Inspector View for the material. If it doesn’t show and an error message is displayed at the bottom of the Unity window, reopen the shader and check in the editor that the text is the same as that given in this lesson.</p>
+
+<p>Link the new material to a triangle mesh. To do this attach the material to the new plane by dragging and dropping the material from the Project View to the plane in the Hierarchy View. Alternatively you can drag and drop the material from the Project View to the plane in the Scene View. Another way would be to select the plane in the Hierarchy View, locate the Mesh Renderer component in the Inspector View (open it by clicking the title if it isn’t open) and open the Materials setting of the Mesh Renderer by clicking it. Use whichever of these methods that works best for you. Change the <em>Default-Diffuse</em> material to the new material by clicking the dotted circle icon to the right of the material name and choosing the new material from the pop-up window. The plane in the Scene View should now have the same color as the preview in the Inspector View of the material. Changing the shader should (after saving and switching to Unity) change the appearance of the plane in the Scene View.</p>
+
+<p><em>Now you have the scene setup completed!</em></p>
+
+<h2>Empty Shader</h2>
+
+<p>This will explain the four main parts of a Shader in ShaderLab that you can see in the code.</p>
+
+<pre><code>Shader &quot;Custom/Empty&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>Shader
+</code></pre>
+
+<p>The <a href="SL-Shader.html">Shader</a> command contains a string with the name of the Shader. This name can be subdivided with the “/” character simulating a folder structure, simplifying the future reutilization of the Shader. The name should be unique in all shaders.</p>
+
+<pre><code>SubShader
+</code></pre>
+
+<p>A Shader can contain one or more <a href="SL-SubShader.html">SubShaders</a>, which are primarily used to implement shaders for different GPU capabilities. All the SubShaders should present similar results using different techniques for each architecture. ShaderLab translates the code of the shader automatically to other architectures, but in some cases full functionality of the Shader in mobile architectures is not desired or some inputs are missing, You are going to work with a simple SubShader in the Shader and the lessons are implemented for desktop architectures.</p>
+
+<pre><code>Pass
+</code></pre>
+
+<p>Each SubShader is composed of a number of <a href="SL-Pass.html">passes</a>, and each Pass represents an execution of the Vertex and Fragment code for the same object rendered with the Material of the Shader. You should implement the shader with the smallest number of passes possible for performance reasons.</p>
+
+<pre><code>CGPROGRAM .. ENDCG
+</code></pre>
+
+<p>These directives define in ShaderLab the language used for the shader. Unity can work with the shader languages of Cg and GLSL. the Cg language is recommended, because several optimization steps are implemented for the different architectures.</p>
+
+<h2>Simple Shader</h2>
+
+<p>The difference between vertex and fragment shaders is the process developed in the render pipeline. Vertex shaders could be define as the shader programs that modifies the geometry of the scene and made the 3D projection. Fragment shaders are related to the render window and define the color for each pixel. Fragment and Vertex shader can present more functionality in new graphics cards like moving the vertex position or storing more data for each pixel.</p>
+
+<pre><code>Shader &quot;Custom/SolidColor&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+
+            float4 vert(float4 v:POSITION) : SV_POSITION {
+                return mul (UNITY_MATRIX_MVP, v);
+            }
+
+            fixed4 frag() : SV_Target {
+                return fixed4(1.0,0.0,0.0,1.0);
+            }
+
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>pragma vertex vert
+</code></pre>
+
+<p>Vertex Shader is a shader program to modify the geometry of the scene. It is executed for each vertex in the scene, and outputs are the coordinates of the projection, color, textures and other data passed to the fragment shader. The directive <em>#pragma vertex [function name]</em> is used to define the name of the vertex function.</p>
+
+<pre><code>pragma fragment frag
+</code></pre>
+
+<p>Fragment Shader is a shader program to modify image properties in the render window. It is executed for each pixel and the output is the color info of the pixel. The directive <code>#pragma fragment</code> defines the name of the function of the fragment shader.</p>
+
+<pre><code>float4 vert(float4 v:POSITION) : SV_POSITION
+</code></pre>
+
+<p>The variable v contains the values for the vertex, this function is called for each vertex of the scene rendered. The returned value is a <code>float4</code> variable with the position of the vertex in the screen, the use of four float values to store an <code>SV_POSITION</code>coordinate in a 2D window is because the geometry of the projection is expected in homogeneous coordinates which use two values for the pixel in the screen (x,y), one value for the depth (z), and one value for the homogeneous space (w). You can transform homogeneous coordinates into 3D coordinates, but you will lose the ability to obtain the 3D position of the vertex in the future; also you can delete the z value, but you will lose the ability to perform depth testing in the final rendering. The homogeneous coordinates are used in almost all GPUs. Eliminating variables of the vertex shader output shaders doesn’t represent any optimization of the code, instead making the code less generic and more difficult to understand.</p>
+
+<pre><code>return mul (UNITY_MATRIX_MVP, v);
+</code></pre>
+
+<p>This is the core of the vertex function, where a coordinate in 3D is projected into a 2D window. The process involves multiplying the 3D position with a matrix known as Model-View-Projection</p>
+
+<pre><code>fixed4 frag() : COLOR
+</code></pre>
+
+<p>This line defines the function <code>frag</code>, which is going to be used by the fragment shader as its main function. In this lesson, there are no input parameters for the fragment function, and the output is defined as a <code>COLOR</code> value defined in a <code>fixed4</code> variable that contains the RGBA (red, green, blue, alpha) of the color. It’s possible to use the color as a visualization of a float variable, or even to pass information between the vertex and fragment shaders. However the COLOR variable is clamped between the values 0 and 1 so it expects a change of the values in the COLOR variable.</p>
+
+<pre><code>return fixed4(1.0,0.0,0.0,1.0)
+</code></pre>
+
+<p>Fragment function core functionality, where for each pixel processed in the fragment shader a color red is defined.</p>
+
+<figure>
+<img src="../uploads/Main/ShaderSolidColor.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Window Coordinates</h2>
+
+<p>This Shader defines a static color depending on the pixel coordinate of the window. This allows the definition of colors in the screen independent of the geometry rendered. If you move the plane you can see the colors change on the screen.</p>
+
+<pre><code>Shader &quot;Custom/WindowCoordinates/Base&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include &quot;UnityCG.cginc&quot;
+
+            float4 vert(appdata_base v) : POSITION {
+                return mul (UNITY_MATRIX_MVP, v.vertex);
+            }
+
+            fixed4 frag(float4 sp:WPOS) : SV_Target {
+                return fixed4(sp.xy/_ScreenParams.xy,0.0,1.0);
+            }
+
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>pragma target 3.0
+</code></pre>
+
+<p>The target directive defines the hardware requirements to support the shader.</p>
+
+<pre><code>include &quot;UnityCG.cginc&quot;
+</code></pre>
+
+<p>Include the file “UnityCG.cginc” inside the code of the shader.</p>
+
+<pre><code>appdata_base v
+</code></pre>
+
+<p>Defines a default structure of Unity to set the input variables of the vertex shaders.</p>
+
+<pre><code>WPOS
+</code></pre>
+
+<p>Input argument for the <code>frag</code> function, which is declared as a <code>float4</code> type and <code>WPOS</code> semantics. Semantics is a special clause of Cg to define the default input values of a fragment/vertex Shader. WPOS fills the variable with the values of the pixel coordinates in the screen of the rendered shader. This position needs to be divided by the screen size, the values are transformed into 0 and 1 values so they can be mapped as the RG components of the output color.</p>
+
+<pre><code>ScreenParams
+</code></pre>
+
+<p>The screen width and height values are stored in the variable _ScreenParams; this variable is declared in the UnityCG.cginc file.</p>
+
+<figure>
+<img src="../uploads/Main/ShaderWindowsCoordinates.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Examples</h2>
+
+<p>Window coordinates are not commonly used in shaders, because normally the shaders work with the position of the texture as you will see in the next lessons. However some interesting effects like Render with a Mask or some other image effects use this property.</p>
+
+<h3>Behind bars</h3>
+
+<pre><code>Shader &quot;Custom/WindowCoordinates/Bars&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct vertOut {
+                float4 pos:SV_POSITION;
+                float4 scrPos;
+            };
+
+            vertOut vert(appdata_base v) {
+                vertOut o;
+                o.pos = mul (UNITY_MATRIX_MVP, v.vertex);
+                o.scrPos = ComputeScreenPos(o.pos);
+                return o;
+            }
+
+            fixed4 frag(vertOut i) : SV_Target {
+                float2 wcoord = (i.scrPos.xy/i.scrPos.w);
+                fixed4 color;
+
+                if (fmod(20.0*wcoord.x,2.0)&lt;1.0) {
+                    color = fixed4(wcoord.xy,0.0,1.0);
+                } else {
+                    color = fixed4(0.3,0.3,0.3,1.0);
+                }
+                return color;
+            }
+
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>struct vertOut
+</code></pre>
+
+<p>Defines a new type of variable; this is a compound type, which represents a set of other variables with native or compound types. The struct is used when more than a native data is needed to be passed from the vertex to the fragment shader. As the return data of a function is only a variable, with struct a set of values can be represented as an only value.</p>
+
+<pre><code>ComputeScreenPos
+</code></pre>
+
+<p>Function define in the UnityCG.cginc file, this function returns the screen position for the fragment shader. The difference with the previous example where a WPOS semantic variable was used, is that this function is multiplatform and it does not need target 3.0.</p>
+
+<figure>
+<img src="../uploads/Main/ShaderWindowsCoordinatesBars.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Vignetting</h3>
+
+<pre><code>Shader &quot;Custom/WindowCoordinates/Vignetting&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include &quot;UnityCG.cginc&quot;
+
+            float4 vert(appdata_base v) : POSITION {
+                return mul (UNITY_MATRIX_MVP, v.vertex);
+            }
+
+            fixed4 frag(float4 sp:WPOS) : SV_Target {
+                float2 wcoord = sp.xy/_ScreenParams.xy;
+                float vig = clamp(3.0*length(wcoord-0.5),0.0,1.0);
+                return lerp (fixed4(wcoord,0.0,1.0),fixed4(0.3,0.3,0.3,1.0),vig);
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/ShaderWindowsCoordinatesVignetting.png" alt="">
+<figcaption></figcaption></figure>
+
+<pre><code>lerp
+</code></pre>
+
+<p>Standard function of the Cg language, this function is a linear interpolation between the first two arguments given the third as a factor. Many functions are implemented in the Cg language as standard functions.</p>
+
+<h3>Circles Mask</h3>
+
+<p>Some shaders need external information given in types like Variables, Arrays, Textures. These cases are covered by the use of uniforms and properties in ShaderLab. Properties define a set of types which can be passed to the shader in every run. The variables can modify the behavior of the shader. The following example shows how to change the values of a shader mask full of circles. The number of rows and columns can also change the size of the circles.</p>
+
+<pre><code>Shader &quot;Custom/WindowCoordinates/CirclesMask&quot; {
+    Properties {
+        _CirclesX (&quot;Circles in X&quot;, Float) = 20
+        _CirclesY (&quot;Circles in Y&quot;, Float) = 10
+        _Fade (&quot;Fade&quot;, Range (0.1,1.0)) = 0.5
+    }
+    SubShader {
+        Pass {
+
+            CGPROGRAM
+
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include &quot;UnityCG.cginc&quot;
+            
+            uniform float _CirclesX;
+            uniform float _CirclesY;
+            uniform float _Fade;
+
+            float4 vert(appdata_base v) : POSITION {
+                return mul (UNITY_MATRIX_MVP, v.vertex);
+            }
+
+            fixed4 frag(float4 sp:WPOS) : SV_Target {
+                float2 wcoord = sp.xy/_ScreenParams.xy;
+                fixed4 color;
+                if (length(fmod(float2(_CirclesX*wcoord.x,_CirclesY*wcoord.y),2.0)-1.0)&lt;_Fade) {
+                    color = fixed4(sp.xy/_ScreenParams.xy,0.0,1.0);
+                } else {
+                    color = fixed4(0.3,0.3,0.3,1.0);
+                } 
+                return color;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>uniform
+</code></pre>
+
+<p>ShaderLab defines properties as values that are transferred from the application to the shader. Properties are defined with different types like <code>Color</code>, <code>Float</code>, <code>2D</code>, and others. To use the properties values defined into the shader the keyword <em>uniform</em> should be use declaring the variables, so the compiler identify the variables as external values which should be transferred to the shader in each execution.</p>
+
+<figure>
+<img src="../uploads/Main/ShaderWindowsCoordinatesCirclesMask.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Texture Coordinates</h2>
+
+<p>This lesson presents a set of shaders which use texture coordinates to draw the faces of a mesh with different effects.</p>
+
+<p>Texture position in a mesh is given by the variable <code>texcoord0</code>, which is set for each vertex. The vertex and fragment shader can modify this variable. You should select in which shader you modify <code>texcoord0</code>, depending on the variables needed for the operation, the number of vertices in the scene and the screen resolution. You should select the modification of <code>texcoord0</code> values looking for the smallest number of executions.</p>
+
+<pre><code>Shader &quot;Custom/TextureCoordinates/Base&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct vertexInput {
+                float4 vertex : POSITION;
+                float4 texcoord0 : TEXCOORD0;
+            };
+
+            struct fragmentInput{
+                float4 position : SV_POSITION;
+                float4 texcoord0 : TEXCOORD0;
+            };
+
+            fragmentInput vert(vertexInput i){
+                fragmentInput o;
+                o.position = mul (UNITY_MATRIX_MVP, i.vertex);
+                o.texcoord0 = i.texcoord0;
+                return o;
+            }
+            fixed4 frag(fragmentInput i) : SV_Target {
+                return fixed4(i.texcoord0.xy,0.0,1.0);
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<p>The range of the values of <code>texcoord0</code> is from 0 to 1 and they are mapped to a specific texture. Textures are images stored in the memory of the GPU representing a square or rectangular image, the textures in the fragment shader can be also used as procedural textures which uses mathematical functions to define the color of each pixel in the screen. In the code above you the <code>texcoord0</code> values were used to set the colors of the Red and Green channels, given a gradient effect for each color.</p>
+
+<figure>
+<img src="../uploads/Main/ShaderTextureCoordinates.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Examples</h2>
+
+<h3>Chess</h3>
+
+<pre><code>Shader &quot;Custom/TextureCoordinates/Chess&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+
+            struct vertexInput {
+                float4 vertex : POSITION;
+                float4 texcoord0 : TEXCOORD0;
+            };
+
+            struct fragmentInput{
+                float4 position : SV_POSITION;
+                float4 texcoord0 : TEXCOORD0;
+            };
+
+            fragmentInput vert(vertexInput i){
+                fragmentInput o;
+                o.position = mul (UNITY_MATRIX_MVP, i.vertex);
+                o.texcoord0 = i.texcoord0;
+                return o;
+            }
+
+            fixed4 frag(fragmentInput i) : SV_Target {
+                fixed4 color;
+                if ( fmod(i.texcoord0.x*8.0,2.0) &lt; 1.0 ){
+                    if ( fmod(i.texcoord0.y*8.0,2.0) &lt; 1.0 )
+                    {
+                        color = fixed4(1.0,1.0,1.0,1.0);
+                    } else {
+                        color = fixed4(0.0,0.0,0.0,1.0);
+                    }
+                } else {
+                    if ( fmod(i.texcoord0.y*8.0,2.0) &gt; 1.0 )
+                    {
+                        color = fixed4(1.0,1.0,1.0,1.0);
+                    } else {
+                        color = fixed4(0.0,0.0,0.0,1.0);}
+                    }
+                return color;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<pre><code>Shader &quot;Custom/TextureCoordinates/ChessOpt&quot; {
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert_img
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+
+            fixed4 frag(v2f_img i) : SV_Target {
+                bool p = fmod(i.uv.x*8.0,2.0) &lt; 1.0;
+                bool q = fmod(i.uv.y*8.0,2.0) &gt; 1.0;
+                
+                return fixed4(fixed3((p &amp;&amp; q) || !(p || q)),1.0);
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/ShaderTextureCoordinatesChess.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Mandelbrot Fractal</h3>
+
+<pre><code>Shader &quot;Custom/TextureCoordinates/Mandelbrot&quot; {
+
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert_img
+            #pragma fragment frag
+            #pragma target 3.0
+
+            #include &quot;UnityCG.cginc&quot;
+            
+            float4 frag(v2f_img i) : SV_Target {
+                float2 mcoord;
+                float2 coord = float2(0.0,0.0);
+                mcoord.x = ((1.0-i.uv.x)*3.5)-2.5;
+                mcoord.y = (i.uv.y*2.0)-1.0;
+                float iteration = 0.0;
+                const float _MaxIter = 29.0;
+                const float PI = 3.14159;
+                float xtemp;
+                for ( iteration = 0.0; iteration &lt; _MaxIter; iteration += 1.0) {
+                    if ( coord.x*coord.x + coord.y*coord.y &gt; 2.0*(cos(fmod(_Time.y,2.0*PI))+1.0) )
+                    break;
+                    xtemp = coord.x*coord.x - coord.y*coord.y + mcoord.x;
+                    coord.y = 2.0*coord.x*coord.y + mcoord.y;
+                    coord.x = xtemp;
+                }
+                float val = fmod((iteration/_MaxIter)+_Time.x,1.0);
+                float4 color;
+
+                color.r = clamp((3.0*abs(fmod(2.0*val,1.0)-0.5)),0.0,1.0);
+                color.g = clamp((3.0*abs(fmod(2.0*val+(1.0/3.0),1.0)-0.5)),0.0,1.0);
+                color.b = clamp((3.0*abs(fmod(2.0*val-(1.0/3.0),1.0)-0.5)),0.0,1.0);
+                color.a = 1.0;
+                
+                return color;
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/ShaderTextureCoordinatesMandelbrot.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Texture</h3>
+
+<pre><code>Shader &quot;Custom/TextureCoordinates/ActualTexture&quot; {
+    Properties {
+        _MainTex (&quot;Base (RGB)&quot;, 2D) = &quot;white&quot; {}
+    }
+    SubShader {
+        Pass {
+            CGPROGRAM
+            #pragma vertex vert_img
+            #pragma fragment frag
+
+            #include &quot;UnityCG.cginc&quot;
+            
+            uniform sampler2D _MainTex;
+
+            fixed4 frag(v2f_img i) : SV_Target {
+                return tex2D(_MainTex, i.uv);
+            }
+            ENDCG
+        }
+    }
+}
+</code></pre>
+
+<figure>
+<img src="../uploads/Main/ShaderTextureCoordinatesTexture.png" alt="">
+<figcaption></figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-ShaderPrograms.html"></a></span><div class="tip">Writing vertex and fragment shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-PropertiesInPrograms.html"></a></span><div class="tip"> Accessing shader properties in Cg/HLSL</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

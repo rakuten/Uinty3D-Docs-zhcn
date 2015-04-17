@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Log Files</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/LogFiles.html">English</a></li>
+<li><a href="/es/current/Manual/LogFiles.html">Español</a></li>
+<li><a href="/ru/current/Manual/LogFiles.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="ScriptingSection.html">Scripting</a></li>
+<li><a href="ScriptingTools.html">Scripting Tools</a></li>
+<li>Log Files</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerGPU.html"></a></span><div class="tip">GPU Area</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EventSystem.html"></a></span><div class="tip">EventSystem</div>
+</div>
+</div></div>
+<h1>Log Files</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>There might be times during development when you need to obtain information from the logs of the webplayer you’ve built, your standalone player, the target device or the editor. Usually you need to see these files when you have experienced a problem and you have to know where exactly the problem occurred.</p>
+
+<p>On Mac the webplayer, player and editor logs can be accessed uniformly through the standard <span class="doc-menu">Console.app</span> utility.</p>
+
+<p>On Windows the webplayer and editor logs are placed in folders which are not shown in the Windows Explorer by default. See below.</p>
+
+<h2>Editor</h2>
+
+<p>The editor log can be brought up through the <span class="doc-menu">Open Editor Log</span> button in Unity’s Console window.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mac OS X</span></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/Editor.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows XP</span></td>
+	<td style="text-align:left;"><code>C:\Documents and Settings\username\Local Settings\Application Data_\Unity\Editor\Editor.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows Vista/7</span></td>
+	<td style="text-align:left;"><code>C:\Users\username\AppData\Local\Unity\Editor\Editor.log</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>On Windows, the Editor log file is stored in the local application data folder: <em>%LOCALAPPDATA%</em>\Unity\Editor\Editor.log, where <em>LOCALAPPDATA</em> is defined by <a href="http://msdn.microsoft.com/en-us/library/bb762494&amp;#40;VS.85&amp;#41;.aspx">CSIDL_LOCAL_APPDATA</a>.</p>
+
+<p>On Mac all the logs can be accessed uniformly through the standard <span class="doc-menu">Console.app</span> utility.</p>
+
+<h2>Webplayer</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mac OS X</span></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/WebPlayer.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows XP</span></td>
+	<td style="text-align:left;"><code>C:\Documents and Settings\username\Local Settings\Temp\UnityWebPlayer\log\log_UNIQUEID.txt</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows Vista/7</span></td>
+	<td style="text-align:left;"><code>C:\Users\username\AppData\Local\Temp\UnityWebPlayer\log\log_UNIQUEID.txt</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows Vista/7 + IE7 + UAC</span></td>
+	<td style="text-align:left;"><code>C:\Users\username\AppData\Local\Temp\Low\UnityWebPlayer\log\log_UNIQUEID.txt</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>On Windows the webplayer log is stored in a temporary folder: <em>%TEMP%</em>\UnityWebPlayer\log\log_UNIQUEID.txt, where <em>TEMP</em> is defined by <a href="http://msdn.microsoft.com/en-us/library/aa364992&amp;#40;VS.85&amp;#41;.aspx">GetTempPath</a>.</p>
+
+<h2>Player</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mac OS X</span></td>
+	<td style="text-align:left;"><code>~/Library/Logs/Unity/Player.log</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Windows </span></td>
+	<td style="text-align:left;"><code>_EXECNAME_Data_\output_log.txt</code></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Linux</span></td>
+	<td style="text-align:left;"><code>~/.config/unity3d/CompanyName/ProductName/Player.log</code></td>
+</tr>
+</tbody>
+</table>
+
+<p>On Windows, <em>EXECNAME_Data</em> is a folder next to the executable with your game.</p>
+
+<p>Note that on Windows and Linux standalones the location of the log file can be changed (or logging suppressed.) See the <a href="CommandLineArguments.html">command line</a> page for further details.</p>
+
+<h3>iOS</h3>
+
+<p>The device log can be accessed in XCode via GDB console or the Organizer Console. The latter is useful for getting crashlogs when your application was not running through the XCode debugger.</p>
+
+<p>The <a href="TroubleShootingIPhone.html">Troubleshooting</a> and <a href="iphone-bugreporting.html">Bugreporting</a> guides may be useful for you.</p>
+
+<h3>Android</h3>
+
+<p>The device log can be viewed by using the <a href="http://developer.android.com/guide/developing/tools/adb.html#logcat">logcat console</a>. Use the <span class="doc-prop">adb</span> application found in <span class="doc-prop">Android SDK/platform-tools directory</span> with a trailing <span class="doc-prop">logcat</span> parameter:</p>
+
+<p><code>$ adb logcat</code></p>
+
+<p>Another way to inspect the LogCat is to use the <a href="http://developer.android.com/guide/developing/debugging/ddms.html">Dalvik Debug Monitor Server (DDMS)</a>. DDMS can be started either from <span class="doc-prop">Eclipse</span> or from inside the <span class="doc-prop">Android SDK/tools</span>. DDMS also provides a number of other debug related tools.</p>
+
+<h3>Blackberry</h3>
+
+<p>On Blackberry, the log is available from the Player Settings (menu: <span class="doc-menu">Edit &gt; Project Settings &gt; Player</span>). Select the Blackberry platform tab and among the Publishing Settings, you will find a <span class="doc-menu">Get Log</span> button. Clicking this button will get the latest log from the device and display it using the default system text editor.</p>
+
+<p>Note that the log only records details for the most recently run Unity project, so you will need to keep copies of logs yourself if you want to track details over several runs.</p>
+
+<h2>Accessing Log Files on Windows</h2>
+
+<p>On Windows the log files are stored in locations that are hidden by default. In Windows XP, you can make hidden folders visible in Windows Explorer using <span class="doc-menu">Tools-&gt;Folder Options…-&gt;View (tab)</span>.</p>
+
+<p>On Windows Vista/7 you can make the AppData folder visible in Windows Explorer using <span class="doc-menu">Tools-&gt;Folder Options…-&gt;View (tab)</span>. The Tools menu is hidden by default, but can be displayed by pressing the Alt key once.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="ProfilerGPU.html"></a></span><div class="tip">GPU Area</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EventSystem.html"></a></span><div class="tip">EventSystem</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

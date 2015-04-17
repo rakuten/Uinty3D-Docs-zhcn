@@ -1,0 +1,201 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Building Plugins for Desktop Platforms</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/PluginsForDesktop.html">English</a></li>
+<li><a href="/es/current/Manual/PluginsForDesktop.html">Español</a></li>
+<li><a href="/ru/current/Manual/PluginsForDesktop.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture Overview</li>
+<li><a href="Plugins.html">Plugins</a></li>
+<li>Building Plugins for Desktop Platforms</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NativePlugins.html"></a></span><div class="tip">Native Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="NativePluginInterface.html"></a></span><div class="tip">Low-level Native Plugin Interface</div>
+</div>
+</div></div>
+<h1>Building Plugins for Desktop Platforms</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This page describes <a href="Plugins.html">Native Code Plugins</a> for desktop platforms (Windows/Mac OS X/Linux). Note that plugins are intentionally disabled in webplayers for security reasons.</p>
+
+<h2>Building a Plugin for Mac OS X</h2>
+
+<p>On Mac OSX, <a href="Plugins.html">plugins</a> are deployed as bundles. You can create the bundle project with XCode by selecting <span class="doc-menu">File-&gt;NewProject…</span> and then selecting <span class="doc-menu">Bundle</span> -&gt; <span class="doc-menu">Carbon/Cocoa Loadable Bundle</span> (in XCode 3) or <span class="doc-menu">OS X</span> -&gt; <span class="doc-menu">Framework &amp; Library</span> -&gt; <span class="doc-menu">Bundle</span> (in XCode 4)</p>
+
+<p>If you are using C++ (.cpp) or Objective-C (.mm) to implement the plugin then you must ensure the functions are declared with C linkage to avoid <a href="http://en.wikipedia.org/wiki/Name_mangling">name mangling issues</a>.</p>
+
+<pre><code>extern &quot;C&quot; {
+  float FooPluginFunction ();
+}
+
+</code></pre>
+
+<h2>Building a Plugin for Windows</h2>
+
+<p>Plugins on Windows are DLL files with exported functions. Practically any language or development environment that can create DLL files can be used to create plugins.
+As with Mac OSX, you should declare any C++ functions with C linkage to avoid name mangling issues.</p>
+
+<h2>Building a Plugin for Linux</h2>
+
+<p>Plugins on Linux are <code>.so</code> files with exported functions. These libraries are typically written in C or C++, but any language can be used.
+As with the other platforms, you should declare any C++ functions with C linkage in order to avoid name mangling issues.</p>
+
+<h2>32-bit and 64-bit libraries</h2>
+
+<p>The issue of needing 32-bit and/or 64-bit plugins is handled differently depending on the platform.</p>
+
+<h3>Windows and Linux</h3>
+
+<p>On Windows and Linux, plugins can be managed manually (e.g, before building a 64-bit player, you copy the 64-bit library into the <code>Assets/Plugins</code> folder, and before building a 32-bit player, you copy the 32-bit library into the <code>Assets/Plugins</code> folder) OR you can place the 32-bit version of the plugin in <code>Assets/Plugins/x86</code> and the 64-bit version of the plugin in <code>Assets/Plugins/x86_64</code>. By default the editor will look in the architecture-specific sub-directory first, and if that directory does not exist, it will copy plugins from the root <code>Assets/Plugins</code> folder instead.</p>
+
+<p>Note that for the Universal Linux build, you are required to use the architecture-specific sub-directories (when building a Universal Linux build, the Editor will not copy any plugins from the root <code>Assets/Plugins</code> folder).</p>
+
+<h3>Mac OS X</h3>
+
+<p>For Mac OS X, you should build your plugin as a universal binary that contains both 32-bit and 64-bit architectures.</p>
+
+<h2>Using your plugin from C#</h2>
+
+<p>Once built, the bundle should be placed in the <span class="doc-menu">Assets-&gt;Plugins</span> folder (or the appropriate architecture-specific sub-directory) in the Unity project. Unity will then find it by name when you define a function like this in the C# script:-</p>
+
+<pre><code>[DllImport (&quot;PluginName&quot;)]
+private static extern float FooPluginFunction ();
+
+</code></pre>
+
+<p>Please note that <span class="doc-prop">PluginName</span> should not include the library prefix nor file extension. For example, the actual name of the plugin file would be PluginName.dll on Windows and libPluginName.so on Linux.
+Be aware that whenever you change code in the Plugin you will need to recompile scripts in your project or else the plugin will not have the latest compiled code.</p>
+
+<h2>Deployment</h2>
+
+<p>For cross platform plugins you must include the .bundle (for Mac), .dll (for Windows), and .so (for Linux) files in the Plugins folder.
+No further work is then required on your side - Unity automatically picks the right plugin for the target platform and includes it with the player.</p>
+
+<h2>Examples</h2>
+
+<h3>Simplest Plugin</h3>
+
+<p>This plugin project implements only some very basic operations (print a number, print a string, add two floats, add two integers). This example may be helpful if this is your first Unity plugin.
+The project can be found <a href="../uploads/Main/SimplestPluginExample-4.0.zip">here</a> and includes Windows, Mac, and Linux project files.</p>
+
+<h3>Rendering from C++ code</h3>
+
+<p>An example multiplatform plugin that works with multithreaded rendering in Unity can be found on the <a href="NativePluginInterface.html">Native Plugin Interface</a> page.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="NativePlugins.html"></a></span><div class="tip">Native Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="NativePluginInterface.html"></a></span><div class="tip">Low-level Native Plugin Interface</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

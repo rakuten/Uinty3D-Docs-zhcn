@@ -1,0 +1,341 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Using Webplayer Templates</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/UsingWebPlayertemplates.html">English</a></li>
+<li><a href="/es/current/Manual/UsingWebPlayertemplates.html">Español</a></li>
+<li><a href="/ru/current/Manual/UsingWebPlayertemplates.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web Player</a></li>
+<li><a href="WebPlayerDeployment.html">Web Player Deployment</a></li>
+<li>Using Webplayer Templates</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityWebPlayerandbrowsercommunication.html"></a></span><div class="tip">Unity Web Player and browser communication</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WebPlayerStreaming.html"></a></span><div class="tip">Web Player Streaming</div>
+</div>
+</div></div>
+<h1>Using Webplayer Templates</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>When you build a webplayer project, Unity embeds the player in an HTML page so that it can be played in the browser. The default page is very simple, with just a white background and some minimal text. There are actually three different variations of this page which can be selected from the Player Settings inspector (menu: Edit &gt; Project Settings &gt; Player).</p>
+
+<figure>
+<img src="../uploads/Main/WPPlayerSettings.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The built-in HTML pages are fine for testing and demonstrating a minimal player but for production purposes, it is often desirable to see the player hosted in the page where it will eventually be deployed. For example, if the Unity content interacts with other elements in the page via the external call interface then it must be tested with a page that provides those interacting elements. Unity allows you to supply your own pages to host the player by using <strong>webplayer templates</strong>.</p>
+
+<h2>Structure of a Webplayer Template</h2>
+
+<p>Custom templates are added to a project by creating a folder called “WebPlayerTemplates” in the Assets folder - the templates themselves are sub-folders within this folder. Each template folder contains an <em>index.html</em> or <em>index.php</em> file along with any other resources the page needs, such as images or stylesheets.</p>
+
+<figure>
+<img src="../uploads/Main/WPTemplatesProjPanel.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Once created, the template will appear among the options on the Player Settings inspector. (the name of the template will be the same as its folder). Optionally, the folder can contain a file named <em>thumbnail.png</em>, which should have dimensions of 128x128 pixels. The thumbnail image will be displayed in the inspector to hint at what the finished page will look like.</p>
+
+<h2>Template Tags</h2>
+
+<p>During the build process, Unity will look for special tag strings in the page text and replace them with values supplied by the editor. These include the name, onscreen dimensions and various other useful information about the player.</p>
+
+<p>The tags are delimited by percent signs (%) in the page source. For example, if the product name is defined as “MyPlayer” in the Player settings:-</p>
+
+<pre><code>    &lt;title&gt;%UNITY_WEB_NAME%&lt;/title&gt;
+</code></pre>
+
+<p>…in the template’s index file will be replaced with</p>
+
+<pre><code>    &lt;title&gt;MyPlayer&lt;/title&gt;
+</code></pre>
+
+<p>…in the host page generated for the build. The complete set of tags is given below:-</p>
+
+<ul>
+<li><p>
+<strong>UNITY_WEB_NAME</strong>: Name of the webplayer.</p></li>
+<li><p>
+<strong>UNITY_WIDTH</strong> and <strong>UNITY_HEIGHT</strong>: Onscreen width and height of the player in pixels.</p></li>
+<li><p>
+<strong>UNITY_WEB_PATH</strong>: Local path to the webplayer file.</p></li>
+<li><p>
+<strong>UNITY_UNITYOBJECT_LOCAL</strong>: A browser JavaScript file called <em>UnityObject2.js</em> is generally used to embed the player in the host page and provide part of the interaction between Unity and the host’s JavaScript. This is normally supplied to a page by downloading from Unity’s website. However, this requires an internet connection and causes problems if the page is to be deployed offline from the user’s hard drive. This tag provides the local path to the <em>UnityObject.js</em> file, which will be generated if the <em>Offline Deployment</em> option is enabled in the <a href="PublishingBuilds.html">Build Settings</a>.</p></li>
+<li><p>
+<strong>UNITY_UNITYOBJECT_URL</strong>: By default, the webpage will download <em>UnityObject2.js</em> from Unity’s website as necessary (ie, the <em>Offline Deployment</em> option is disabled). This tag provides the URL that will be used to download the file.</p></li>
+<li><p>
+<strong>UNITY_UNITYOBJECT_DEPENDENCIES</strong>: The <em>UnityObject2.js</em> file has dependencies; this tag will be replaced with those dependencies.</p></li>
+<li><p>
+<strong>UNITY_BETA_WARNING</strong>: If the webplayer has been built with a beta version of Unity, this tag will be replaced with a short warning message about the fact. Otherwise, it is replaced with nothing.</p></li>
+<li><p>
+<strong>UNITY_CUSTOM_SOME_TAG</strong>: If you add a tag to the index file with the form UNITY_CUSTOM_XXX, then this tag will appear in the Player Settings when your template is selected. For example, if something like</p></li>
+</ul>
+
+<pre><code>    &lt;title&gt;Unity Web Player | %UNITY_CUSTOM_MYTAG%&lt;/title&gt;
+</code></pre>
+
+<p>…is added to the source, the Player Settings will look like this:-</p>
+
+<figure>
+<img src="../uploads/Main/WPPlayerSettingsCustomTag.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The textbox next to the tag’s name contains the text that the custom tag will be replaced with during the build.</p>
+
+<h2>Example</h2>
+
+<p>To illustrate the use of the template tags, here is the HTML source that Unity uses for its default webplayer build.</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;head&gt;
+        &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;
+        &lt;title&gt;Unity Web Player | %UNITY_WEB_NAME%&lt;/title&gt;
+        %UNITY_UNITYOBJECT_DEPENDENCIES%
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        &lt;!--
+        var unityObjectUrl = &quot;%UNITY_UNITYOBJECT_URL%&quot;;
+        if (document.location.protocol == 'https:')
+            unityObjectUrl = unityObjectUrl.replace(&quot;http://&quot;, &quot;https://ssl-&quot;);
+        document.write('&lt;script type=&quot;text\/javascript&quot; src=&quot;' + unityObjectUrl + '&quot;&gt;&lt;\/script&gt;');
+        --&gt;
+        &lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        &lt;!--
+            jQuery(function() {
+                var config = {
+                    width: %UNITY_WIDTH%, 
+                    height: %UNITY_HEIGHT%,
+                    params: %UNITY_PLAYER_PARAMS%
+                };
+                var u = new UnityObject2(config);
+
+                var $missingScreen = jQuery(&quot;#unityPlayer&quot;).find(&quot;.missing&quot;);
+                var $brokenScreen = jQuery(&quot;#unityPlayer&quot;).find(&quot;.broken&quot;);
+                $missingScreen.hide();
+                $brokenScreen.hide();
+                
+                u.observeProgress(function (progress) {
+                    switch(progress.pluginStatus) {
+                        case &quot;broken&quot;:
+                            $brokenScreen.find(&quot;a&quot;).click(function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                u.installPlugin();
+                                return false;
+                            });
+                            $brokenScreen.show();
+                        break;
+                        case &quot;missing&quot;:
+                            $missingScreen.find(&quot;a&quot;).click(function (e) {
+                                e.stopPropagation();
+                                e.preventDefault();
+                                u.installPlugin();
+                                return false;
+                            });
+                            $missingScreen.show();
+                        break;
+                        case &quot;installed&quot;:
+                            $missingScreen.remove();
+                        break;
+                        case &quot;first&quot;:
+                        break;
+                    }
+                });
+                u.initPlugin(jQuery(&quot;#unityPlayer&quot;)[0], &quot;%UNITY_WEB_PATH%&quot;);
+            });
+        --&gt;
+        &lt;/script&gt;
+        &lt;style type=&quot;text/css&quot;&gt;
+        &lt;!--
+        body {
+            font-family: Helvetica, Verdana, Arial, sans-serif;
+            background-color: white;
+            color: black;
+            text-align: center;
+        }
+        a:link, a:visited {
+            color: #000;
+        }
+        a:active, a:hover {
+            color: #666;
+        }
+        p.header {
+            font-size: small;
+        }
+        p.header span {
+            font-weight: bold;
+        }
+        p.footer {
+            font-size: x-small;
+        }
+        div.content {
+            margin: auto;
+            width: %UNITY_WIDTH%px;
+        }
+        div.broken,
+        div.missing {
+            margin: auto;
+            position: relative;
+            top: 50%;
+            width: 193px;
+        }
+        div.broken a,
+        div.missing a {
+            height: 63px;
+            position: relative;
+            top: -31px;
+        }
+        div.broken img,
+        div.missing img {
+            border-width: 0px;
+        }
+        div.broken {
+            display: none;
+        }
+        div#unityPlayer {
+            cursor: default;
+            height: %UNITY_HEIGHT%px;
+            width: %UNITY_WIDTH%px;
+        }
+        --&gt;
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p class=&quot;header&quot;&gt;&lt;span&gt;Unity Web Player | &lt;/span&gt;%UNITY_WEB_NAME%&lt;/p&gt;%UNITY_BETA_WARNING%
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div id=&quot;unityPlayer&quot;&gt;
+                &lt;div class=&quot;missing&quot;&gt;
+                    &lt;a href=&quot;http://unity3d.com/webplayer/&quot; title=&quot;Unity Web Player. Install now!&quot;&gt;
+                        &lt;img alt=&quot;Unity Web Player. Install now!&quot; src=&quot;http://webplayer.unity3d.com/installation/getunity.png&quot; width=&quot;193&quot; height=&quot;63&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;broken&quot;&gt;
+                    &lt;a href=&quot;http://unity3d.com/webplayer/&quot; title=&quot;Unity Web Player. Install now! Restart your browser after install.&quot;&gt;
+                        &lt;img alt=&quot;Unity Web Player. Install now! Restart your browser after install.&quot; src=&quot;http://webplayer.unity3d.com/installation/getunityrestart.png&quot; width=&quot;193&quot; height=&quot;63&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;footer&quot;&gt;&amp;laquo; created with &lt;a href=&quot;http://unity3d.com/unity/&quot; title=&quot;Go to unity3d.com&quot;&gt;Unity&lt;/a&gt; &amp;raquo;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="UnityWebPlayerandbrowsercommunication.html"></a></span><div class="tip">Unity Web Player and browser communication</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WebPlayerStreaming.html"></a></span><div class="tip">Web Player Streaming</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

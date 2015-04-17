@@ -1,0 +1,319 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Using the Animation View</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/animeditor-UsingAnimationEditor.html">English</a></li>
+<li><a href="/es/current/Manual/animeditor-UsingAnimationEditor.html">Español</a></li>
+<li><a href="/ru/current/Manual/animeditor-UsingAnimationEditor.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="AnimationSection.html">Animation</a></li>
+<li><a href="AnimationOverview.html">Unity's Animation System</a></li>
+<li><a href="AnimationClips.html">Animation Clips</a></li>
+<li><a href="AnimationEditorGuide.html">Animation View Guide</a></li>
+<li>Using the Animation View</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AnimationEditorGuide.html"></a></span><div class="tip">Animation View Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="animeditor-AnimationCurves.html"></a></span><div class="tip">Using Animation Curves</div>
+</div>
+</div></div>
+<h1>Using the Animation View</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The <span class="doc-keyword">Animation View</span> can be used to preview and edit <span class="doc-keyword">Animation Clips</span> for animated <span class="doc-keyword">Game Objects</span> in Unity. The <span class="doc-keyword">Animation View</span> can be opened from the <span class="doc-menu">Window-&gt;Animation</span> menu.</p>
+
+<h2>Viewing Animations on a GameObject</h2>
+
+<p>The <span class="doc-keyword">Animation View</span> is tightly integrated with the <span class="doc-keyword">Hierarchy View</span>, the <span class="doc-keyword">Scene View</span>, and the <span class="doc-keyword">Inspector</span>. Similar to the Inspector, the Animation View will show the timeline and keyframes of the animation for the currently selected <span class="doc-keyword">Game Object</span>. You can select a Game Object using the <span class="doc-keyword">Hierarchy View</span> or the <span class="doc-keyword">Scene View</span>. (If you select a Prefab in the <span class="doc-keyword">Project View</span> you can inspect its animation timeline as well, but you have to drag the Prefab into the Scene View in order to be able to edit the animation.)</p>
+
+<h2>The Animated Properties List</h2>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorShowsSelectedPP.png" alt="The Animation View (left) shows the animation used by the currently selected Game Object, and its child objects if they are also controlled by this animation. The scene view and hierarchy view are shown on the right, demonstrating that the animation view shows the currently selected object. ">
+<figcaption>The Animation View (left) shows the animation used by the currently selected Game Object, and its child objects if they are also controlled by this animation. The scene view and hierarchy view are shown on the right, demonstrating that the animation view shows the currently selected object. </figcaption></figure>
+
+<p>At the left side of the <span class="doc-keyword">Animation View</span> is a list of the animated properties. In a newly created clip where no animation has yet been recorded, this list will be empty. When you begin to animate various properties within this clip, the animated properties will appear here. If the animation controls multiple child objects, the list will also include a hierarchical list of each child object’s animated properties. In the example above, various parts of the Robot Arm hierarchy are all animated within the same animation clip, and each animated GameObject is shown according to its hierarchical position in relation to the root object which has the Animator component attached.</p>
+
+<p>Each property can be folded and unfolded to reveal the exact values recorded at each keyframe. The value fields will show the interpolated value if the playback head (the red line) is in-between keyframes. These fields can be edited directly. If changes are made when the playback head is over a keyframe, the keyframe’s values will be modified. If changes are made when the playback head is between keyframes (and therefore the value shown was an interpolated value), a new keyframe will be created at that point with the new value that you entered.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorUnfoldedProperty.png" alt="An unfolded property in the Animation View, allowing the keyframe value to be typed in directly. In this image, an interpolated value is shown because the playback head (the red line) is between keyframes. Entering a new value at this point would create a new keyframe.">
+<figcaption>An unfolded property in the Animation View, allowing the keyframe value to be typed in directly. In this image, an interpolated value is shown because the playback head (the red line) is between keyframes. Entering a new value at this point would create a new keyframe.</figcaption></figure>
+
+<h2>The Animation Timeline</h2>
+
+<p>On the right side of the Animation View is the timeline for the current clip. The keyframes for each animated property appear in this timeline. The timeline view has two modes, “Dope Sheet” and “Curves”. You can toggle between these modes by clicking the respective buttons at the bottom of the animated property list area:</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorDopeSheetCurvesButtons.png" alt="The Dope Sheet / Curves view buttons">
+<figcaption>The Dope Sheet / Curves view buttons</figcaption></figure>
+
+<p>These offer two alternate views of the animation timeline and keyframe data, with each mode having its own benefits.</p>
+
+<h2>Dope Sheet Timeline Mode</h2>
+
+<p>The Dope Sheet mode offers a more compact view, allowing you to view each property’s keyframe seqence in an individual horizontal track. This allows you have a simple overview of the keyframe timing for multiple properties or objects.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorDopeSheetView.png" alt="Here the Animation Window is in Dope Sheet mode, showing the keyframe positions all the animated properties within the Animation Clip">
+<figcaption>Here the Animation Window is in Dope Sheet mode, showing the keyframe positions all the animated properties within the Animation Clip</figcaption></figure>
+
+<h2>Curves Timeline Mode</h2>
+
+<p>Curves mode offers a view of how the values for each animated property changes over time in a resizable graph. All selected properties appear overlaid within the same graph view. This mode allows you to have great control over viewing and editing the values, and how they are interpolated between.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorCurvesViewMultipleSelected.png" alt="Here the Animation Window is showing the curves for the rotation data of four selected GameObjects within this animation clip">
+<figcaption>Here the Animation Window is showing the curves for the rotation data of four selected GameObjects within this animation clip</figcaption></figure>
+
+<p>When using curves mode to view your animation it’s important to understand that sometimes the various ranges for each property may differ greatly. For example, consider a simple animation clip for a spinning bouncing cube. The bouncing Y position value may vary between the range 0 to 2 (meaning the cube bounces 2 units high during the animation), however the rotation value will go from 0 to 360. When viewing these two curves at the same time, the position animation curves will be very difficult to make out because the view will be zoomed out to fit the 0–360 range within the window:</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorTwoCurvesBigRangeDifference.png" alt="The position and rotation curves of a bouncing spinning cube are both selected, but because the view is zoomed out to fit the 0-360 range of the rotation curve, the bouncing Y position curve is not discernible">
+<figcaption>The position and rotation curves of a bouncing spinning cube are both selected, but because the view is zoomed out to fit the 0–360 range of the rotation curve, the bouncing Y position curve is not discernible</figcaption></figure>
+
+<p>You can click on individual properties in the list to automatically re-scale the curves view to fit the range for that value, or you can manually adjust the zoom of the curves window by using the special drag handles at each end of the view’s scrollbar sliders.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorTwoCurvesZoomedIn.png" alt="Here the Animation Window is zoomed in to view the bouncing Y position animation. The start of the yellow rotation curve is still visible, but now extends way off the top of the view.">
+<figcaption>Here the Animation Window is zoomed in to view the bouncing Y position animation. The start of the yellow rotation curve is still visible, but now extends way off the top of the view.</figcaption></figure>
+
+<h2>Creating a New Animation Clip</h2>
+
+<p>To animate Game Objects in Unity, the object or objects need an Animator Component attached. This Animator Component must reference an Animator Controller, which in turn contains references to one or more Animation Clips.</p>
+
+<p>When using the Animation View to begin animating a GameObject in Unity, these items will be automatically created, attached and set-up for you. </p>
+
+<p>To create a new <span class="doc-keyword">Animation Clip</span> for the selected <span class="doc-keyword">Game Object</span>, click the selection box at the upper right of the <span class="doc-keyword">Animation View</span> and select <span class="doc-menu">[Create New Clip]</span>. You will then be prompted to save an Animation Clip somewhere in your <span class="doc-keyword">Assets</span> folder. If the Game Object already has an Animator Component attached, with an Animator Controller assigned, the new clip will be added as a state in the existing Animator Controller.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorNewClip.png" alt="Create a new Animation Clip">
+<figcaption>Create a new Animation Clip</figcaption></figure>
+
+<p>If the Game Object doesn’t have an <span class="doc-keyword">Animator Component</span> already at this stage, a number of things happen automatically:</p>
+
+<ul>
+<li>A new Animator Controller asset will be will be created</li>
+<li>The new clip being created will be added into the Animator Controller as the default state</li>
+<li>An Animator Component will be added to the GameObject being animated</li>
+<li>The Animator Component will have the new Animator Controller assigned to it</li>
+</ul>
+
+<p>The result of this automatic sequence is that you can begin the animation process of a new object by clicking the record button or selecting [Create New Clip], and all the required elements of the animation system are set up for you.</p>
+
+<p>The diagram below shows how these pieces are assigned, starting from the new animation clip created in the Animation Window:</p>
+
+<figure>
+<img src="../uploads/Main/AnimationNewClipAutoSetup.png" alt="A new clip is created, and saved as an asset. The clip is automatically added as the default state to a new Animator Controller which is also saved as an asset. The Animator Controller is assigned to an Animator Component which is added to the GameObject. ">
+<figcaption>A new clip is created, and saved as an asset. The clip is automatically added as the default state to a new Animator Controller which is also saved as an asset. The Animator Controller is assigned to an Animator Component which is added to the GameObject. </figcaption></figure>
+
+<p>In the image below, you can see a game object selected that is not animated. We have just a simple cube, with no Animator component. The Animation, Hierarchy, Project and Inspector windows are arranged side-by-side for clarity. </p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorNewAnimationBefore.png" alt="Before: An un-animated gameobject (Cube) is selected. It does not yet have an Animator Component, and no Animator Controller exists.">
+<figcaption>Before: An un-animated gameobject (“Cube”) is selected. It does not yet have an Animator Component, and no Animator Controller exists.</figcaption></figure>
+
+<p>By pressing the record button in the Animation view (left), or choosing “[Create New Clip]” from the selection box in the Animation view, a new animation clip is created. Unity will ask to pick the name &amp; location to save this new Animation Clip. Unity also creates an Animator Controller asset with the same name as the selected GameObject, adds an Animator component to the GameObject, and connects the assets up appropriately.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorNewAnimationAdded.png" alt="After: After creating a new clip, you can see the new assets created in the project window, and the Animator Component assigned in the Inspector window (far right). You can also see the new clip assigned as the default state in the Animator Window">
+<figcaption>After: After creating a new clip, you can see the new assets created in the project window, and the Animator Component assigned in the Inspector window (far right). You can also see the new clip assigned as the default state in the Animator Window</figcaption></figure>
+
+<h2>Animating a Game Object</h2>
+
+<p>Once you have saved the new animation clip asset, you are ready to begin adding keyframes to the clip. To begin editing an Animation Clip for the selected Game Object, click on the <span class="doc-menu">Animation Record button</span>. This will enter <span class="doc-keyword">Animation Record Mode</span>, where changes to the Game Object are recorded into the <span class="doc-keyword">Animation Clip</span>.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorAnimationModeButton.png" alt="Record button">
+<figcaption>Record button</figcaption></figure>
+
+<p>You can stop the <span class="doc-keyword">Animation Record Mode</span> at any time by clicking the <span class="doc-menu">Animation Mode button</span> again. This will revert the <span class="doc-keyword">Game Object</span> to the state it was in prior to entering the Animation Mode.</p>
+
+<p>The changes you make to the GameObject will be recorded as keyframes at the current time shown by the red line in the Animation Window. </p>
+
+<p>You can animate any property of the object by manipulating the object while in Animation Record Mode. Moving, Rotating or Scaling the object will add corresponding keyframes for those properties in the animation clip. Adjusting values directly in the object’s inspector will also add keyframes while in Record mode. This applies to any property in the inspector, including numeric values, checkboxes, colours, and most other values.</p>
+
+<p>Any animated properties of the GameObject are shown listed in the property list on the left-hand side of the Animation Window. Properties which are not animated are not shown in this window. Any new properties that you animate, including properties on child objects, are added to the property list area as soon as you start animating them.</p>
+
+<p>
+<span class="doc-prop">Transform</span> properties are special in that the <span class="doc-prop">.x</span>, <span class="doc-prop">.y</span>, and <span class="doc-prop">.z</span> properties are linked, so that curves are added three at a time.</p>
+
+<p>You can also browse all animatable properties on the current GameObject (and its children) by clicking the Add Curve button.</p>
+
+<p>Any property can be animated by selecting it from the “Add Curves” button popup menu.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorAddCurves.png" alt="Add curves">
+<figcaption>Add curves</figcaption></figure>
+
+<p>When in <span class="doc-keyword">Animation Mode</span>, a red vertical line will show which frame of the <span class="doc-keyword">Animation Clip</span> is currently previewed. The <span class="doc-keyword">Inspector</span> and <span class="doc-keyword">Scene View</span> will show the Game Object at that frame of the Animation Clip. The values of the animated properties at that frame are also shown in a column to the right of the property names.</p>
+
+<p>In Animation Mode a red vertical line shows the currently previewed frame.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorPreviewFrame.png" alt="Current frame">
+<figcaption>Current frame</figcaption></figure>
+
+<h3>Time Line</h3>
+
+<p>You can click anywhere on the <span class="doc-menu">Time Line</span> to preview or modify that frame in the Animation Clip. The numbers in the <span class="doc-menu">Time Line</span> are shown as seconds and frames, so 1:30 means 1 second and 30 frames.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorTimeLine.png" alt="Time Line">
+<figcaption>Time Line</figcaption></figure>
+
+<h3>Frame Navigation</h3>
+
+<p>You can also use the following keyboard shortcuts to navigate between frames:</p>
+
+<ul>
+<li>Press <span class="doc-menu">Comma</span> (<span class="doc-menu">,</span>) to go to the previous frame.</li>
+<li>Press <span class="doc-menu">Period</span> (<span class="doc-menu">.</span>) to go to the next frame.</li>
+<li>Hold Alt and press <span class="doc-menu">Comma</span> (<span class="doc-menu">,</span>) to go to the previous <span class="doc-keyword">keyframe</span>.</li>
+<li>Hold Alt and press <span class="doc-menu">Period</span> (<span class="doc-menu">.</span>) to go to the next <span class="doc-keyword">keyframe</span>.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorFrameNavigation.png" alt="Frame navigation">
+<figcaption>Frame navigation</figcaption></figure>
+
+<h3>Animation Mode</h3>
+
+<p>In <span class="doc-keyword">Animation Mode</span> you can move, rotate, or scale the <span class="doc-keyword">Game Object</span> in the <span class="doc-keyword">Scene View</span>. This will automatically create <span class="doc-keyword">Animation Curves</span> for the position, rotation, and scale properties of the <span class="doc-keyword">Animation Clip</span> if they didn’t already exist, and keys on those Animation Curves will automatically be created at the currently previewed frame to store the respective <span class="doc-menu">Transform</span> values you changed.</p>
+
+<p>You can also use the <span class="doc-keyword">Inspector</span> to modify any of the animatable properties of the <span class="doc-keyword">Game Object</span>. This too will create <span class="doc-keyword">Animation Curves</span> as needed, and create <span class="doc-keyword">keys</span> on those Animation Curves at the currently previewed frame to store your changed values.</p>
+
+<h3>Keyframe Creation</h3>
+
+<p>You can manually create a <span class="doc-keyword">keyframe</span> using the <span class="doc-menu">Add Keyframe button</span>. This will create a key for all the properties that are currently selected in the <span class="doc-keyword">Animation View</span>. This is useful for selectively adding keys to specific properties only.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorKeyframeButton.png" alt="The Add Keyframe Button">
+<figcaption>The Add Keyframe Button</figcaption></figure>
+
+<h3>Playback</h3>
+
+<p>The <span class="doc-keyword">Animation Clip</span> can be played back at anytime by clicking the <span class="doc-menu">Play button</span> in the <span class="doc-keyword">Animation View</span>.</p>
+
+<figure>
+<img src="../uploads/Main/AnimationEditorPlayButton.png" alt="Play button">
+<figcaption>Play button</figcaption></figure>
+
+<h2>More Information</h2>
+
+<p>To learn more about navigating the <span class="doc-menu">Curve View</span>, see the section on <a href="animeditor-AnimationCurves.html">Using Animation Curves</a>.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AnimationEditorGuide.html"></a></span><div class="tip">Animation View Guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="animeditor-AnimationCurves.html"></a></span><div class="tip">Using Animation Curves</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

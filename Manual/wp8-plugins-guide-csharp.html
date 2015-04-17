@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual:  Windows Phone 8: C# Plugins</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/wp8-plugins-guide-csharp.html">English</a></li>
+<li><a href="/es/current/Manual/wp8-plugins-guide-csharp.html">Español</a></li>
+<li><a href="/ru/current/Manual/wp8-plugins-guide-csharp.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Windows.html">Windows</a></li>
+<li><a href="WP8.html">Windows Phone 8</a></li>
+<li><a href="wp8-gettingstarted.html">Windows Phone 8: Getting Started</a></li>
+<li><a href="wp8-plugins.html">Windows Phone 8: Plugins</a></li>
+<li> Windows Phone 8: C# Plugins</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="wp8-plugins.html"></a></span><div class="tip">Windows Phone 8: Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="wp8-plugins-guide-cplusplus.html"></a></span><div class="tip"> Windows Phone 8: C++ Plugins</div>
+</div>
+</div></div>
+<h1>Windows Phone 8: C# Plugins</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>In this guide we will create a Unity Plugin for Windows Phone which uses Windows Phone specific API to get device name. On other devices such information is not available, so we will return “Not Windows Phone” string instead.</p>
+
+<p>To create a plugin specific to Windows Phone, create a new solution in Visual Studio. Select Other Project Types -&gt; Visual Studio Solutions -&gt; Blank Solution:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide1.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Next, you’ll need to add two projects, one for Windows Phone (real DLL) and one for Editor (fake DLL). In Solution Explorer, right click the newly created solution and select add project:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide2.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Select Windows Phone Class Library template. We’ll name the project “RealDLL” for clarity sakes:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide3.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>When prompt, make sure to select Windows Phone 8.0 OS, rather than Windows Phone 7.1:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide4.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Once the project is created, go to its properties and change Assembly name and Default namespace to your solution name:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide5.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Next, open file “Class1.cs” and change its namespace to solution name as well:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide6.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Add Windows Phone specific functionally to the project. In this example, we’ll make a property to get device name:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide7.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Build the Solution. 2 files should be created:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide8.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Alright, the first part is done. Now we need to create the fake DLL for the editor to use. Create a new project again, and this time, select Windows -&gt; Class Library template. Make sure to change the .NET framework to 3.5!</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide9.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Once again, change Assembly name and Default namespace in project properties and change the namespace of the class. Next, implement identical non-private methods/fields/properties as in the real DLL:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide10.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Build the solution. 2 more files should be created:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide11.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>That’s it! The plugins were created. To import them to your Unity project, copy the FakeDLL to &lt;UnityProjectPath&gt;/Assets/Plugins:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide12.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>And the RealDLL to &lt;UnityProjectPath&gt;/Assets/Plugins/WP8:</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide13.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>Finally, write a script to make use of the new plugin (and don’t forget to attach it to the camera!):</p>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide14.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Results:</h2>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide15.png" alt="">
+<figcaption></figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/WP8PluginGuide16.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Attachments:</h2>
+
+<ul>
+<li><a href="../uploads/Main/UnityPluginForWindowsPhone.zip">UnityPluginForWindowsPhone.zip</a></li>
+<li><a href="../uploads/Main/WP8PluginExample-MyNextGreatGame.zip">MyNextGreatGame.zip</a></li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="wp8-plugins.html"></a></span><div class="tip">Windows Phone 8: Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="wp8-plugins-guide-cplusplus.html"></a></span><div class="tip"> Windows Phone 8: C++ Plugins</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

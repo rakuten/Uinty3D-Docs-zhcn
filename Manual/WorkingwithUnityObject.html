@@ -1,0 +1,369 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Working with UnityObject2</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/WorkingwithUnityObject.html">English</a></li>
+<li><a href="/es/current/Manual/WorkingwithUnityObject.html">Español</a></li>
+<li><a href="/ru/current/Manual/WorkingwithUnityObject.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web Player</a></li>
+<li><a href="WebPlayerDeployment.html">Web Player Deployment</a></li>
+<li>Working with UnityObject2</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HTMLcodetoloadUnityWebPlayercontent.html"></a></span><div class="tip">HTML code to load Unity content</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CustomizingtheUnityWebPlayerloadingscreen.html"></a></span><div class="tip">Customizing the Unity Web Player loading screen</div>
+</div>
+</div></div>
+<h1>Working with UnityObject2</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">UnityObject2</span> is a JavaScript script that simplifies Unity content embedding into HTML and allows you to customize the install process. Having a custom install UI that matches your game and website, will create a more engaging and pleasurable experience for the end-user. It has functions to detect the Unity <span class="doc-keyword">Web Player</span> plugin, initiate Web Player installation and embed Unity content. Although it’s possible to deploy <span class="doc-prop">UnityObject2.js</span> file on the web server alongside the HTML file it’s best to load it directly from the Unity server at <span class="doc-prop">http://webplayer.unity3d.com/download_webplayer–3.x/3.0/uo/UnityObject2.js</span> or <span class="doc-prop">https://ssl-webplayer.unity3d.com/download_webplayer–3.x/3.0/uo/UnityObject2.js</span> for https support. That way you will always reference the most up to date version of UnityObject2. Please note that the <span class="doc-prop">UnityObject2.js</span> file hosted on the Unity server is minified to make it smaller and save traffic. If you want to explore the source code you can find the original file in the <span class="doc-prop">Data\Resources</span> folder on Windows and the <span class="doc-prop">Contents/Resources</span> folder on Mac OS X. UnityObject2 by default sends anonymous data to GoogleAnalytics which is used to help us identify installation type and conversion rate. UnityObject2 depends on jQuery.</p>
+
+<h2>Constructor</h2>
+
+<p>You will need to create a new instance of the unityObject2 for each Unity content present on the page.</p>
+
+<p><em>Parameters:</em></p>
+
+<ul>
+<li>
+<span class="doc-prop">configuration</span> - An object containing the configuration for this instance. Those are the available members:
+
+<ul>
+<li>
+<span class="doc-prop">width</span> - Default: 100%, Width of Unity content. Can be specified in pixel values (e.g. 600, “450”) or in percentage values (e.g. “50%”, “100%”). Note that percentage values are relative to the parent element.</li>
+<li>
+<span class="doc-prop">height</span> - Default: 100%, Height of Unity content. Can be specified in pixel values (e.g. 600, “450”) or in percentage values (e.g. “50%”, “100%”). Note that percentage values are relative to the parent element.</li>
+<li>
+<span class="doc-prop">fullInstall</span> - Default: false, Installs the full Web Player if not available. Normally only a small part of the Web Player is installed and the remaining files are automatically downloaded later.</li>
+<li>
+<span class="doc-prop">enableJava</span> - Default: true, Enables Java based installation. Some platforms doesn’t support this feature.</li>
+<li>
+<span class="doc-prop">enableClickOnce</span> - Default: true, Enables ClickOnce based installation. Only works on Internet Explorer browsers.</li>
+<li>
+<span class="doc-prop">enableUnityAnalytics</span> - Default: true, Notifies Unity about Web Player installation. This doesn’t do anything if the Web Player is already installed.</li>
+<li>
+<span class="doc-prop">enableGoogleAnalytics</span> -Default: true, Notifies Unity about Web Player installation using Google Analytics. This doesn’t do anything if the Web Player is already installed.</li>
+<li>
+<span class="doc-prop">params</span> - Default: {}, Extra parameters to be used when embedding the Player. Those are usefull to customize the Unity experience:
+
+<ul>
+<li>
+<span class="doc-prop">backgroundcolor</span> - Default: “FFFFFF”, The background color of the web player content display region during loading, the default is white. <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">bordercolor</span> - Default: “FFFFFF”, The color of the one pixel border drawn around the web player content display region during loading. <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">textcolor</span> - Default: “000000”, The color of error message text (when data file fails to load for example). <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">logoimage</span> - Default: unity Logo, The path to a custom logo image, the logo image is drawn centered within the web player content display region during loading. <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">progressbarimage</span> - The path to a custom image used as the progress bar during loading. The progress bar image width is clipped based on the amount of file loading completed, therefore it starts with a zero pixel width and animates to its original width when the loading is complete. The progress bar is drawn beneath the logo image. <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">progressframeimage</span> - The path to a custom image used to frame the progress bar during loading. <span class="doc-keyword">Pro Only</span>
+</li>
+<li>
+<span class="doc-prop">disableContextMenu</span> - This parameter controls whether or not the Unity Web Player displays a context menu when the user right- or control-clicks on the content. Setting it to true prevents the context menu from appearing and allows content to utilize right-mouse behavior. To enable the context menu don’t include this parameter.</li>
+<li>
+<span class="doc-prop">disableExternalCall</span> - This parameter controls whether or not the Unity Web Player allows content to communicate with browser-based JavaScript. Setting it to true prevents browser communication and so content cannot call or execute JavaScript in the browser, the default is false.</li>
+<li>
+<span class="doc-prop">disableFullscreen</span> - This parameter controls whether or not the Unity Web Player allows content to be viewed in fullscreen mode. Setting it to true prevents fullscreen viewing and removes the “Go Fullscreen” entry from the context menu, the default is false.</li>
+</ul>
+</li>
+<li>
+<span class="doc-prop">attributes</span> - Default: {}, Object containing list of attributes. These will be added to underlying <span class="doc-prop">&lt;object&gt;</span> or <span class="doc-prop">&lt;embed&gt;</span> tag depending on the browser.</li>
+<li>
+<span class="doc-prop">debugLevel</span> - Default: 0, Enables/Disables logging, useful when developing to be able to see the progress on the browser console. Set it greater to 0 to enable.</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<em>Notes</em>:
+All color values provided must be 6-digit hexidecimal colors, (eg. FFFFFF, 020F16, etc.). The image paths provided can be either relative or absolute links and all image files must be RGB (without transparency) or RGBA (with transparency) 8-bit/channel PNG files. Finally, the progressframeimage and the progressbarimage should be the same height.</p>
+
+<h2>Functions</h2>
+
+<h3>observeProgress</h3>
+
+<p>You can register a callback that will receive notifications during the plugin installation and/or initialization.</p>
+
+<p><em>Parameters:</em></p>
+
+<ul>
+<li>
+<span class="doc-prop">callback</span> - Callback function that will receive information about the plugin installation/initialization. This callback will receive an <span class="doc-prop">progress</span> object.
+
+<ul>
+<li>
+<span class="doc-prop">progress</span> - It contains information about the current step of the plugin installation/initialization.
+
+<ul>
+<li>
+<span class="doc-prop">pluginStatus</span> - Will contain a string identifying the plugin status, can be one of those:
+
+<ul>
+<li>
+<span class="doc-prop">unsupported</span>` - The current Browser/OS is not supported</li>
+<li>
+<span class="doc-prop">missing</span> - Supported platform, but the plugin haven’t be installed yet.</li>
+<li>
+<span class="doc-prop">installed</span> - The plugin have finished installing, or was already installed.</li>
+<li>
+<span class="doc-prop">first</span> - called after the plugin have been installed at the first frame of the game is played (This will not be called if the plugin was already installed previously)</li>
+</ul>
+</li>
+<li>
+<span class="doc-prop">targetEl</span> - The DOM Element serving as a container for the webplayer (This is the same element you pass to UnityObject2.initPlugin)</li>
+<li>
+<span class="doc-prop">bestMethod</span> - If the plugin is missing will contain the best installation path for the current platform, can be one of the following strings:
+
+<ul>
+<li>
+<span class="doc-prop">JavaInstall</span> - It will use our “One Click” Java Applet to install the plugin</li>
+<li>
+<span class="doc-prop">ClickOnceIE</span> - It will use Internet Explorer’s Click Once install</li>
+<li>
+<span class="doc-prop">Manual</span> - It will ask the user to download a file and install it manually.</li>
+</ul>
+</li>
+<li>
+<span class="doc-prop">unityObj</span>- A reference to the previously created unityObject2 instance responsible for this callback</li>
+<li>
+<span class="doc-prop">ua</span> - Contains some User Agent information used to decide the pluginStatus and bestMethod.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h3>initPlugin</h3>
+
+<p>This will actually try to start up your game. And call the callback you previously registered at the appropriated moments. Note that </p>
+
+<p><em>Parameters:</em></p>
+
+<ul>
+<li>
+<span class="doc-prop">containerElement</span> - The DOM Element serving as a container for the webplayer</li>
+<li>
+<span class="doc-prop">gameURL</span> - URL to the web player data file (.unity3d). Can be relative or absolute.</li>
+</ul>
+
+<p>
+<em>Notes</em>:
+This function should be called after the containerElement is present on the DOM, to be safe, you could wait for the DOM to load completely before calling it.</p>
+
+<h3>installPlugin</h3>
+
+<p>Tries to install the plugin using the specified <span class="doc-prop">method</span>. If no method is passed, it will try to use this.getBestInstallMethod().</p>
+
+<p><em>Parameters:</em></p>
+
+<ul>
+<li>
+<span class="doc-prop">method</span> - Default: this.<span class="doc-prop">getBestInstallMethod</span>(). A string specifying which method to use for installation. It can be one of the following values: JavaInstall, ClickOnceIE, Manual.</li>
+</ul>
+
+<p>
+<em>Notes</em>:
+Not all methods are available in every platform/browser. Manual will download an exe/dmg installer and the user will need to perform a manual installation.</p>
+
+<h3>getUnity</h3>
+
+<p>This will return a reference to the player, so you can Call SendMessage from it for instance.</p>
+
+<p>
+<em>Notes</em>:
+Will return null if the WebPlayer has not been initialized yet.</p>
+
+<p>
+<em>Example:</em>
+This exemplifies a very simple UnityObject2 usage. If the user already has the plugin installed, the WebPlayer will load normally, otherwise it will reveal a hidden <code>div.missing</code> and attach a click event to the install button. After installation is succeeded, the screen is hidden, and the webplayer is loaded normally.</p>
+
+<pre><code>&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd&quot;&gt;
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+    &lt;head&gt;
+        &lt;title&gt;Unity Web Player | &quot;Sample&quot;&lt;/title&gt;
+    &lt;script type=&quot;text/javascript&quot; src=&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script type=&quot;text/javascript&quot;&gt;
+        &lt;!--
+        var unityObjectUrl = &quot;http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js&quot;;
+        if (document.location.protocol == 'https:')
+            unityObjectUrl = unityObjectUrl.replace(&quot;http://&quot;, &quot;https://ssl-&quot;);
+        document.write('&lt;script type=&quot;text\/javascript&quot; src=&quot;' + unityObjectUrl + '&quot;&gt;&lt;\/script&gt;');
+        --&gt;
+    &lt;/script&gt;
+        &lt;script type=&quot;text/javascript&quot;&gt;
+        var u = new UnityObject2();
+        u.observeProgress(function (progress) {
+            var $missingScreen = jQuery(progress.targetEl).find(&quot;.missing&quot;);
+            switch(progress.pluginStatus) {
+                case &quot;unsupported&quot;:
+                    showUnsupported();
+                break;
+                case &quot;broken&quot;:
+                    alert(&quot;You will need to restart your browser after installation.&quot;);
+                break;
+                case &quot;missing&quot;:
+                    $missingScreen.find(&quot;a&quot;).click(function (e) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                        u.installPlugin();
+                        return false;
+                    });
+                    $missingScreen.show();
+                break;
+                case &quot;installed&quot;:
+                    $missingScreen.remove();
+                break;
+                case &quot;first&quot;:
+                break;
+            }
+        });
+        jQuery(function(){
+            u.initPlugin(jQuery(&quot;#unityPlayer&quot;)[0], &quot;Example.unity3d&quot;);
+        });
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;p class=&quot;header&quot;&gt;
+            &lt;span&gt;Unity Web Player | &lt;/span&gt;WebPlayer
+        &lt;/p&gt;
+        &lt;div class=&quot;content&quot;&gt;
+            &lt;div id=&quot;unityPlayer&quot;&gt;
+                &lt;div class=&quot;missing&quot;&gt;
+                    &lt;a href=&quot;http://unity3d.com/webplayer/&quot; title=&quot;Unity Web Player. Install now!&quot;&gt;
+                        &lt;img alt=&quot;Unity Web Player. Install now!&quot; src=&quot;http://webplayer.unity3d.com/installation/getunity.png&quot; width=&quot;193&quot; height=&quot;63&quot; /&gt;
+                    &lt;/a&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;p class=&quot;footer&quot;&gt;&amp;laquo; created with &lt;a href=&quot;http://unity3d.com/unity/&quot; title=&quot;Go to unity3d.com&quot;&gt;Unity&lt;/a&gt; &amp;raquo;&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+
+
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HTMLcodetoloadUnityWebPlayercontent.html"></a></span><div class="tip">HTML code to load Unity content</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CustomizingtheUnityWebPlayerloadingscreen.html"></a></span><div class="tip">Customizing the Unity Web Player loading screen</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Cache Server (Pro Only)</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/CacheServer.html">English</a></li>
+<li><a href="/es/current/Manual/CacheServer.html">Español</a></li>
+<li><a href="/ru/current/Manual/CacheServer.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture Overview</li>
+<li><a href="AssetImportandCreation.html">Asset Import and Creation</a></li>
+<li>Cache Server (Pro Only)</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SettinguptheAssetServer.html"></a></span><div class="tip">Setting up the Asset Server</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BehindtheScenes.html"></a></span><div class="tip">Behind the Scenes</div>
+</div>
+</div></div>
+<h1>Cache Server (Pro Only)</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity has a completely automatic asset pipeline. Whenever a source asset like a <code>.psd</code> or an <code>.fbx</code> file is modified, Unity will detect the change and automatically reimport it. The imported data from the file is subsequently stored by Unity in its own internal format.</p>
+
+<p>This arrangement is designed to make the workflow as efficient and flexible as possible for an individual user. However, when working in a team, you will find that other users might keep making changes to assets, all of which must be imported. Furthermore, assets must be reimported when you switch between desktop and mobile build target platforms. The switch can therefore take a long time for large projects.</p>
+
+<p>The time it takes to import assets can be drastically reduced by caching the imported asset data on the <span class="doc-keyword">Cache Server</span>.</p>
+
+<p>Each asset import is cached based on </p>
+
+<ul>
+<li>The asset file itself</li>
+<li>The import settings</li>
+<li>Asset importer version</li>
+<li>The current platform.</li>
+</ul>
+
+<p>If any of the above change, the asset gets reimported, otherwise it gets downloaded from the Cache Server.</p>
+
+<p>When you enable the cache server in the preferences, you can even share asset imports across multiple projects (ie, the work of importing is done on one machine and the results are shared with others).</p>
+
+<p>Note that once the cache server is set up, this process is <em>completely automatic</em>, which means there are no additional workflow requirements. It will simply reduce the time it takes to import projects without getting in your way.</p>
+
+<h2>How to set up a Cache Server (user)</h2>
+
+<p>Setting up the Cache Server couldn’t be easier. All you need to do is click Use Cache Server in the preferences and tell the local machine’s <span class="doc-keyword">Unity Editor</span> where the <span class="doc-keyword">Cache Server</span> is. </p>
+
+<figure>
+<img src="../uploads/Main/CacheServerEnabled.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>This can be found in <span class="doc-menu">Unity-&gt;Preferences</span> on the Mac or <span class="doc-menu">Edit-&gt;Preferences</span> on the PC. </p>
+
+<p>If you are hosting the Cache Server on your local machine, specify <em>localhost</em> for the server address. However, due to hard drive size limitations, it is recommended you host the Cache Server on separate machine. </p>
+
+<h2>How to set up a <span class="doc-keyword">Cache Server</span> (admin)</h2>
+
+<p>Admins need to set up the <span class="doc-keyword">Cache Server</span> machine that will host the cached assets. </p>
+
+<p>You need to:</p>
+
+<ul>
+<li>Purchase Cache Server (part of Unity Pro) in the <a href="https://store.unity3d.com">Online Store</a>.</li>
+<li>Download the Cache Server. Go to the <a href="http://unity3d.com/unity/collaboration/">Collaboration</a> page and click on the button to Download the Cache Server.</li>
+<li>Unzip the file, after which you should see something like this:</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/CacheServerZipCropped.png" alt="">
+<figcaption></figcaption></figure>
+
+<ul>
+<li>Depending on your operating system, run the appropriate command script.</li>
+<li>You will see a terminal window, indicating that the Cache Server is running in the background</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/CacheServerTerminal.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The <span class="doc-keyword">Cache Server</span> needs to be on a reliable machine with very large storage (much larger than the size of the project itself, as there will be multiple versions of imported resources stored). If the hard disk becomes full the <span class="doc-keyword">Cache Server</span> could perform slowly.</p>
+
+<h2>Installing the Cache Server as a service</h2>
+
+<p>The provided <code>.sh</code> and <code>.cmd</code> scripts should be set-up as a service on the server.
+The cache server can be safely killed and restarted at any time, since it uses atomic file operations.</p>
+
+<h2>Cache Server Configuration</h2>
+
+<p>If you simply start by double clicking the script, it will launch the legacy Cache Server on port 8125 and the new Cache Server on port 8126. It will also create “cache” and “cache5.0” directories next to the script, and keep data in there. The cache directories are allowed to grow to up to 50 GB by default. You can configure the size and the location of the data using command line options, like this:</p>
+
+<p><code>./RunOSX.command --path ~/mycachePath --size 2000000000</code></p>
+
+<p>or </p>
+
+<p><code>./RunOSX.command --path ~/mycachePath --port 8199 -nolegacy</code></p>
+
+<p>You can configure the cache server by using the following command line options:</p>
+
+<p>
+<code>--port</code> lets you specify the server port, it only applies to the new cache server, the default value is <code>8126</code>.</p>
+
+<p>
+<code>--path</code> lets you specify the path of the cache location, it only applies to the new cache server, the default value is <code>./cache5.0</code>.</p>
+
+<p>
+<code>--legacypath</code> lets you specify the path of the cache location, it only applies to the legacy cache server, the default value is <code>./cache</code>.</p>
+
+<p>
+<code>--size</code> lets you specify the maximum cache size in bytes for both cache servers. Files that have not been used recently will automatically be discarded when the cache size is exceeded.</p>
+
+<p>
+<code>--nolegacy</code> if specify it will NOT start the legacy cache server, otherwise the legacy cache server is started on port <code>8125</code>.</p>
+
+<h2>Requirements for the machine hosting the Cache Server</h2>
+
+<p>For best performance there must be enough RAM to hold an entire imported project folder. In addition, it is best to have a machine with a fast hard drive and fast Ethernet connection. The hard drive should also have sufficient free space. On the other hand, the Cache Server has very low CPU usage.</p>
+
+<p>One of the main distinctions between the Cache Server and version control is that its cached data can always be rebuilt locally. It is simply a tool for improving performance. For this reason it doesn’t make sense to use a Cache Server over the Internet. If you have a distributed team, you should place a separate cache server in each location.</p>
+
+<p>The cache server should run on a Linux or Mac OS X machine. The Windows file system is not particularly well optimized for how the Asset Cache Server stores data and problems with file locking on Windows can cause issues that don’t occur on Linux or Mac OS X.</p>
+
+<h2>Cache Server FAQ</h2>
+
+<h3>Will the size of my Cache Server database grow indefinitely as more and more resources get imported and stored?</h3>
+
+<p>The Cache Server removes assets that have not been used for a period of time automatically (of course if those assets are needed again, they will be re-created during next usage). </p>
+
+<h3>Does the cache server work only with the asset server?</h3>
+
+<p>The cache server is designed to be transparent to source/version control systems and so you are not restricted to using Unity’s asset server.</p>
+
+<h3>What changes will cause the imported file to get regenerated?</h3>
+
+<p>When Unity is about to import an asset, it generates an MD5 hash of all source data.</p>
+
+<p>For a texture this consists of:</p>
+
+<ul>
+<li>The source asset: “myTexture.psd” file</li>
+<li>The meta file: “myTexture.psd.meta” (Stores all importer settings)</li>
+<li>The internal version number of the texture importer</li>
+<li>A hash of version numbers of all <a href="../ScriptReference/AssetPostprocessor.html">AssetPostprocessors</a>
+</li>
+</ul>
+
+<p>If that hash is different from what is stored on the Cache Server, the asset will be reimported, otherwise the cached version will be downloaded. The client Unity editor will only pull assets from the server as they are needed - assets don’t get pushed to each project as they change.</p>
+
+<h3>How do I work with Asset dependencies?</h3>
+
+<p>The Cache Server does not handle dependencies. Unity’s asset pipeline does not deal with the concept of dependencies. It is built in such a way as to avoid dependencies between assets. <span class="doc-prop">AssetPostprocessors</span> are a common technique used to customize the Asset importer to fit your needs. For example, you might want to add MeshColliders to some GameObjects in an fbx file based on their name or tag.</p>
+
+<p>It is also easy to use <span class="doc-prop">AssetPostprocessors</span> to introduce dependencies. For example you might use data from a text file next to the asset to add additional components to the imported game objects. This is not supported in the Cache Server. If you want to use the Cache Server, you will have to remove dependency on other assets in the project folder. Since the Cache Server doesn’t know anything about the dependency in your postprocessor, it will not know that anything has changed thus use an old cached version of the asset.</p>
+
+<p>In practice there are plenty of ways you can do asset postprocessing to work well with the cache server.
+You can use:</p>
+
+<ul>
+<li>The Path of the imported asset</li>
+<li>Any import settings of the asset</li>
+<li>The source asset itself or any data generated from it passed to you in the asset postprocessor.</li>
+</ul>
+
+<h3>Are there any issues when working with materials?</h3>
+
+<p>Modifying materials that already exist might cause trouble. When using the Cache Server, Unity validates that the references to materials are maintained. But since no postprocessing calls will be invoked, the contents of the material can not be changed when a model is imported through the Cache Server. Thus you might get different results when importing with or without Cache Server. It is best to never modify materials that already exist on disk.</p>
+
+<h3>Are there any asset types which will not be cached by the server?</h3>
+
+<p>There are a few kinds of asset data which the server doesn’t cache. There isn’t really anything to be gained by caching script files and so the server will ignore them. Also, native files used by 3D modelling software (Maya, 3D Max, etc) are converted to FBX using the application itself. Currently, the asset server caches neither the native file nor the intermediate FBX file generated in the import process. However, it is possible to benefit from the server by exporting files as FBX from the modelling software and adding those to the Unity project.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SettinguptheAssetServer.html"></a></span><div class="tip">Setting up the Asset Server</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="BehindtheScenes.html"></a></span><div class="tip">Behind the Scenes</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

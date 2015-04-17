@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Collision Module</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/PartSysCollisionModule.html">English</a></li>
+<li><a href="/es/current/Manual/PartSysCollisionModule.html">Español</a></li>
+<li><a href="/ru/current/Manual/PartSysCollisionModule.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="PartSysReference.html">Particle Systems Reference</a></li>
+<li><a href="ParticleSystemModules.html">Particle System Modules</a></li>
+<li>Collision Module</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PartSysExtForceModule.html"></a></span><div class="tip">External Forces Module</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PartSysSubEmitModule.html"></a></span><div class="tip">Sub Emitters Module</div>
+</div>
+</div></div>
+<h1>Collision Module</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This module controls the way particles collide with solid objects in the scene.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysCollisionInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">World/Planes popup</span></td>
+	<td style="text-align:left;">Selects between <em>World</em> and <em>Planes</em> modes (see below for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Planes</span></td>
+	<td style="text-align:left;">An expandable list of Transforms that define collision planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Visualization</span></td>
+	<td style="text-align:left;">Selects whether the collision plane gizmos will be shown in the scene view as wireframe grids or solid planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scale Plane</span></td>
+	<td style="text-align:left;">Size of planes used for visualization (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dampen</span></td>
+	<td style="text-align:left;">The fraction of a particle’s speed that it loses after a collision.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bounce</span></td>
+	<td style="text-align:left;">The fraction of a particle’s speed that rebounds from a surface after a collision.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Lifetime Loss</span></td>
+	<td style="text-align:left;">The fraction of a particle’s total lifetime that it loses if it collides.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Min Kill Speed</span></td>
+	<td style="text-align:left;">Particles travelling below this speed after a collision will be removed from the system.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Particle Radius</span></td>
+	<td style="text-align:left;">Approximate size of a particle, used to avoid clipping with collision planes (Planes mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Collides With</span></td>
+	<td style="text-align:left;">Particles will only collide with objects on the selected layers (World mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Collision Quality</span></td>
+	<td style="text-align:left;">This affects how “watertight” the collisions are - at lower quality levels, particles may sometimes pass through colliders (World mode only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Send Collision Messages</span></td>
+	<td style="text-align:left;">If enabled, particle collisions can be detected from scripts by the <a href="../ScriptReference/MonoBehaviour.OnParticleCollision.html">OnParticleCollision</a> function.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<p>When other objects surround a particle system, the effect is often more convincing when the particles interact with those objects. For example, water or debris should be obstructed by a solid wall rather than simply passing through it. With <em>Collision</em> enabled, particles can collide with objects in the scene.</p>
+
+<p>A particle system can be set so its particles collide with any collider in the scene by selecting <em>World</em> mode from the popup. (Colliders can also be disabled according to the layer they are on by using the <em>Collides With</em> property.) The popup also has a <em>Planes</em> mode option which allows you to add a set of planes to the scene that don’t need to have colliders. This option is useful for simple floors, walls and similar objects and has a lower processor overhead than <em>World</em> mode. When <em>Planes</em> mode is enabled, a list of transforms (typically empty GameObjects) can be added via the <em>Planes</em> property. The planes extend infinitely in the objects’ local XZ planes with the positive Y axis indicating the planes’ normal vectors. To assist with development, the planes will be shown as gizmos in the scene, regardless of whether or not the objects have any visible mesh themselves. The gizmos can be shown as a wireframe grid or a solid plane, and can also be scaled. However, the scaling only applies to the visualization - the collision planes themselves extend infinitely through the scene.</p>
+
+<p>When collisions are enabled, the size of a particle is sometimes a problem because its graphic can be clipped as it makes contact with a surface. This can result in a particle appearing to “sink” partway into a surface before stopping or bouncing. The <em>Particle Radius</em> property addresses this issue by defining an approximate circular radius for the particles. This size information is used to prevent clipping and avoid the sinking-in effect.</p>
+
+<p>The <em>Dampen</em> and <em>Bounce</em> properties are useful when the particles represent solid objects. For example, gravel will tend to bounce off a hard surface when thrown but a snowball’s particles might lose speed during a collision. <em>Lifetime Loss</em> and <em>Min Kill Speed</em> can help to reduce the effects of residual particles following a collision. For example, a fireball might last for a few seconds while flying through the air but after colliding, the separate fire particles should dissipate quickly.</p>
+
+<p>You can also detect particle collisions from a script if <em>Send Collision Messages</em> is enabled. The script can be attached to the object with the particle system or the one with the collider or both. By detecting collisions, you can use particles as active objects in gameplay, such as projectiles, magic spell and power-ups. See the script reference page for <a href="../ScriptReference/MonoBehaviour.OnParticleCollision.html">MonoBehaviour.OnParticleCollision</a> for further details and examples.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PartSysExtForceModule.html"></a></span><div class="tip">External Forces Module</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PartSysSubEmitModule.html"></a></span><div class="tip">Sub Emitters Module</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

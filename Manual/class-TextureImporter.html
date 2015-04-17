@@ -1,0 +1,921 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: 2D Textures</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-TextureImporter.html">English</a></li>
+<li><a href="/es/current/Manual/class-TextureImporter.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-TextureImporter.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="comp-Textures.html">Texture Components</a></li>
+<li>2D Textures</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-Textures.html"></a></span><div class="tip">Texture Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ProceduralMaterial.html"></a></span><div class="tip">Procedural Material Assets</div>
+</div>
+</div></div>
+<h1>2D Textures</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/TextureImporter.html' title='Go to TextureImporter page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Textures</span> bring your <span class="doc-keyword">Meshes</span>, <span class="doc-keyword">Particles</span>, and interfaces to life! They are image or movie files that you lay over or wrap around your objects. As they are so important, they have a lot of properties.</p>
+
+<p>The shaders you use for your objects put specific requirements on which textures you need, but the basic principle is that you can put any image file inside your project. If it meets the size requirements (specified below), it will get imported and optimized for game use. This extends to multi-layer Photoshop or TIFF files - they are flattened on import, so there is no size penalty for your game. Note that this flattening happens internally to Unity, and is optional, so you can continue to save and import your PSD files with layers intact. The PSD file is not flattened, in other words.</p>
+
+<h2>Properties</h2>
+
+<p>The <span class="doc-keyword">Texture Inspector</span> looks a bit different from most others: </p>
+
+<figure>
+<img src="../uploads/Main/TexImporterFull40.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>The inspector is split into two sections, the <span class="doc-keyword">Texture Importer</span> and the texture preview.</p>
+
+<h2>Texture Importer</h2>
+
+<p>Textures all come from image files in your <span class="doc-keyword">Project Folder</span>. How they are imported is specified by the <span class="doc-keyword">Texture Importer</span>. You change these by selecting the file texture in the <span class="doc-keyword">Project View</span> and modifying the <span class="doc-keyword">Texture Importer</span> in the <span class="doc-keyword">Inspector</span>.</p>
+
+<p>The topmost item in the inspector is the <span class="doc-menu">Texture Type</span> menu that allows you to select the type of texture you want to create from the source image file.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Texture Type</span></td>
+	<td style="text-align:left;">Select this to set basic parameters depending on the purpose of your texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Texture</span>
+</td>
+	<td style="text-align:left;">This is the most common setting used for all the textures in general.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Normal Map</span>
+</td>
+	<td style="text-align:left;">Select this to turn the color channels into a format suitable for real-time normal mapping. See the Details section at the end of the page..</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">GUI</span>
+</td>
+	<td style="text-align:left;">Use this if your texture is going to be used on any HUD/GUI Controls.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Sprite</span>
+</td>
+	<td style="text-align:left;">This must be selected if your texture will be used in a 2D game as a <span class="doc-keyword">Sprite</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Cubemap</span>
+</td>
+	<td style="text-align:left;">Cubemap, often used to create reflections. See <a href="class-Cubemap.html">Cubemap Textures</a> for more info.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Cookie</span>
+</td>
+	<td style="text-align:left;">This sets up your texture with the basic parameters used for the Cookies of your lights</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Advanced</span>
+</td>
+	<td style="text-align:left;">Select this when you want to have specific parameters on your texture and you want to have total control over your texture.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterTexture40.png" alt="Basic Texture Settings Selected">
+<figcaption>Basic Texture Settings Selected</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Alpha From Grayscale</span></td>
+	<td style="text-align:left;">If enabled, an alpha transparency channel will be generated by the image’s existing values of light &amp; dark.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Wrap Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture behaves when tiled:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Repeat</span>
+</td>
+	<td style="text-align:left;">The Texture repeats (tiles) itself</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Clamp</span>
+</td>
+	<td style="text-align:left;">The Texture’s edges get stretched</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Aniso Level</span></td>
+	<td style="text-align:left;">Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the Details section at the end of the page.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterNormalMap40.png" alt="Normal Map Settings in the Texture Importer">
+<figcaption>Normal Map Settings in the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Create from Greyscale</span></td>
+	<td style="text-align:left;">If this is enabled then Bumpiness and Filtering options will be shown.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bumpiness</span></td>
+	<td style="text-align:left;">Control the amount of bumpiness.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filtering</span></td>
+	<td style="text-align:left;">Determine how the bumpiness is calculated:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Smooth</span>
+</td>
+	<td style="text-align:left;">This generates normal maps that are quite smooth.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Sharp</span>
+</td>
+	<td style="text-align:left;">Also known as a Sobel filter. this generates normal maps that are sharper than Standard.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Wrap Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture behaves when tiled:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Repeat</span>
+</td>
+	<td style="text-align:left;">The Texture repeats (tiles) itself</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Clamp</span>
+</td>
+	<td style="text-align:left;">The Texture’s edges get stretched</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Aniso Level</span></td>
+	<td style="text-align:left;">Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the Details section at the end of the page.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterGUI40.png" alt="GUI Settings for the Texture Importer">
+<figcaption>GUI Settings for the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterSprite43.png" alt="Sprite settings for the Texture Importer">
+<figcaption>Sprite settings for the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Sprite mode</span></td>
+	<td style="text-align:left;">Selects how the the sprite graphic will be extracted from the image.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Single</span>
+</td>
+	<td style="text-align:left;">The sprite image will be used in isolation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Multiple</span>
+</td>
+	<td style="text-align:left;">Multiple related sprites (eg, animation frames or separate sprite elements that belong to a single game character) will be kept together in the same image.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Packing Tag</span></td>
+	<td style="text-align:left;">The name of an optional sprite atlas into which this texture should be packed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Pixels To Units</span></td>
+	<td style="text-align:left;">The number of pixels of width/height in the sprite image that will correspond to one distance unit in world space.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Pivot</span></td>
+	<td style="text-align:left;">The point in the image where the sprite’s local coordinate system originates (center, top-left, etc).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterCursor40.png" alt="Cursor settings for the Texture Importer">
+<figcaption>Cursor settings for the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Wrap Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture behaves when tiled:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Repeat</span>
+</td>
+	<td style="text-align:left;">The Texture repeats (tiles) itself</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Clamp</span>
+</td>
+	<td style="text-align:left;">The Texture’s edges get stretched</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Textures/CubeImportInspector.png" alt="Cubemap Settings in the Texture Importer">
+<figcaption>Cubemap Settings in the Texture Importer</figcaption></figure>
+
+<p>See <a href="class-Cubemap.html">Cubemap Textures</a> page for more information on cubemap import settings.</p>
+
+<p>An interesting way to add a lot of visual detail to your scenes is to use <span class="doc-keyword">Cookies</span> - greyscale textures you use to control the precise look of in-game lighting. This is fantastic for making moving clouds and giving an impression of dense foliage. The <a href="class-Light.html">Light</a> page has more info on all this, but the main thing is that for textures to be usable for cookies you just need to set the <span class="doc-menu">Texture Type</span> to Cookie.</p>
+
+<figure>
+<img src="../uploads/Main/TexImporterCookie40.png" alt="Cookie Settings in the Texture Importer">
+<figcaption>Cookie Settings in the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Light Type</span></td>
+	<td style="text-align:left;">Type of light that the texture will be applied to. (This can be Spotlight, Point or Directional lights). For Directional Lights this texture will tile, so in the texture inspector, you must set the Edge Mode to <span class="doc-prop">Repeat</span>; for SpotLights You should keep the edges of your cookie texture solid black in order to get the proper effect. In the Texture Inspector, set the Edge Mode to <span class="doc-prop">Clamp</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mapping</span></td>
+	<td style="text-align:left;">(Point light only) Options for mapping the texture onto the spherical cast of the point light.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Sphere Mapped</span>
+</td>
+	<td style="text-align:left;">Maps the texture to a “sphere like” cubemap.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Cylindrical</span>
+</td>
+	<td style="text-align:left;">Maps the texture to a cylinder, use this when you want to use reflections on objects that are like cylinders.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Simple Sphere</span>
+</td>
+	<td style="text-align:left;">Maps the texture to a simple sphere, deforming the reflection when you rotate it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Nice Sphere</span>
+</td>
+	<td style="text-align:left;">Maps the texture to a sphere, deforming it when you rotate but you still can see the texture’s wrap</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">6 Frames Layout</span>
+</td>
+	<td style="text-align:left;">The texture contains six images arranged in one of the standard cubemap layouts, cross or sequence (+x -x +y -y +z -z) and the images can be in either horizontal or vertical orientation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Fixup edge seams</span></td>
+	<td style="text-align:left;">(Point light only) Removes visual artifacts at the joined edges of the map image(s).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Alpha from Greyscale</span></td>
+	<td style="text-align:left;">If enabled, an alpha transparency channel will be generated by the image’s existing values of light &amp; dark.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterLightmap40.png" alt="Lightmap settings in the Texture Importer">
+<figcaption>Lightmap settings in the Texture Importer</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Aniso Level</span></td>
+	<td style="text-align:left;">Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the Details section at the end of the page.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TexImporterAdvanced40.png" alt="The Advanced Texture Importer Settings dialog">
+<figcaption>The Advanced Texture Importer Settings dialog</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Non Power of 2</span></td>
+	<td style="text-align:left;">If texture has non-power-of-two size, this will define a scaling behavior at import time. See the Details section at the end of the page.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">None</span>
+</td>
+	<td style="text-align:left;">Texture size will be kept as-is.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">To nearest</span>
+</td>
+	<td style="text-align:left;">Texture will be scaled to the nearest power-of-two size at import time. For instance 257x511 texture will become 256x512. Note that PVRTC formats require textures to be square (width equal to height), therefore final size will be upscaled to 512x512.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">To larger</span>
+</td>
+	<td style="text-align:left;">Texture will be scaled to the next larger power-of-two size at import time. For instance 257x511 texture will become 512x512.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">To smaller</span>
+</td>
+	<td style="text-align:left;">Texture will be scaled to the next smaller power-of-two size at import time. For instance 257x511 texture will become 256x256.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mapping</span></td>
+	<td style="text-align:left;">Should a Cubemap be generated from this texture? See <a href="class-Cubemap.html">Cubemap Textures</a> page for more information.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Read/Write Enabled</span></td>
+	<td style="text-align:left;">Select this to enable access to the texture data from scripts (GetPixels, SetPixels and other <a href="../ScriptReference/Texture2D.html">Texture2D</a> functions). Note however that a copy of the texture data will be made, doubling the amount of memory required for texture asset. Use only if absolutely necessary. This is only valid for uncompressed and DTX compressed textures, other types of compressed textures cannot be read from. Disabled by default.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Import Type</span></td>
+	<td style="text-align:left;">The way the image data is interpreted.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Default</span>
+</td>
+	<td style="text-align:left;">Standard texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Normal Map</span>
+</td>
+	<td style="text-align:left;">Texture is treated as a normal map (enables other options)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Lightmap</span>
+</td>
+	<td style="text-align:left;">Texture is treated as a lightmap (disables other options)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Alpha from grayscale</span></td>
+	<td style="text-align:left;">(Default mode only) Generates the alpha channel from the luminance information in the image</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Create from grayscale</span></td>
+	<td style="text-align:left;">(Normal map mode only) Creates the map from the luminance information in the image</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bypass sRGB sampling</span></td>
+	<td style="text-align:left;">(Default mode only) Use the exact colour values from the image rather than compensating for gamma (useful when the texture is for GUI or used as a way to encode non-image data)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Generate Mip Maps</span></td>
+	<td style="text-align:left;">Select this to enable mip-map generation. Mip maps are smaller versions of the texture that get used when the texture is very small on screen. See the Details section at the end of the page.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">In Linear Space</span></td>
+	<td style="text-align:left;">Generate mipmaps in linear colour space.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Border Mip Maps</span></td>
+	<td style="text-align:left;">Select this to avoid colors seeping out to the edge of the lower Mip levels. Used for light cookies (see below).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mip Map Filtering</span></td>
+	<td style="text-align:left;">Two ways of mip map filtering are available to optimize image quality:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Box</span>
+</td>
+	<td style="text-align:left;">The simplest way to fade out the mipmaps - the mip levels become smoother and smoother as they go down in size.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Kaiser</span>
+</td>
+	<td style="text-align:left;">A sharpening Kaiser algorithm is run on the mip maps as they go down in size. If your textures are too blurry in the distance, try this option.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Fade Out Mipmaps</span></td>
+	<td style="text-align:left;">Enable this to make the mipmaps fade to gray as the mip levels progress. This is used for detail maps. The left most scroll is the first mip level to begin fading out at. The rightmost scroll defines the mip level where the texture is completely grayed out</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Wrap Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture behaves when tiled:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Repeat</span>
+</td>
+	<td style="text-align:left;">The Texture repeats (tiles) itself</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Clamp</span>
+</td>
+	<td style="text-align:left;">The Texture’s edges get stretched</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Filter Mode</span></td>
+	<td style="text-align:left;">Selects how the Texture is filtered when it gets stretched by 3D transformations:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Point</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blocky up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bilinear</span>
+</td>
+	<td style="text-align:left;">The Texture becomes blurry up close</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Trilinear</span>
+</td>
+	<td style="text-align:left;">Like Bilinear, but the Texture also blurs between the different mip levels</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Aniso Level</span></td>
+	<td style="text-align:left;">Increases texture quality when viewing the texture at a steep angle. Good for floor and ground textures. See the Details section at the end of the page.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Per-Platform Overrides</h2>
+
+<p>When you are building for different platforms, you have to think about the resolution of your textures for the target platform, the size and the quality. You can set default options and then override the defaults for a specific platform.</p>
+
+<p>The general settings are covered below. Settings specific to a platform can be found separately in the <a href="PlatformSpecific.html">platform’s own manual section</a>.</p>
+
+<figure>
+<img src="../uploads/Main/TextureImporterOverride.png" alt="Default settings for all platforms.">
+<figcaption>Default settings for all platforms.</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Max Texture Size</span></td>
+	<td style="text-align:left;">The maximum imported texture size. Artists often prefer to work with huge textures - scale the texture down to a suitable size with this.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Texture Format</span></td>
+	<td style="text-align:left;">What internal representation is used for the texture. This is a tradeoff between size and quality. In the examples below we show the final size of a in-game texture of 256 by 256 pixels:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Compressed</span>
+</td>
+	<td style="text-align:left;">Compressed RGB texture. This is the most common format for diffuse textures. 4 bits per pixel (32 KB for a 256x256 texture).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">16 bit</span>
+</td>
+	<td style="text-align:left;">Low-quality truecolor. Has 16 levels of red, green, blue and alpha.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Truecolor</span>
+</td>
+	<td style="text-align:left;">Truecolor, this is the highest quality. At 256 KB for a 256x256 texture.</td>
+</tr>
+</tbody>
+</table>
+
+<p>If you have set the <span class="doc-menu">Texture Type</span> to <span class="doc-menu">Advanced</span> then the <span class="doc-menu">Texture Format</span> has different values.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Texture Format</span></td>
+	<td style="text-align:left;">What internal representation is used for the texture. This is a tradeoff between size and quality. In the examples below we show the final size of an in-game texture of 256 by 256 pixels:</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGB Compressed DXT1</span>
+</td>
+	<td style="text-align:left;">Compressed RGB texture. This is the most common format for diffuse textures. 4 bits per pixel (32 KB for a 256x256 texture).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGBA Compressed DXT5</span>
+</td>
+	<td style="text-align:left;">Compressed RGBA texture. This is the main format used for diffuse &amp; specular control textures. 1 byte/pixel (64 KB for a 256x256 texture).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGB 16 bit</span>
+</td>
+	<td style="text-align:left;">65 thousand colors with no alpha. Compressed DXT formats use less memory and usually look better. 128 KB for a 256x256 texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGB 24 bit</span>
+</td>
+	<td style="text-align:left;">Truecolor but without alpha. 192 KB for a 256x256 texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Alpha 8 bit</span>
+</td>
+	<td style="text-align:left;">High quality alpha channel but without any color. 64 KB for a 256x256 texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGBA 16 bit</span>
+</td>
+	<td style="text-align:left;">Low-quality truecolor. Has 16 levels of red, green, blue and alpha. Compressed DXT5 format uses less memory and usually looks better. 128 KB for a 256x256 texture.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">RGBA 32 bit</span>
+</td>
+	<td style="text-align:left;">Truecolor with alpha - this is the highest quality. At 256 KB for a 256x256 texture, this one is expensive. Most of the time, <strong>DXT5</strong> offers sufficient quality at a much smaller size. The main way this is used is for normal maps, as DXT compression there often carries a visible quality loss.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<h3>Supported Formats</h3>
+
+<p>Unity can read the following file formats: PSD, TIFF, JPG, TGA, PNG, GIF, BMP, IFF, PICT. It should be noted that Unity can import multi-layer PSD &amp; TIFF files just fine. They are flattened automatically on import but the layers are maintained in the assets themselves, so you don’t lose any of your work when using these file types natively. This is important as it allows you to just have one copy of your textures that you can use from Photoshop, through your 3D modelling app and into Unity.</p>
+
+<h3>Texture Sizes</h3>
+
+<p>Ideally texture sizes should be powers of two on the sides. These sizes are as follows: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048 etc. pixels. The textures do not have to be square, i.e. width can be different from height. Note that each platform may impose maximum texture sizes.</p>
+
+<p>It is possible to use other (non power of two - “NPOT”) texture sizes with Unity. Non power of two texture sizes generally take slightly more memory and might be slower to read by the GPU, so for performance it’s best to use power of two sizes whenever you can. If the platform or GPU does not support NPOT texture sizes, then Unity will scale and pad the texture up to next power of two size, which will use even more memory and make loading slower (in practice, this can happen on some older mobile devices). In general you’d want to use non power of two sizes only for GUI purposes.</p>
+
+<p>Non power of two texture assets can be scaled up at import time using the <span class="doc-prop">Non Power of 2</span> option in the advanced texture type in the import settings.</p>
+
+<h3>UV Mapping</h3>
+
+<p>When mapping a 2D texture onto a 3D model, some sort of wrapping is done. This is called <span class="doc-keyword">UV mapping</span> and is done in your 3D modelling app. Inside Unity, you can scale and move the texture using <a href="class-Material.html">Materials</a>. Scaling normal &amp; detail maps is especially useful.</p>
+
+<h3>Mip Maps</h3>
+
+<p>Mip Maps are a list of progressively smaller versions of an image, used to optimise performance on real-time 3D engines. Objects that are far away from the camera use the smaller texture versions. Using mip maps uses 33% more memory, but not using them can be a huge performance loss. You should always use mipmaps for in-game textures; the only exceptions are textures that will never be minified (e.g. GUI textures).</p>
+
+<h3>Normal Maps</h3>
+
+<p>Normal maps are used by normal map shaders to make low-polygon models look as if they contain more detail. Unity uses normal maps encoded as RGB images. You also have the option to generate a normal map from a grayscale height map image.</p>
+
+<h3>Detail Maps</h3>
+
+<p>If you want to make a terrain, you normally use your main texture to show where there are areas of grass, rocks sand, etc… If your terrain has a decent size, it will end up very blurry. <a href="HOWTO-UseDetailTexture.html">Detail textures</a> hide this fact by fading in small details as your main texture gets up close.</p>
+
+<p>When drawing detail textures, a neutral gray is invisible, white makes the main texture twice as bright and black makes the main texture completely black.</p>
+
+<h3>Reflections (Cube Maps)</h3>
+
+<p>If you want to use texture for reflection maps (e.g. use it in <a href="class-ReflectionProbe.html">Reflection Probes</a> or a cubemapped <a href="class-Skybox.html">Skybox</a>), pick <code>Cubemap</code> import type. See <a href="class-Cubemap.html">Cubemap Textures</a> page for more information.</p>
+
+<h3>Anisotropic filtering</h3>
+
+<p>Anisotropic filtering increases texture quality when viewed from a grazing angle, at some expense of rendering cost (the cost is entirely on the graphics card). Increasing anisotropy level is usually a good idea for ground and floor textures. In <a href="class-QualitySettings.html">Quality Settings</a> anisotropic filtering can be forced for all textures or disabled completely.</p>
+
+<figure>
+<img src="../uploads/Main/AnisotropicComparison.png" alt="No anisotropy (left) / Maximum anisotropy (right) used on the ground texture">
+<figcaption>No anisotropy (left) / Maximum anisotropy (right) used on the ground texture</figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-Textures.html"></a></span><div class="tip">Texture Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ProceduralMaterial.html"></a></span><div class="tip">Procedural Material Assets</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Plugin Inspector</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/PluginInspector.html">English</a></li>
+<li><a href="/es/current/Manual/PluginInspector.html">Español</a></li>
+<li><a href="/ru/current/Manual/PluginInspector.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture Overview</li>
+<li><a href="Plugins.html">Plugins</a></li>
+<li>Plugin Inspector</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Plugins.html"></a></span><div class="tip">Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UsingDLL.html"></a></span><div class="tip">Managed Plugins</div>
+</div>
+</div></div>
+<h1>Plugin Inspector</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>In versions of Unity prior to v5, plugins were added to a project by placing them in specially-named folders to identify the target platform (OSX, Android, etc). From v5 onwards, plugins can be placed at any convenient place in the project, since the target platforms are now selected from the inspector.</p>
+
+<p>If you select a plugin file (or bundle, etc) in your project, you will see the plugin inspector.</p>
+
+<figure>
+<img src="../uploads/Main/PluginInspector.png" alt="Inspector for a plugin called CustomConnection">
+<figcaption>Inspector for a plugin called “CustomConnection”</figcaption></figure>
+
+<p>The checkboxes at the top let you choose the platforms which will use the plugin. </p>
+
+<p>The <strong>Platforms</strong> tab lets you choose the platforms that will use the plugin. If you select <em>Any</em> as the platform then the plugin will apply to all platforms, including the Unity editor. Once you have selected the platforms, you can choose additional options (CPU type, specific OS, etc) from the separate <em>Platform Settings</em> section below. This contains a tab for each platform selected by the checkboxes. Most platforms have no setting or just a few (eg, CPU and OS selection).</p>
+
+<h4>Default settings</h4>
+
+<p>To make transition easier from earlier Unity versions, Unity will try to set default plugins settings, depending on the folder where the plugin is located.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;">Assets/**/Editor</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Editor, and won’t be used when building to platform.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/**/Editor/(x86 or x86_64 or x64)</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Editor, CPU value will be assigned depending on the subfolder.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/x86_64(or x64)</td>
+	<td style="text-align:left;">x64 Standalone plugins will be set as compatible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/x86</td>
+	<td style="text-align:left;">x86 Standalone plugins will be set as compatible.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/Android/(x86 or armeabi or armeabi-v7a)</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Android, if CPU subfolder is present, CPU value will be set as well.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/BlackBerry</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Blackberry.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/iOS</td>
+	<td style="text-align:left;">Plugin will be set only compatible with iOS.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/WP8/(x86 or ARM)</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Windows Phone 8, if subfolder is CPU present, CPU value will be set as well.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/WSA/(x86 or ARM)</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Windows Store Apps and Windows Phone 8.1, if subfolder is CPU present, CPU value will be set as well. <strong>Note</strong>. Metro keyword can be used instead of WSA.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/WSA/(SDK80 or SDK81 or PhoneSDK81 or UniversalSDK81)</td>
+	<td style="text-align:left;">Same as above, additionally SDK value will be set, you can also add CPU subfolder afterwards. For compatibility reasons, SDK80 is the same as Win80, SDK81 - Win81, PhoneSDK81 - WindowsPhone81.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/Tizen</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Tizen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/Xbox360</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Xbox360.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/PSVita</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Playstation Vita.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/PS3</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Playstation 3.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/PS4</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Playstation 4.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">Assets/Plugins/SamsungTV</td>
+	<td style="text-align:left;">Plugin will be set only compatible with Samsung TV.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Editor settings</h4>
+
+<figure>
+<img src="../uploads/Main/PluginInspectorEditorTab.png" alt="Options in the editor tab">
+<figcaption>Options in the editor tab</figcaption></figure>
+
+<p>For instance, if you select <strong>CPU X86</strong>, the plugin will be used only in <strong>32 bit Editor</strong>, but will not be used in <strong>64 bit Editor</strong>.</p>
+
+<p>If you select <strong>OS Windows</strong>, the plugin will be used only in <strong>Windows Editor</strong>, but will not be used by <strong>Linux Editor</strong> or <strong>OS X Editor</strong>.</p>
+
+<h4>Standalone Settings</h4>
+
+<p><a href="class-PluginInspectorStandalone.html" title="Plugins">PluginInspectorStandalone.html</a></p>
+
+<h4>Windows Store Apps</h4>
+
+<p><a href="windowsstore-plugins.html" title="Plugins">windowsstore-plugins.html</a></p>
+
+<h4>iOS</h4>
+
+<figure>
+<img src="../uploads/Main/PluginiOSExample.png" alt="iOS plugin settings, showing Framework dependencies">
+<figcaption>iOS plugin settings, showing Framework dependencies</figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Plugins.html"></a></span><div class="tip">Plugins</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UsingDLL.html"></a></span><div class="tip">Managed Plugins</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

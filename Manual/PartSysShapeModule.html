@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Shape Module</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/PartSysShapeModule.html">English</a></li>
+<li><a href="/es/current/Manual/PartSysShapeModule.html">Español</a></li>
+<li><a href="/ru/current/Manual/PartSysShapeModule.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="PartSysReference.html">Particle Systems Reference</a></li>
+<li><a href="ParticleSystemModules.html">Particle System Modules</a></li>
+<li>Shape Module</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PartSysEmissionModule.html"></a></span><div class="tip">Emission Module</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PartSysVelOverLifeModule.html"></a></span><div class="tip">Velocity Over Lifetime Module</div>
+</div>
+</div></div>
+<h1>Shape Module</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This module is used to select the shape of the emission volume and where the particles are launched from within it.</p>
+
+<figure>
+<img src="../uploads/Main/PartSysShapeInsp.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Shape</span></td>
+	<td style="text-align:left;">The shape of the emission volume. The options are <em>Sphere</em>, <em>Hemisphere</em>, <em>Cone</em>, <em>Box</em>, <em>Mesh</em>, <em>Circle</em> and <em>Edge</em>. For the Mesh shape, there is an extra menu to select whether particles are emitted from the vertices, triangles or edges of the mesh.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Random Direction</span></td>
+	<td style="text-align:left;">When enabled, the particles’ initial direction will be chosen randomly.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Radius</span></td>
+	<td style="text-align:left;">The radius of the circular aspect of the shape (for Sphere, Hemisphere, Cone, Circle and Edge only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angle</span></td>
+	<td style="text-align:left;">The angle of the cone at its point (for Cone only). An angle of 0 produces a cylinder while an angle of 90 gives a flat disc.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Box X, Y, Z</span></td>
+	<td style="text-align:left;">Width, height and depth of the box shape (for Box only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mesh</span></td>
+	<td style="text-align:left;">The mesh that provides the emitter’s shape (for Mesh only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Emit from Shell</span></td>
+	<td style="text-align:left;">Should particles be emitted from the outer surface rather than the inner volume of the shape? (For Sphere and Hemisphere only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Emit from</span></td>
+	<td style="text-align:left;">Selects the part of the cone to emit from: Base, Volume, Base Shell or Volume Shell (for Cone only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Arc</span></td>
+	<td style="text-align:left;">The angular portion of a full circle that forms the emitter’s shape (for Circle only).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Emit From Edge</span></td>
+	<td style="text-align:left;">Should particles be emitted from the edge of the circle rather than the centre? (For Circle only.)</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<p>The emitter can be given any of a selection of shapes:</p>
+
+<ul>
+<li>
+<strong>Sphere</strong>: Uniform emission in all directions.</li>
+<li>
+<strong>Hemisphere</strong>: Uniform emission in all directions on <em>one side</em> of a plane.</li>
+<li>
+<strong>Cone</strong>: Emission from the base or body of a cone. The particles diverge in proportion to their distance from the cone’s centre line.</li>
+<li>
+<strong>Box</strong>: Emission from the body of a box shape. The particles move in the emitter object’s forward (Z) direction.</li>
+<li>
+<strong>Mesh</strong>: Emission from any arbitrary mesh shape supplied via the inspector.</li>
+<li>
+<strong>Circle</strong>: Uniform emission from the centre of edge of a circle. The particles move only in the plane of the circle.</li>
+<li>
+<strong>Edge</strong>: Emission from a line segment. The particles move in the emitter object’s upward (Y) direction.</li>
+</ul>
+
+<p>All the shapes except <em>Mesh</em> have properties that define their dimensions (eg, radius). These can be edited by dragging the handles on the wireframe emitter shape in the scene view. The choice of shape affects the region from which particles can be launched but also the initial direction of the particles. For example, a sphere throws particles outward in all directions, a cone produces a diverging stream of particles and a mesh emits particles in directions that are normal to the surface.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="PartSysEmissionModule.html"></a></span><div class="tip">Emission Module</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="PartSysVelOverLifeModule.html"></a></span><div class="tip">Velocity Over Lifetime Module</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

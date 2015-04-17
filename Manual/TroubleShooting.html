@@ -1,0 +1,188 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Trouble Shooting</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/TroubleShooting.html">English</a></li>
+<li><a href="/es/current/Manual/TroubleShooting.html">Español</a></li>
+<li><a href="/ru/current/Manual/TroubleShooting.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="UnityOverview.html">Unity Overview</a></li>
+<li><a href="CreatingGameplay.html">Creating Gameplay</a></li>
+<li>Trouble Shooting</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="RandomNumbers.html"></a></span><div class="tip">Adding Random Gameplay Elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Editor.html"></a></span><div class="tip">Editor</div>
+</div>
+</div></div>
+<h1>Trouble Shooting</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>This section addresses common problems that can arise when using Unity. Each platform is dealt with separately below.</p>
+
+<h1>Platform Trouble Shooting</h1>
+
+<h2>Geforce 7300GT on OSX 10.6.4</h2>
+
+<ul>
+<li>Deferred rendering is disabled because materials are not displayed correctly for Geforce 7300GT on OX 10.6.4; This happens because of buggy video drivers.</li>
+</ul>
+
+<h2>On Windows x64, Unity crashes when my script throws a NullReferenceException</h2>
+
+<ul>
+<li>Please apply <a href="http://support.microsoft.com/kb/976038">Windows Hotfix #976038</a>.</li>
+</ul>
+
+<h2>Script Editing</h2>
+
+<h3>Is there a way to get rid of the welcome page in MonoDevelop?</h3>
+
+<ul>
+<li>Yes. In the MonoDevelop preferences, go to the Visual Style section, and uncheck “Load welcome page on startup”.</li>
+</ul>
+
+<h3>Why does my script open in MonoDevelop when I have selected Visual Studio as my script editor?</h3>
+
+<ul>
+<li>This happens when VS reports that it failed to open your script. The most common cause for this is an external plugin (e.g. Resharper) popping up a dialog at startup, requesting input from the user - this will cause VS to report that it failed to open.</li>
+</ul>
+
+<h2>Graphics</h2>
+
+<h3>Slow framerate and/or visual artifacts.</h3>
+
+<ul>
+<li>This may occur if your video card drivers are not up to date. Make sure you have the latest official drivers from your card vendor.</li>
+</ul>
+
+<h2>Shadows</h2>
+
+<ul>
+<li>Shadows also require certain graphics hardware support. See <a href="LightPerformance.html">Light Performance</a> page for details.</li>
+<li>Check if shadows are not completely disabled in <a href="class-QualitySettings.html">Quality Settings</a>.</li>
+<li>Shadows on Android and iOS have these limitations: soft shadows are not available and in forward rendering rendering path only a single directional light can cast shadows. There is no limit to the number of lights casting shadows in the deferred rendering path.</li>
+</ul>
+
+<h3>Some of my objects do not cast or receive shadows</h3>
+
+<p>An object’s <a href="class-MeshRenderer.html">Renderer</a> must have <span class="doc-prop">Receive Shadows</span> enabled for shadows to be rendered onto it. Also, an object must have <span class="doc-prop">Cast Shadows</span> enabled in order to cast shadows on other objects (both are on by default).</p>
+
+<p>Only opaque objects cast and receive shadows. This means that objects using the built-in <a href="shader-TransparentFamily.html">Transparent</a> or Particle shaders will not cast shadows. In most cases it is possible to use <a href="shader-TransparentCutoutFamily.html">Transparent Cutout</a> shaders for objects like fences, vegetation, etc. If you use custom written <a href="Shaders.html">Shaders</a>, they have to be pixel-lit and use the <a href="SL-SubshaderTags.html">Geometry render queue</a>. Objects using <span class="doc-prop">VertexLit</span> shaders do not receive shadows but are able to cast them.</p>
+
+<p>Only <span class="doc-keyword">Pixel lights</span> cast shadows. If you want to make sure that a light always casts shadows no matter how many other lights are in the scene, then you can set it to <span class="doc-prop">Force Pixel</span> render mode (see the <a href="class-Light.html">Light</a> reference page).</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="RandomNumbers.html"></a></span><div class="tip">Adding Random Gameplay Elements</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Editor.html"></a></span><div class="tip">Editor</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

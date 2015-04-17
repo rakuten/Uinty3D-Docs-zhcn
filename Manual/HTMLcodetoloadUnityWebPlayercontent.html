@@ -1,0 +1,174 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: HTML code to load Unity content</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/HTMLcodetoloadUnityWebPlayercontent.html">English</a></li>
+<li><a href="/es/current/Manual/HTMLcodetoloadUnityWebPlayercontent.html">Español</a></li>
+<li><a href="/ru/current/Manual/HTMLcodetoloadUnityWebPlayercontent.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li><a href="Web.html">Web Player</a></li>
+<li><a href="WebPlayerDeployment.html">Web Player Deployment</a></li>
+<li>HTML code to load Unity content</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WebPlayerDeployment.html"></a></span><div class="tip">Web Player Deployment</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WorkingwithUnityObject.html"></a></span><div class="tip">Working with UnityObject2</div>
+</div>
+</div></div>
+<h1>HTML code to load Unity content</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity content is loaded in the browser by the Unity <span class="doc-keyword">Web Player</span> plugin. HTML code usually does not communicate with this plugin directly but via the script called <span class="doc-keyword">UnityObject2</span>. Its primary task is to make Unity content embedding very simple by shielding the user from various browser- and platform-specific issues. It also enables easy Web Player installation.</p>
+
+<p>The HTML file generated by Unity when building a web player contains all the commonly required functionality. In most cases you don’t have to modify the HTML file at all. The rest of the document explains the inner workings of this file.</p>
+
+<p>The UnityObject2 script has to be loaded before it can be used. This is done at the top of the <span class="doc-prop">&lt;head&gt;</span> section.</p>
+
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+&lt;!--
+var unityObjectUrl = &quot;http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js&quot;;
+if (document.location.protocol == 'https:')
+    unityObjectUrl = unityObjectUrl.replace(&quot;http://&quot;, &quot;https://ssl-&quot;);
+document.write('&lt;script type=&quot;text/javascript&quot; src=&quot;' + unityObjectUrl + '&quot;&gt;&lt;/script&gt;');
+--&gt;
+&lt;/script&gt;
+
+
+</code></pre>
+
+<p>You can now instantiate the <span class="doc-prop">UnityObject2</span> class to assist you in various Unity-related tasks, the most important one being embedding Unity content. This is performed by instantiating <span class="doc-prop">UnityObject2</span> and calling <span class="doc-prop">initPlugin</span> on the new instance. <span class="doc-prop">initPlugin</span> accepts several parameters. The first one specifies the <span class="doc-prop">id</span> of the HTML element that will be replaced by Unity content. It could be any HTML element with <span class="doc-prop">&lt;div&gt;</span> being the most common. Think of it as a temporary placeholder where Unity should be placed. The second parameter specifies the path to the web player data file to be displayed. See <a href="WorkingwithUnityObject.html">UnityObject2.initPlugin</a> for more info.</p>
+
+<pre><code>var u = new UnityObject2();
+u.initPlugin(jQuery(&quot;#unityPlayer&quot;)[0], &quot;Example.unity3d&quot;);
+
+
+</code></pre>
+
+<p>Finally, the HTML placeholder is placed inside the <span class="doc-prop">&lt;body&gt;</span> section. It could be as simple as <span class="doc-prop">&lt;div id=“unityPlayer” /&gt;</span>. However for maximum compatibility it’s best to place some warning message in case the browser doesn’t support JavaScript and the placeholder isn’t replaced by UnityObject.</p>
+
+<pre><code>&lt;div id=&quot;unityPlayer&quot;&gt;
+    &lt;div class=&quot;missing&quot;&gt;
+        &lt;a href=&quot;http://unity3d.com/webplayer/&quot; title=&quot;Unity Web Player. Install now!&quot;&gt;
+            &lt;img alt=&quot;Unity Web Player. Install now!&quot; src=&quot;http://webplayer.unity3d.com/installation/getunity.png&quot; width=&quot;193&quot; height=&quot;63&quot; /&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="WebPlayerDeployment.html"></a></span><div class="tip">Web Player Deployment</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="WorkingwithUnityObject.html"></a></span><div class="tip">Working with UnityObject2</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

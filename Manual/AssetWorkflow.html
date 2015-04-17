@@ -1,0 +1,178 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Asset Workflow</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetWorkflow.html">English</a></li>
+<li><a href="/es/current/Manual/AssetWorkflow.html">Español</a></li>
+<li><a href="/ru/current/Manual/AssetWorkflow.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="UnityOverview.html">Unity Overview</a></li>
+<li><a href="UnityBasics.html">Unity Basics</a></li>
+<li>Asset Workflow</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="CustomizingYourWorkspace.html"></a></span><div class="tip">Customizing Your Workspace</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CreatingScenes.html"></a></span><div class="tip">Creating Scenes</div>
+</div>
+</div></div>
+<h1>Asset Workflow</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Here we’ll explain the steps to use a single asset with Unity. These steps are general and are meant only as an overview for basic actions. For the example, we’ll talk about using a 3D mesh.</p>
+
+<h2>Create Rough Asset</h2>
+
+<p>Use any supported 3D modeling package to create a rough version of your asset. Our example will use Maya. Work with the asset until you are ready to save. For a list of applications that are supported by Unity, please see <a href="HOWTO-importObject.html">this page</a>.</p>
+
+<h2>Import</h2>
+
+<p>When you save your asset initially, you should save it normally to the <span class="doc-keyword">Assets</span> folder in your Project folder. When you open the Unity project, the asset will be detected and imported into the project. When you look in the <span class="doc-keyword">Project View</span>, you’ll see the asset located there, right where you saved it. Please note that Unity uses the FBX exporter provided by your modeling package to convert your models to the FBX file format. You will need to have the FBX exporter of your modeling package available for Unity to use. Alternatively, you can directly export as FBX from your application and save in the Projects folder. For a list of applications that are supported by Unity, please see <a href="HOWTO-importObject.html">this page</a>.</p>
+
+<h2>Import Settings</h2>
+
+<p>If you select the asset in the <span class="doc-keyword">Project View</span> the import settings for this asset will appear in the <span class="doc-keyword">Inspector</span>. The options that are displayed will change based on the type of asset that is selected.</p>
+
+<h2>Adding Asset to the Scene</h2>
+
+<p>Simply click and drag the mesh from the Project View to the <span class="doc-keyword">Hierarchy</span> or <span class="doc-keyword">Scene View</span> to add it to the Scene. When you drag a mesh to the scene, you are creating a <span class="doc-keyword">GameObject</span> that has a <span class="doc-prop">Mesh Renderer</span> <span class="doc-keyword">Component</span>. If you are working with a texture or a sound file, you will have to add it to a GameObject that already exists in the Scene or Project.</p>
+
+<h2>Putting Different Assets Together</h2>
+
+<p>Here is a brief description of the relationships between the most common assets</p>
+
+<ul>
+<li>A Texture is applied to a <span class="doc-keyword">Material</span>
+</li>
+<li>A Material is applied to a GameObject (with a Mesh Renderer Component)</li>
+<li>An <span class="doc-prop">Animation</span> is applied to a GameObject (with an Animation Component)</li>
+<li>A sound file is applied to a GameObject (with an <span class="doc-prop">Audio Source</span> Component)</li>
+</ul>
+
+<h2>Creating a Prefab</h2>
+
+<p>A <span class="doc-keyword">Prefab</span> is a stored collection containing one or more complete GameObjects with components attached and properties set. Prefabs are asset types, so they do not appear in the scene in their own right. However, they can be used to create <em>instances</em> of the stored objects in the scene. Each instance is a copy of the original prefab. For example, you might use a prefab to store a tree object and then create many instances of the tree in a forest scene.</p>
+
+<p>By default, changes made to the prefab are automatically applied to all the instances, and so using prefabs can be a good way to maintain consistency among a set of objects. However, you can also break the link between the instance and the prefab if you want to create special variations on the original. You can also make changes to an instance, and then save those changes to the prefab (menu: <span class="doc-menu">GameObject &gt; Apply Changes to Prefab</span>).</p>
+
+<p>You can create a Prefab from a GameObject in your scene, simply by dragging the GameObject from the scene into the project view. When you do this, the GameObject’s name text will be selected to let you rename it as you like.</p>
+
+<p>For further information, see the <a href="Prefabs.html">Prefabs</a> page in the manual.</p>
+
+<h2>Updating Assets</h2>
+
+<p>You have imported, instantiated, and linked your asset to a Prefab. Now when you want to edit your source asset, just double-click it from the Project View. The appropriate application will launch, and you can make any changes you want. When you’re done updating it, just Save it. Then, when you switch back to Unity, the update will be detected, and the asset will be re-imported. The asset’s link to the Prefab will also be maintained. So the effect you will see is that your Prefab will update. That’s all you have to know to update assets. Just open it and save!</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="CustomizingYourWorkspace.html"></a></span><div class="tip">Customizing Your Workspace</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="CreatingScenes.html"></a></span><div class="tip">Creating Scenes</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,498 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Command line arguments</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/CommandLineArguments.html">English</a></li>
+<li><a href="/es/current/Manual/CommandLineArguments.html">Español</a></li>
+<li><a href="/ru/current/Manual/CommandLineArguments.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture Overview</li>
+<li>Command line arguments</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="StreamingAssets.html"></a></span><div class="tip">Streaming Assets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="InstallingUnity.html"></a></span><div class="tip"> Installing Unity</div>
+</div>
+</div></div>
+<h1>Command line arguments</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Typically, Unity will be launched by double-clicking its icon from the desktop but it is also possible to run it from the command line (ie, the MacOS Terminal or the Windows Command Prompt). When launched in this way, Unity can receive commands and information on startup, which can be very useful for test suites, automated builds and other production tasks.</p>
+
+<p>Under MacOS, you can launch Unity from the Terminal by typing:-</p>
+
+<pre><code> /Applications/Unity/Unity.app/Contents/MacOS/Unity
+</code></pre>
+
+<p>…while under Windows, you should type</p>
+
+<pre><code> &quot;C:\Program Files (x86)\Unity\Editor\Unity.exe&quot;
+</code></pre>
+
+<p>…at the command prompt.</p>
+
+<p>Standalone Unity games can be launched in a similar way.</p>
+
+<h2>Options</h2>
+
+<p>As mentioned above, the editor and also built games can optionally be supplied with additional commands and information on startup. This is done using the following command line options:-</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-assetServerUpdate &lt;IP[:port] projectName username password [r &lt;revision&gt;]&gt;</span></td>
+	<td style="text-align:left;">Force an update of the project in the <a href="AssetServer.html">Asset Server</a> given by <em>IP:port</em>. The port is optional and if not given it is assumed to be the standard one (10733). It is advisable to use this command in conjunction with the <em>-projectPath</em> argument to ensure you are working with the correct project. If no project name is given then the last project opened by Unity is used. If no project exists at the path given by <em>-projectPath</em> then one is created automatically.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-batchmode</span></td>
+	<td style="text-align:left;">Run Unity in batch mode. This should always be used in conjunction with the other command line arguments as it ensures no pop up windows appear and eliminates the need for any human intervention. When an exception occurs during execution of script code, asset server updates fail or other operations fail Unity will immediately exit with return code 1. Note that in batch mode, Unity will send a minimal version of its log output to the console. However, the <a href="LogFiles.html">Log Files</a> still contain the full log information. Note that opening a project in batch mode whilst the Editor has the same project open is not supported. Only a single instance of Unity can run at a time.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildLinux32Player &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 32-bit standalone Linux player (e.g. -buildLinux32Player path/to/your/build).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildLinux64Player &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 64-bit standalone Linux player (e.g. -buildLinux64Player path/to/your/build).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildLinuxUniversalPlayer &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a combined 32-bit and 64-bit standalone Linux player (e.g. -buildLinuxUniversalPlayer path/to/your/build).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildOSXPlayer &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 32-bit standalone Mac OSX player (e.g. -buildOSXPlayer path/to/your/build.app).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildOSX64Player &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 64-bit standalone Mac OSX player (e.g. -buildOSX64Player path/to/your/build.app).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildOSXUniversalPlayer &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a combined 32-bit and 64-bit standalone Mac OSX player (e.g. -buildOSXUniversalPlayer path/to/your/build.app).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildTarget &lt;name&gt;</span></td>
+	<td style="text-align:left;">Allows the selection of an active build target before a project is loaded. Possible options are: win32, win64, osx, osxintel64, osxuniversal, linux, linux64, linuxuniversal, ios, android, web, webstreamed, webgl, xbox360, xboxone, ps3, ps4, psp2, wsa, wp8, bb10, tizen, samsungtv.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildWebPlayer &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a WebPlayer (e.g. -buildWebPlayer path/to/your/build).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildWebPlayerStreamed &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a streamed WebPlayer (e.g. -buildWebPlayerStreamed path/to/your/build).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildWindowsPlayer &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 32-bit standalone Windows player (e.g. -buildWindowsPlayer path/to/your/build.exe).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-buildWindows64Player &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Build a 64-bit standalone Windows player (e.g. -buildWindows64Player path/to/your/build.exe).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-createProject &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Create an empty project at the given path.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-executeMethod &lt;ClassName.MethodName&gt;</span></td>
+	<td style="text-align:left;">Execute the static method as soon as Unity is started, the project is open and after the optional asset server update has been performed. This can be used to do continous integration, perform Unit Tests, make builds, prepare some data, etc. If you want to return an error from the commandline process you can either throw an exception which will cause Unity to exit with 1 or else call <a href="../ScriptReference/EditorApplication.Exit.html">EditorApplication.Exit</a> with a non-zero code. If you want to pass parameters you can add them to the command line and retrieve them inside the method using System.Environment.GetCommandLineArgs. To use <code>-executeMethod</code>, you need to place the enclosing script in an Editor folder. The method to be executed must be defined as <strong>static</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-exportPackage &lt;exportAssetPath1 exportAssetPath2 ExportAssetPath3 exportFileName&gt;</span></td>
+	<td style="text-align:left;">Exports a package given a path (or set of given paths). <span class="doc-prop">exportAssetPath</span> is a folder (relative to to the Unity project root) to export from the Unity project and <span class="doc-prop">exportFileName</span> is the package name. Currently, this option can only export whole folders at a time. This command normally needs to be used with the <span class="doc-prop">-projectPath</span> argument.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d9 (Windows only)</span></td>
+	<td style="text-align:left;">Make the editor use Direct3D 9 for rendering. This is the default, so normally there’s no reason to pass it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d11 (Windows only)</span></td>
+	<td style="text-align:left;">Make the editor use Direct3D 11 for rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-opengl (Windows only)</span></td>
+	<td style="text-align:left;">Make the editor use OpenGL for rendering, even if Direct3D is available. Normally Direct3D is used but OpenGL is used if Direct3D 9.0c is not available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-free</span></td>
+	<td style="text-align:left;">Make the editor run as if there is a free Unity license on the machine, even if a Unity Pro license is installed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-importPackage &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Import the given <a href="HOWTO-exportpackage.html">package</a>. No import dialog is shown.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-logFile &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Specify where the Editor or Windows/Linux/OSX standalone log file will be written.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-silent-crashes</span></td>
+	<td style="text-align:left;">Don’t display crash dialog.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-nographics (Windows only)</span></td>
+	<td style="text-align:left;">When running in batch mode, do not initialize graphics device at all. This makes it possible to run your automated workflows on machines that don’t even have a GPU (automated workflows only work, when you have a window in focus, otherwise you can’t send simulated input commands).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-projectPath &lt;pathname&gt;</span></td>
+	<td style="text-align:left;">Open the project at the given path.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-quit</span></td>
+	<td style="text-align:left;">Quit the Unity editor after other commands have finished executing. Note that this can cause error messages to be hidden (but they will show up in the Editor.log file).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-returnlicense</span></td>
+	<td style="text-align:left;">Return the currently active license to the license server. Please allow a few seconds before license file is removed, as Unity needs to communicate with the license server. This option is new in Unity 5.0.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-serial &lt;serial&gt;</span></td>
+	<td style="text-align:left;">Activates Unity with the specified serial key. It is recommended to pass “-batchmode -quit” arguments as well, in order to quit Unity when done, if using this for automated activation of Unity. Please allow a few seconds before license file is created, as Unity needs to communicate with the license server. Make sure that <a href="Unity4xActivation-Overview.html">License file folder</a> exists, and has appropriate permissions before running Unity with this argument. In case activation fails, see the <a href="LogFiles.html">Editor.log</a> for info. This option is new in Unity 5.0.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Example usage</h2>
+
+<pre><code>// C# example
+using UnityEditor;
+class MyEditorScript
+{
+     static void PerformBuild ()
+     {
+         string[] scenes = { &quot;Assets/MyScene.unity&quot; };
+         BuildPipeline.BuildPlayer(scenes, ...);
+     }
+}
+
+
+// JavaScript example
+static void PerformBuild ()
+{
+    string[] scenes = { &quot;Assets/MyScene.unity&quot; };
+    BuildPipeline.BuildPlayer(scenes, ...);
+}
+</code></pre>
+
+<p>The following command executes Unity in batch mode, executes the <code>MyEditorScript.MyMethod</code> method and then quits upon completion.</p>
+
+<p>
+<strong>Windows:</strong>
+<code>C:\program files\Unity\Editor\Unity.exe -quit -batchmode -executeMethod MyEditorScript.MyMethod</code>
+</p>
+
+<p>
+<strong>Mac OS:</strong>
+<code>/Applications/Unity/Unity.app/Contents/MacOS/Unity -quit -batchmode -executeMethod MyEditorScript.MyMethod</code>
+</p>
+
+<p>The next command executes Unity in batch mode and updates from the asset server using the supplied project path. The method is executed after all assets have been downloaded and imported from the asset server. After the method has finished execution, Unity automatically quits.</p>
+
+<p><code>/Applications/Unity/Unity.app/Contents/MacOS/Unity -batchmode -projectPath ~/UnityProjects/AutobuildProject -assetServerUpdate 192.168.1.1 MyGame AutobuildUser l33tpa33 -executeMethod MyEditorScript.PerformBuild -quit</code></p>
+
+<h2>Unity Editor special command line arguments</h2>
+
+<p>These should only be used under special circumstances, or when directed by Support.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop" style="white-space: nowrap;">-enableIncompatibleAssetDowngrade</span></td>
+	<td style="text-align:left;">Use when you have content made by a newer, incompatible version of Unity, that you want to downgrade to work with your current version of Unity. When enabled, Unity will present you with a dialog asking for confirmation of such a downgrade if you attempt to open a project that would require it. This procedure is unsupported and highly risky, and should only be used as a last resort.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Unity Standalone Player command line arguments</h2>
+
+<p>Standalone players built with Unity also understand some command line arguments:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-adapter N (Windows only)</span></td>
+	<td style="text-align:left;">Allows the game to run full-screen on another display. The N maps to a Direct3D display adaptor. In most cases there is a one-to-one relationship between adapters and video cards. On cards that support multi-head (they can drive multiple monitors from a single card) each “head” may be its own adapter.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-batchmode</span></td>
+	<td style="text-align:left;">Run the game in “headless” mode. The game will not display anything or accept user input. This is mostly useful for running servers for <a href="NetworkReferenceGuide.html">networked games</a>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d9 (Windows only)</span></td>
+	<td style="text-align:left;">Make the game use Direct3D 9 for rendering. This is the default, so normally there’s no reason to pass it.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d9-ref (Windows only)</span></td>
+	<td style="text-align:left;">Make the game run using Direct3D’s “Reference” software renderer. The <a href="http://msdn.microsoft.com/en-us/directx/default.aspx">DirectX SDK</a> has to be installed for this to work. This is mostly useful for building automated test suites, where you want to ensure rendering is exactly the same no matter what graphics card is being used.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d11 (Windows only)</span></td>
+	<td style="text-align:left;">Make the game use Direct3D 11 for rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-opengl (Windows only)</span></td>
+	<td style="text-align:left;">Make the game use OpenGL for rendering, even if Direct3D is available. Normally Direct3D is used but OpenGL is used if Direct3D 9.0c is not available.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-nographics (Linux &amp; Windows only)</span></td>
+	<td style="text-align:left;">When running in batch mode, do not initialize graphics device at all. This makes it possible to run your automated workflows on machines that don’t even have a GPU.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-nolog (Linux &amp; Windows only)</span></td>
+	<td style="text-align:left;">Do not produce output log. Normally <code>output_log.txt</code> is written in the <code>*_Data</code> folder next to the game executable, where <a href="../ScriptReference/Debug.Log.html">Debug.Log</a> output is printed.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-popupwindow</span></td>
+	<td style="text-align:left;">The window will be created as a a pop-up window (without a frame).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-screen-fullscreen</span></td>
+	<td style="text-align:left;">Overrides the default fullscreen state. This must be 0 or 1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-screen-height</span></td>
+	<td style="text-align:left;">Overrides the default screen height. This must be an integer from a supported resolution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-screen-width</span></td>
+	<td style="text-align:left;">Overrides the default screen width. This must be an integer from a supported resolution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-screen-quality</span></td>
+	<td style="text-align:left;">Overrides the default screen quality. Example usage would be: <code>/path/to/myGame -screen-quality Beautiful</code>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-show-screen-selector</span></td>
+	<td style="text-align:left;">Forces the screen selector dialog to be shown.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-single-instance (Linux &amp; Windows only)</span></td>
+	<td style="text-align:left;">Allow only one instance of the game to run at the time. If another instance is already running then launching it again with <code>-single-instance</code> will just focus the existing one.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-parentHWND &lt;HWND&gt; (Windows only)</span></td>
+	<td style="text-align:left;">Embeds Windows Standalone application into another application, you have to pass parent application’s window handle to Windows Standalone application. See this example <a href="../uploads/Main/EmbeddedWindow.zip">EmbeddedWindow.zip</a> for more information.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Windows Store Command line arguments</h2>
+
+<p>Windows Store Apps don’t accept command line arguments by default, so to pass them you have to call a special function from App.xaml.cs/cpp or App.cs/cpp. For example, </p>
+
+<pre><code>appCallbacks.AddCommandLineArg(&quot;-nolog&quot;);
+</code></pre>
+
+<p>You should call this before the <code>appCallbacks.Initialize*()</code> function.</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"></th>
+	<th style="text-align:left;"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-nolog</span></td>
+	<td style="text-align:left;">Don’t produce UnityPlayer.log.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-driver-type-warp</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 WARP device (More info <a href="http://msdn.microsoft.com/en-us/library/gg615082.aspx">http://msdn.microsoft.com/en-us/library/gg615082.aspx</a>)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-gfx-direct</span></td>
+	<td style="text-align:left;">Force single threaded rendering.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-d3d11-no-singlethreaded</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 to be created without D3D11_CREATE_DEVICE_SINGLETHREADED flag.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–9–1</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 9.1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–9–2</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 9.2.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–9–3</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 9.3.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–10–0</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 10.0.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–10–1</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 10.1.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">-force-feature-level–11–0</span></td>
+	<td style="text-align:left;">Force DirectX 11.0 feature level 11.0.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="StreamingAssets.html"></a></span><div class="tip">Streaming Assets</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="InstallingUnity.html"></a></span><div class="tip"> Installing Unity</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

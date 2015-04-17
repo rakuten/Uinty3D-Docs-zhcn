@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Animation Curves on Imported Clips</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AnimationCurvesOnImportedClips.html">English</a></li>
+<li><a href="/es/current/Manual/AnimationCurvesOnImportedClips.html">Español</a></li>
+<li><a href="/ru/current/Manual/AnimationCurvesOnImportedClips.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="AnimationSection.html">Animation</a></li>
+<li><a href="AnimationOverview.html">Unity's Animation System</a></li>
+<li><a href="AnimationClips.html">Animation Clips</a></li>
+<li><a href="AnimationsImport.html">Animation from External Sources </a></li>
+<li>Animation Curves on Imported Clips</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AnimationMaskOnImportedClips.html"></a></span><div class="tip">Masking Imported Clips</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AnimationEventsOnImportedClips.html"></a></span><div class="tip">Animation Events on Imported Clips</div>
+</div>
+</div></div>
+<h1>Animation Curves on Imported Clips</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Animation curves can be attached to imported animation clips in the Animations tab of the <span class="doc-menu">Animation Import Settings</span>.</p>
+
+<p>These curves allow you to add additional animated data to an imported clip, which can allow you to animate the timings of other items based on the the state of an animator. For example, in a game set in icy conditions, an extra animation curve could be used to control the emission rate of a particle system to show the player’s condensing breath in the cold air.</p>
+
+<p>To add a curve to an imported animation, first select the imported animation file in your project view, then in the import settings in the inspector, select the Animations button.</p>
+
+<figure>
+<img src="../uploads/Main/FBXImporterInspectorAnimationsSection.png" alt="View the Animations section of the Import Settings for your animation file">
+<figcaption>View the Animations section of the Import Settings for your animation file</figcaption></figure>
+
+<p>Then scroll all the way to the bottom of the inspector to find the Curves heading, among the four fold-out headings as shown:</p>
+
+<figure>
+<img src="../uploads/Main/AnimationInspectorMasksCurvesEventsMotion.png" alt="The curves fold-out heading, along with the Masks, Events and Motion headings">
+<figcaption>The curves fold-out heading, along with the Masks, Events and Motion headings</figcaption></figure>
+
+<p>Expand the curves heading, and click the plus icon to add a new curve to the current animation clip. If your imported animation file is split into multiple animation clips, each clip can have its own custom curves. </p>
+
+<figure>
+<img src="../uploads/Main/MecanimCurves.png" alt="The curves on an imported animation clip">
+<figcaption>The curves on an imported animation clip</figcaption></figure>
+
+<p>The curve’s X-axis represents <em>normalized time</em> and always ranges between 0.0 and 1.0 (corresponding to the beginning and the end of the animation clip respectively, regardless of its duration). </p>
+
+<figure>
+<img src="../uploads/Main/CurveEditorPopupDescr.png" alt="Unity Curve Editor">
+<figcaption>Unity Curve Editor</figcaption></figure>
+
+<p>Double-clicking an animation curve will bring up the standard Unity curve editor (see <a href="EditingValueProperties.html">Editing Value Properties</a> for further details) which you can use to add <span class="doc-keyword">keys</span> to the curve. Keys are points along the curve’s timeline where it has a value explicitly set by the animator rather than just using an interpolated value. Keys are very useful for marking important points along the timeline of the animation. For example, with a walking animation, you might use keys to mark the points where the left foot is on the ground, then both feet on the ground, right foot on the ground, etc. Once the keys are set up, you can move conveniently between key frames by pressing the <span class="doc-menu">Previous/Next Key Frame</span> buttons. This will move the vertical red line and show the <em>normalized time</em> at the keyframe; the value you enter in the text box will then set the value of the curve at that time. </p>
+
+<h2>Animation Curves and Animator Controller parameters</h2>
+
+<p>If you have a curve with the same name as one of the <a href="AnimationParameters.html">parameters</a> in the <a href="Animator.html">Animator Controller</a>, then that parameter will take its value from the value of the curve at each point in the timeline. For example, if you make a call to <a href="../ScriptReference/Animator.GetFloat.html">GetFloat</a> from a script, the returned value will be equal to the value of the curve at the time the call is made. Note that at any given point in time, there might be multiple animation clips attempting to set the same parameter from the same controller. In that case, the curve values from the multiple animation clips are blended. If an animation has no curve for a particular parameter then the blending will be done with the default value for that parameter.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AnimationMaskOnImportedClips.html"></a></span><div class="tip">Masking Imported Clips</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="AnimationEventsOnImportedClips.html"></a></span><div class="tip">Animation Events on Imported Clips</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

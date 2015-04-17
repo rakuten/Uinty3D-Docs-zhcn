@@ -1,0 +1,590 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Configurable Joint</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-ConfigurableJoint.html">English</a></li>
+<li><a href="/es/current/Manual/class-ConfigurableJoint.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-ConfigurableJoint.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PhysicsSection.html">Physics</a></li>
+<li><a href="Physics3DReference.html">3D Physics Reference</a></li>
+<li>Configurable Joint</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-CharacterJoint.html"></a></span><div class="tip">Character Joint</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConstantForce.html"></a></span><div class="tip">Constant Force</div>
+</div>
+</div></div>
+<h1>Configurable Joint</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/ConfigurableJoint.html' title='Go to ConfigurableJoint page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Configurable Joints</span> are extremely customizable. They expose all joint-related properties of PhysX, so they are capable of creating behaviors similar to all other joint types.</p>
+
+<figure>
+<img src="../uploads/Main/ConfigurableJointImage.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Details</h2>
+
+<p>There are two primary functions that the Configurable Joint can perform: movement/rotation restriction and movement/rotation acceleration. These functions depend on a number of inter-dependent properties. It may require some experimentation to create the exact behavior you’re trying to achieve. We’ll now give you an overview of the Joint’s functionality to make your experimentation as simple as possible.</p>
+
+<h2>Movement/Rotation Restriction</h2>
+
+<p>You specify restriction per axis and per motion type. <span class="doc-prop">XMotion</span>, <span class="doc-prop">YMotion</span>, and <span class="doc-prop">ZMotion</span> allow you to define translation along that axis. <span class="doc-prop">Angular XMotion</span>, <span class="doc-prop">Angular YMotion</span>, and <span class="doc-prop">Angular ZMotion</span> allow you to define rotation around that axis. Each one of these properties can be set to <span class="doc-prop">Free</span> (unrestricted), <span class="doc-prop">Limited</span> (restricted based on limits you can define), or <span class="doc-prop">Locked</span> (restricted to zero movement).</p>
+
+<h3>Limiting Motion</h3>
+
+<p>When you have any of the <span class="doc-prop">“Motion”</span> properties set to <span class="doc-prop">Limited</span>, you can define the limitations of movement for that axis. You do this by changing the values of one of the <span class="doc-prop">“Limit”</span> properties.</p>
+
+<p>For translation of movement (non-angular), the <span class="doc-prop">Linear Limit</span> property will define the maximum distance the object can move from its origin. Translation on any <span class="doc-prop">“Motion”</span> properties set to <span class="doc-prop">Limited</span> will be restricted according to <span class="doc-prop">Linear Limit-&gt;Limit</span>. Think of this <span class="doc-prop">Limit</span> property as setting a border around the axis for the object.</p>
+
+<p>
+<span class="doc-prop">Bouncyness</span>, <span class="doc-prop">Spring</span>, and <span class="doc-prop">Damper</span> will define the behavior of the object when it reaches the <span class="doc-prop">Limit</span> on any of the <span class="doc-prop">Limited</span> <span class="doc-prop">“Motion”</span> axes. If all of these values are set to 0, the object will instantly stop moving when it reaches the border. <span class="doc-prop">Bouncyness</span> will make the object bounce back away from the border. <span class="doc-prop">Spring</span> and <span class="doc-prop">Damper</span> will use springing forces to pull the object back to the border. This will soften the border, so the object will be able to pass through the border and be pulled back instead of stopping immediately.</p>
+
+<h3>Limiting Rotation</h3>
+
+<p>Limiting rotation works almost the same as limiting motion. The difference is that the three <span class="doc-prop">“Angular Motion”</span> properties all correspond to different <span class="doc-prop">“Angular Limit”</span> properties. Translation restriction along all 3 axes are defined by the <span class="doc-prop">Linear Limit</span> property, and rotation restriction along each of the 3 axes is defined by a separate <span class="doc-prop">“Angular Limit”</span> property per axis.</p>
+
+<p>
+<span class="doc-prop">Angular XMotion</span> limitation is the most robust, as you can define a <span class="doc-prop">Low Angular XLimit</span> and a <span class="doc-prop">High Angular XLimit</span>. Therefore if you want to define a low rotation limit of –35 degrees and a high rotation limit of 180 degrees, you can do this. For the Y and Z axes, the low and high rotation limits will be identical, set together by the <span class="doc-prop">Limit</span> property of <span class="doc-prop">Angular YLimit</span> or <span class="doc-prop">Angular ZLimit</span>.</p>
+
+<p>The same rules about object behavior at the rotation limits from the Limiting Motion section applies here.</p>
+
+<h2>Movement/Rotation Acceleration</h2>
+
+<p>You specify object movement or rotation in terms of moving the object toward a particular position/rotation, or velocity/angular velocity. This system works by defining the <span class="doc-prop">“Target”</span> value you want to move toward, and using a <span class="doc-prop">“Drive”</span> to provide acceleration which will move the object toward that target. Each <span class="doc-prop">“Drive”</span> has a <span class="doc-prop">Mode</span>, which you use to define which <span class="doc-prop">“Target”</span> the object is moving toward.</p>
+
+<h3>Translation Acceleration</h3>
+
+<p>The <span class="doc-prop">XDrive</span>, <span class="doc-prop">YDrive</span>, and <span class="doc-prop">ZDrive</span> properties are what start the object moving along that axis. Each <span class="doc-prop">Drive</span>’s <span class="doc-prop">Mode</span> will define whether the object should be moving toward the <span class="doc-prop">Target Position</span> or <span class="doc-prop">Target Velocity</span> or both. For example, when <span class="doc-prop">XDrive</span>’s mode is set to <span class="doc-prop">Position</span>, then the object will try to move to the value of <span class="doc-prop">Target Position-&gt;X</span>.</p>
+
+<p>When a <span class="doc-prop">Drive</span> is using <span class="doc-prop">Position</span> in its <span class="doc-prop">Mode</span>, its <span class="doc-prop">Position Spring</span> value will define how the object is moved toward the <span class="doc-prop">Target Position</span>. Similarly, when a <span class="doc-prop">Drive</span> is using <span class="doc-prop">Velocity</span> in its <span class="doc-prop">Mode</span>, its <span class="doc-prop">Maximum Force</span> value will define how the object is accelerated to the <span class="doc-prop">Target Velocity</span>.</p>
+
+<h3>Rotation Acceleration</h3>
+
+<p>Rotation acceleration properties: <span class="doc-prop">Angular XDrive</span>, <span class="doc-prop">Angular YZDrive</span>, and <span class="doc-prop">Slerp Drive</span> function the same way as the translation <span class="doc-prop">Drives</span>. There is one substantial difference. <span class="doc-prop">Slerp Drive</span> behaves differently from the <span class="doc-prop">Angular Drive</span> functionality. Therefore you can choose to use either both <span class="doc-prop">Angular Drives</span> or <span class="doc-prop">Slerp Drive</span> by choosing one from the <span class="doc-prop">Rotation Drive Mode</span>. You cannot use both at once.</p>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Anchor</span></td>
+	<td style="text-align:left;">The point where the center of the joint is defined. All physics-based simulation will use this point as the center in calculations</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Axis</span></td>
+	<td style="text-align:left;">The local axis that will define the object’s natural rotation based on physics simulation</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Auto Configure Connected Anchor</span></td>
+	<td style="text-align:left;">If this is enabled, then the Connected Anchor position will be calculated automatically to match the global position of the anchor property. This is the default behavior. If this is disabled, you can configure the position of the connected anchor manually.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Connected Anchor</span></td>
+	<td style="text-align:left;">Manual configuration of the connected anchor position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Secondary Axis</span></td>
+	<td style="text-align:left;">Together, <span class="doc-prop">Axis</span> and <span class="doc-prop">Secondary Axis</span> define the local coordinate system of the joint. The third axis is set to be orthogonal to the other two.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">XMotion</span></td>
+	<td style="text-align:left;">Allow movement along the X axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Linear Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">YMotion</span></td>
+	<td style="text-align:left;">Allow movement along the Y axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Linear Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">ZMotion</span></td>
+	<td style="text-align:left;">Allow movement along the Z axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Linear Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular XMotion</span></td>
+	<td style="text-align:left;">Allow rotation around the X axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Low</span> and <span class="doc-prop">High Angular XLimit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular YMotion</span></td>
+	<td style="text-align:left;">Allow rotation around the Y axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Angular YLimit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular ZMotion</span></td>
+	<td style="text-align:left;">Allow rotation around the Z axis to be Free, completely Locked, or Limited according to <span class="doc-prop">Angular ZLimit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Linear Limit</span></td>
+	<td style="text-align:left;">Boundary defining movement restriction, based on distance from the joint’s origin</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Limit</span>
+</td>
+	<td style="text-align:left;">The distance in units from the origin to the wall of the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bouncyness</span>
+</td>
+	<td style="text-align:left;">Amount of bounce-back force applied to the object when it reaches the <span class="doc-prop">Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spring</span>
+</td>
+	<td style="text-align:left;">Strength of force applied to move the object back to the <span class="doc-prop">Limit</span>. Any value other than 0 will implicitly soften the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Spring</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Low Angular XLimit</span></td>
+	<td style="text-align:left;">Boundary defining lower rotation restriction, based on delta from original rotation</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Limit</span>
+</td>
+	<td style="text-align:left;">The rotation in degrees that the object’s rotation should not drop below</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bouncyness</span>
+</td>
+	<td style="text-align:left;">Amount of bounce-back torque applied to the object when its rotation reaches the <span class="doc-prop">Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spring</span>
+</td>
+	<td style="text-align:left;">Strength of force applied to move the object back to the <span class="doc-prop">Limit</span>. Any value other than 0 will implicitly soften the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Spring</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High Angular XLimit</span></td>
+	<td style="text-align:left;">Boundary defining upper rotation restriction, based on delta from original rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Limit</span>
+</td>
+	<td style="text-align:left;">The rotation in degrees that the object’s rotation should not exceed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bouncyness</span>
+</td>
+	<td style="text-align:left;">Amount of bounce-back torque applied to the object when its rotation reaches the <span class="doc-prop">Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spring</span>
+</td>
+	<td style="text-align:left;">Strength of force applied to move the object back to the <span class="doc-prop">Limit</span>. Any value other than 0 will implicitly soften the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Spring</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular YLimit</span></td>
+	<td style="text-align:left;">Boundary defining rotation restriction, based on delta from original rotation</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Limit</span>
+</td>
+	<td style="text-align:left;">The rotation in degrees that the object’s rotation should not exceed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bouncyness</span>
+</td>
+	<td style="text-align:left;">Amount of bounce-back torque applied to the object when its rotation reaches the <span class="doc-prop">Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spring</span>
+</td>
+	<td style="text-align:left;">Strength of torque applied to move the object back to the <span class="doc-prop">Limit</span>. Any value other than 0 will implicitly soften the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Spring</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular ZLimit</span></td>
+	<td style="text-align:left;">Boundary defining rotation restriction, based on delta from original rotation</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Limit</span>
+</td>
+	<td style="text-align:left;">The rotation in degrees that the object’s rotation should not exceed</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Bouncyness</span>
+</td>
+	<td style="text-align:left;">Amount of bounce-back torque applied to the object when its rotation reaches the <span class="doc-prop">Limit</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Spring</span>
+</td>
+	<td style="text-align:left;">Strength of force applied to move the object back to the <span class="doc-prop">Limit</span>. Any value other than 0 will implicitly soften the boundary</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Spring</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Position</span></td>
+	<td style="text-align:left;">The desired position that the joint should move into</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Velocity</span></td>
+	<td style="text-align:left;">The desired velocity that the joint should move along</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">XDrive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s movement will behave along its local X axis</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Position</span>, <span class="doc-prop">Target Velocity</span>, or both</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">YDrive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s movement will behave along its local Y axis</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Position</span>, <span class="doc-prop">Target Velocity</span>, or both</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">ZDrive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s movement will behave along its local Z axis</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Position</span>, <span class="doc-prop">Target Velocity</span>, or both.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Rotation</span></td>
+	<td style="text-align:left;">This is a Quaternion. It defines the desired rotation that the joint should rotate into</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Angular Velocity</span></td>
+	<td style="text-align:left;">This is a Vector3. It defines the desired angular velocity that the joint should rotate into</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Rotation Drive Mode</span></td>
+	<td style="text-align:left;">Control the object’s rotation with either <span class="doc-prop">X &amp; YZ</span> or <span class="doc-prop">Slerp Drive</span> by itself</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular XDrive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s rotation will behave around its local X axis. Only used if <span class="doc-prop">Rotation Drive Mode</span> is <span class="doc-prop">Swing &amp; Twist</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Rotation</span>, <span class="doc-prop">Target Angular Velocity</span>, or both</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Angular YZDrive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s rotation will behave around its local Y and Z axes. Only used if <span class="doc-prop">Rotation Drive Mode</span> is <span class="doc-prop">Swing &amp; Twist</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Rotation</span>, <span class="doc-prop">Target Angular Velocity</span>, or both</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Slerp Drive</span></td>
+	<td style="text-align:left;">Definition of how the joint’s rotation will behave around all local axes. Only used if <span class="doc-prop">Rotation Drive Mode</span> is <span class="doc-prop">Slerp Only</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Mode</span>
+</td>
+	<td style="text-align:left;">Set the following properties to be dependent on <span class="doc-prop">Target Rotation</span>, <span class="doc-prop">Target Angular Velocity</span>, or both</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Spring</span>
+</td>
+	<td style="text-align:left;">Strength of a rubber-band pull toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Position Damper</span>
+</td>
+	<td style="text-align:left;">Resistance strength against the <span class="doc-prop">Position Spring</span>. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Position</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Maximum Force</span>
+</td>
+	<td style="text-align:left;">Amount of strength applied to push the object toward the defined direction. Only used if <span class="doc-prop">Mode</span> includes <span class="doc-prop">Velocity</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Projection Mode</span></td>
+	<td style="text-align:left;">Properties to track to snap the object back to its constrained position when it drifts off too much</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Projection Distance</span></td>
+	<td style="text-align:left;">Distance from the <span class="doc-prop">Connected Body</span> that must be exceeded before the object snaps back to an acceptable position</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Projection Angle</span></td>
+	<td style="text-align:left;">Difference in angle from the <span class="doc-prop">Connected Body</span> that must be exceeded before the object snaps back to an acceptable position</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Congfigure in World Space</span></td>
+	<td style="text-align:left;">If enabled, all Target values will be calculated in World Space instead of the object’s Local Space</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Force</span></td>
+	<td style="text-align:left;">Applied Force values above this number will cause the joint to be destroyed</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Torque</span></td>
+	<td style="text-align:left;">Applied Torque values above this number will cause the joint to be destroyed</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable Collision</span></td>
+	<td style="text-align:left;">When checked, this enables collisions between bodies connected with a joint.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-CharacterJoint.html"></a></span><div class="tip">Character Joint</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConstantForce.html"></a></span><div class="tip">Constant Force</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

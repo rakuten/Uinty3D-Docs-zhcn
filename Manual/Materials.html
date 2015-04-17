@@ -1,0 +1,272 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual:  Materials and Shaders</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/Materials.html">English</a></li>
+<li><a href="/es/current/Manual/Materials.html">Español</a></li>
+<li><a href="/ru/current/Manual/Materials.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsOverview.html">Graphics Overview</a></li>
+<li><a href="Shaders.html">Shaders</a></li>
+<li> Materials and Shaders</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Shaders.html"></a></span><div class="tip">Shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShadersOverview.html"></a></span><div class="tip">Writing Shaders</div>
+</div>
+</div></div>
+<h1>Materials and Shaders</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>There is a close relationship between <a href="class-Material.html">Materials</a> and <a href="class-Shader.html">Shaders</a> in Unity. Shaders contain code that defines what kind of properties and assets to use. Materials allow you to adjust properties and assign assets.</p>
+
+<figure>
+<img src="../uploads/Main/Shader-NormalBumpSpec.png" alt="A Shader is implemented through a Material">
+<figcaption>A Shader is implemented through a Material</figcaption></figure>
+
+<p>To create a new Material, use <span class="doc-menu">Assets-&gt;Create-&gt;Material</span> from the main menu or the <span class="doc-keyword">Project View</span> context menu. Once the Material has been created, you can apply it to an object and tweak all of its properties in the <span class="doc-keyword">Inspector</span>. To apply it to an object, just drag it from the <span class="doc-keyword">Project View</span> to any object in the <span class="doc-keyword">Scene</span> or <span class="doc-keyword">Hierarchy</span>.</p>
+
+<h2>Setting Material Properties</h2>
+
+<p>You can select which Shader you want any particular Material to use. Simply expand the <span class="doc-menu">Shader</span> drop-down in the Inspector, and choose your new Shader. The Shader you choose will dictate the available properties to change. The properties can be colors, sliders, textures, numbers, or vectors. If you have applied the Material to an active object in the <span class="doc-keyword">Scene</span>, you will see your property changes applied to the object in real-time.</p>
+
+<p>There are two ways to apply a <span class="doc-keyword">Texture</span> to a property.</p>
+
+<ol>
+<li>Drag it from the Project View on top of the Texture square</li>
+<li>Click the <span class="doc-menu">Select</span> button, and choose the texture from the drop-down list that appears</li>
+</ol>
+
+<p>Two placement options are available for each <span class="doc-keyword">Texture</span>:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Tiling</span></td>
+	<td style="text-align:left;">Scales the texture along the different axes.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Offset</span></td>
+	<td style="text-align:left;">Slides the texture around.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Built-in Shaders</h2>
+
+<p>A set of <a href="Built-inShaderGuide.html">built-in Shaders</a> are installed with the Unity editor. Over eighty shaders are available - the main ones used for texturing game objects fall into the following categories:-</p>
+
+<ul>
+<li>
+<a href="shader-NormalFamily.html">Normal</a>: For opaque textured objects.</li>
+<li>
+<a href="shader-TransparentFamily.html">Transparent</a>: For partly transparent objects. The texture’s alpha channel defines the level of transparency.</li>
+<li>
+<a href="shader-TransparentCutoutFamily.html">TransparentCutOut</a>: For objects that have only fully opaque and fully transparent areas, like fences.</li>
+<li>
+<a href="shader-SelfIllumFamily.html">Self-Illuminated</a>: For objects that have light emitting parts.</li>
+<li>
+<a href="shader-ReflectiveFamily.html">Reflective</a>: For opaque textured objects that reflect an environment <span class="doc-keyword">Cubemap</span>.</li>
+</ul>
+
+<p>In each group, built-in shaders range by complexity, from the simple <span class="doc-prop">VertexLit</span> to the complex <span class="doc-prop">Parallax Bumped with Specular</span>. For more information about performance of Shaders, please read the built-in Shader <a href="shader-Performance.html">performance page</a>
+</p>
+
+<figure>
+<img src="../uploads/Main/BuiltinShaders.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>In addition to the main game object shaders, there are a number of other categories for specialised purposes:-</p>
+
+<ul>
+<li>
+<strong>FX</strong>: lighting and water effects.</li>
+<li>
+<strong>GUI</strong>: graphic user interface display.</li>
+<li>
+<strong>Nature</strong>: trees and terrain.</li>
+<li>
+<strong>Particles</strong>: particle system effects.</li>
+<li>
+<strong>Render FX</strong>: skybox shaders.</li>
+<li>
+<strong>Toon</strong>: cartoon-style rendering.</li>
+</ul>
+
+<p>Also, some of these shaders have special versions for use with mobile devices. </p>
+
+<h2>Shader technical details</h2>
+
+<p>Unity has an extensive Shader system, allowing you to tweak the look of all in-game graphics. It works like this:</p>
+
+<p>A Shader basically defines a formula for how the in-game shading should look. Within any given Shader is a number of properties (typically textures). Shaders are implemented through <span class="doc-keyword">Materials</span>, which are attached directly to individual <span class="doc-keyword">GameObjects</span>. Within a Material, you will choose a Shader, then define the properties (usually textures and colors, but properties can vary) that are used by the Shader.</p>
+
+<p>This is rather complex, so let’s look at a workflow diagram:</p>
+
+<figure>
+<img src="../uploads/Main/material_diagram.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>On the left side of the graph is the <span class="doc-keyword">Carbody Shader</span>. 2 different Materials are created from this: <span class="doc-prop">Blue car Material</span> and <span class="doc-prop">Red car Material</span>. Each of these Materials have 2 textures assigned; the <span class="doc-prop">Car Texture</span> defines the main texture of the car, and a <span class="doc-prop">Color FX texture</span>. These properties are used by the shader to make the car finish look like 2-tone paint. This can be seen on the front of the red car: it is yellow where it faces the camera and then fades towards purple as the angle increases. The car materials are attached to the 2 cars. The car wheels, lights and windows don’t have the color change effect, and must hence use a different Material. At the bottom of the graph there is a <span class="doc-prop">Simple Metal Shader</span>. The <span class="doc-prop">Wheel Material</span> is using this Shader. Note that even though the same <span class="doc-prop">Car Texture</span> is reused here, the end result is quite different from the car body, as the Shader used in the Material is different.</p>
+
+<p>To be more specific, a Shader defines:</p>
+
+<ul>
+<li>The method to render an object. This includes using different methods depending on the graphics card of the end user.</li>
+<li>Any vertex and fragment programs used to render.</li>
+<li>Some texture properties that are assignable within Materials.</li>
+<li>Color and number settings that are assignable within Materials.</li>
+</ul>
+
+<p>A Material defines:</p>
+
+<ul>
+<li>Which textures to use for rendering.</li>
+<li>Which colors to use for rendering.</li>
+<li>Any other assets, such as a Cubemap that is required by the shader for rendering.</li>
+</ul>
+
+<p>Shaders are meant to be written by graphics programmers. They are created using the <span class="doc-keyword">ShaderLab</span> language, which is quite simple. However, getting a shader to work well on a variety graphics cards is an involved job and requires a fairly comprehensive knowledge of how graphics cards work.</p>
+
+<p>A number of shaders are built into Unity directly, and some more come in the <a href="HOWTO-InstallStandardAssets.html">Standard Assets</a> Library. For further information about shaders, see the <a href="Built-inShaderGuide.html">Built-in Shader Guide</a>.</p>
+
+<h2>Further reading</h2>
+
+<ul>
+<li>
+<a href="class-Material.html">Material</a> assets.</li>
+<li>
+<a href="class-Shader.html">Shader</a> assets.</li>
+<li>
+<a href="ShadersOverview.html">Writing Shaders overview</a>.</li>
+<li>
+<a href="SL-Reference.html">Shader reference</a>.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Shaders.html"></a></span><div class="tip">Shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="ShadersOverview.html"></a></span><div class="tip">Writing Shaders</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

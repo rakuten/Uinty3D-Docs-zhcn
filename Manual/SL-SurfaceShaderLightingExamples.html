@@ -1,0 +1,454 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Surface Shader Lighting Examples</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SL-SurfaceShaderLightingExamples.html">English</a></li>
+<li><a href="/es/current/Manual/SL-SurfaceShaderLightingExamples.html">Español</a></li>
+<li><a href="/ru/current/Manual/SL-SurfaceShaderLightingExamples.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="SL-Reference.html"> Shader Reference</a></li>
+<li><a href="SL-SurfaceShaders.html"> Writing Surface Shaders</a></li>
+<li>Surface Shader Lighting Examples</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-SurfaceShaderLighting.html"></a></span><div class="tip">Custom Lighting models in Surface Shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-SurfaceShaderTessellation.html"></a></span><div class="tip">Surface Shaders with DX11 Tessellation</div>
+</div>
+</div></div>
+<h1>Surface Shader Lighting Examples</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Here are some examples of <a href="SL-SurfaceShaderLighting.html">custom lighting models</a> in <a href="SL-SurfaceShaders.html">Surface Shaders</a>. General Surface Shader examples are in <a href="SL-SurfaceShaderExamples.html">this page</a>.</p>
+
+<p>Because Deferred Lighting does not play well with some custom per-material lighting models, in most examples below we make the shaders compile to Forward Rendering only.</p>
+
+<h2>Diffuse</h2>
+
+<p>We’ll start with a shader that uses built-in Lambert lighting model:-</p>
+
+<pre><code>  Shader &quot;Example/Diffuse Texture&quot; {
+    Properties {
+      _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; {}
+    }
+    SubShader {
+      Tags { &quot;RenderType&quot; = &quot;Opaque&quot; }
+      CGPROGRAM
+      #pragma surface surf Lambert
+      
+      struct Input {
+          float2 uv_MainTex;
+      };
+      
+      sampler2D _MainTex;
+      
+      void surf (Input IN, inout SurfaceOutput o) {
+          o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+      }
+      ENDCG
+    }
+    Fallback &quot;Diffuse&quot;
+  }
+</code></pre>
+
+<p>Here’s how it looks like with a texture and without an actual texture (one directional light is in the scene): </p>
+
+<p>
+<img src="../uploads/Main/SurfaceShaderDiffuseTexture.png" alt="">
+<img src="../uploads/Main/SurfaceShaderDiffuseNoTex.png" alt=""> </p>
+
+<p>Now, let’s do exactly the same, but write out <em>our own lighting model</em> instead of using built-in Lambert one. <a href="SL-SurfaceShaderLighting.html">Surface Shader Lighting Models</a> are just some functions that we need to write. Here’s a simple Lambert one. Note that only the CGPROGRAM section changes; the surrounding shader code is exactly the same:-</p>
+
+<pre><code>    Shader &quot;Example/Diffuse Texture&quot; {
+        Properties {
+            _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; {}
+        }
+        SubShader {
+        Tags { &quot;RenderType&quot; = &quot;Opaque&quot; }
+        CGPROGRAM
+          #pragma surface surf SimpleLambert
+  
+          half4 LightingSimpleLambert (SurfaceOutput s, half3 lightDir, half atten) {
+              half NdotL = dot (s.Normal, lightDir);
+              half4 c;
+              c.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten * 2);
+              c.a = s.Alpha;
+              return c;
+          }
+  
+        struct Input {
+            float2 uv_MainTex;
+        };
+        
+        sampler2D _MainTex;
+        
+        void surf (Input IN, inout SurfaceOutput o) {
+            o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+        }
+        ENDCG
+        }
+        Fallback &quot;Diffuse&quot;
+    }
+</code></pre>
+
+<p>So our simple Diffuse lighting model is <code>LightingSimpleLambert</code> function. It computes lighting by doing a dot product between surface normal and light direction, and then applies light attenuation and color.</p>
+
+<h2>Diffuse Wrap</h2>
+
+<p>Here’s Wrapped Diffuse - a modification of Diffuse lighting, where illumination “wraps around” the edges of objects. It’s useful for faking subsurface scattering effect. Since it is only the CGPROGRAM section that changes, once again, the surrounding shader code is omitted:-</p>
+
+<pre><code>    ...ShaderLab code...
+    CGPROGRAM
+    #pragma surface surf WrapLambert
+
+    half4 LightingWrapLambert (SurfaceOutput s, half3 lightDir, half atten) {
+        half NdotL = dot (s.Normal, lightDir);
+        half diff = NdotL * 0.5 + 0.5;
+        half4 c;
+        c.rgb = s.Albedo * _LightColor0.rgb * (diff * atten * 2);
+        c.a = s.Alpha;
+        return c;
+    }
+
+    struct Input {
+        float2 uv_MainTex;
+    };
+    
+    sampler2D _MainTex;
+        void surf (Input IN, inout SurfaceOutput o) {
+        o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+    }
+    ENDCG
+    ...ShaderLab code...
+</code></pre>
+
+<p>
+<img src="../uploads/Main/SurfaceShaderDiffuseWrap.png" alt="">
+<img src="../uploads/Main/SurfaceShaderDiffuseWrapNoTex.png" alt=""> </p>
+
+<h2>Toon Ramp</h2>
+
+<p>Here’s a “Ramp” lighting model that uses a texture ramp to define how surface responds to angle between light and the normal. This can be used for variety of effects, including Toon lighting.</p>
+
+<pre><code>    ...ShaderLab code...
+    CGPROGRAM
+    #pragma surface surf Ramp
+
+    sampler2D _Ramp;
+
+    half4 LightingRamp (SurfaceOutput s, half3 lightDir, half atten) {
+        half NdotL = dot (s.Normal, lightDir);
+        half diff = NdotL * 0.5 + 0.5;
+        half3 ramp = tex2D (_Ramp, float2(diff)).rgb;
+        half4 c;
+        c.rgb = s.Albedo * _LightColor0.rgb * ramp * (atten * 2);
+        c.a = s.Alpha;
+        return c;
+    }
+
+    struct Input {
+        float2 uv_MainTex;
+    };
+    
+    sampler2D _MainTex;
+    
+    void surf (Input IN, inout SurfaceOutput o) {
+        o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+    }
+    ENDCG
+    ...ShaderLab code...
+</code></pre>
+
+<p>
+<img src="../uploads/Main/SurfaceShaderToonRamp.png" alt="">
+<img src="../uploads/Main/SurfaceShaderToonRampNoTex.png" alt=""> </p>
+
+<figure>
+<img src="../uploads/Main/SurfaceShaderToonRampItself.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Simple Specular</h2>
+
+<p>Here’s a simple specular lighting model. It’s quite simple to what built-in BlinnPhong actually does; we just put it here to illustrate how it’s done.</p>
+
+<pre><code>    ...ShaderLab code...
+    CGPROGRAM
+    #pragma surface surf SimpleSpecular
+
+    half4 LightingSimpleSpecular (SurfaceOutput s, half3 lightDir, half3 viewDir, half atten) {
+        half3 h = normalize (lightDir + viewDir);
+
+        half diff = max (0, dot (s.Normal, lightDir));
+
+        float nh = max (0, dot (s.Normal, h));
+        float spec = pow (nh, 48.0);
+
+        half4 c;
+        c.rgb = (s.Albedo * _LightColor0.rgb * diff + _LightColor0.rgb * spec) * (atten * 2);
+        c.a = s.Alpha;
+        return c;
+    }
+
+    struct Input {
+        float2 uv_MainTex;
+    };
+    
+    sampler2D _MainTex;
+    
+    void surf (Input IN, inout SurfaceOutput o) {
+        o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+    }
+    ENDCG
+    ...ShaderLab code...
+</code></pre>
+
+<p>
+<img src="../uploads/Main/SurfaceShaderSimpleSpecular.png" alt="">
+<img src="../uploads/Main/SurfaceShaderSimpleSpecularNoTex.png" alt=""> </p>
+
+<h2>Decoding Lightmaps</h2>
+
+<p>We’ll start with a shader that mimics built-in lightmap decoding and uses Unity built-in function <span class="doc-keyword">DecodeLightmap</span> to decode information from data stored in lightmap textures and built-in <span class="doc-keyword">UNITY_DIRBASIS</span> macro defining basis vectors for Directional lightmaps:</p>
+
+<pre><code>    Shader &quot;Example/Standard Lightmap Decoding&quot; {
+        Properties {
+            _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; {}
+        }
+        SubShader {
+            Tags { &quot;RenderType&quot; = &quot;Opaque&quot; }
+            CGPROGRAM
+
+            #pragma surface surf Standard
+
+            half4 LightingStandard (SurfaceOutput s, half3 lightDir, half atten) {
+                half NdotL = dot (s.Normal, lightDir);
+                half4 c; c.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten * 2);
+                c.a = s.Alpha;
+                return c;
+            }
+
+            inline fixed4 LightingStandard_SingleLightmap (SurfaceOutput s, fixed4 color) {
+                half3 lm = DecodeLightmap (color);
+                return fixed4(lm, 0);
+            }
+
+            inline fixed4 LightingStandard_DualLightmap (SurfaceOutput s, fixed4 totalColor, fixed4 indirectOnlyColor, half indirectFade) {
+                half3 lm = lerp (DecodeLightmap (indirectOnlyColor), DecodeLightmap (totalColor), indirectFade);
+                return fixed4(lm, 0);
+            }
+
+            inline fixed4 LightingStandard_StandardLightmap (SurfaceOutput s, fixed4 color, fixed4 scale, bool surfFuncWritesNormal) {
+                UNITY_DIRBASIS
+
+                half3 lm = DecodeLightmap (color);
+                half3 scalePerBasisVector = DecodeLightmap (scale);
+
+                if (surfFuncWritesNormal)
+                {
+                    half3 normalInRnmBasis = saturate (mul (unity_DirBasis, s.Normal));
+                    lm *= dot (normalInRnmBasis, scalePerBasisVector);
+                }
+
+                return fixed4(lm, 0);
+            }
+
+            struct Input {
+                float2 uv_MainTex;
+            };
+            
+            sampler2D _MainTex;
+            
+            void surf (Input IN, inout SurfaceOutput o) {
+                o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+            }
+            ENDCG
+            }
+        Fallback &quot;Diffuse&quot;
+    }
+</code></pre>
+
+<p>Now, let’s add some tone mapping for light stored in lightmaps:</p>
+
+<pre><code>    Shader &quot;Example/Tonemapped Lightmap Decoding&quot; {
+        Properties {
+            _MainTex (&quot;Texture&quot;, 2D) = &quot;white&quot; {}
+            _Gain (&quot;Lightmap tone-mapping Gain&quot;, Float) = 1
+            _Knee (&quot;Lightmap tone-mapping Knee&quot;, Float) = 0.5
+            _Compress (&quot;Lightmap tone-mapping Compress&quot;, Float) = 0.33
+        }
+        SubShader {
+            Tags { &quot;RenderType&quot; = &quot;Opaque&quot; }
+            CGPROGRAM
+
+            #pragma surface surf Tonemapped
+
+            half4 LightingTonemapped (SurfaceOutput s, half3 lightDir, half atten) {
+                half NdotL = dot (s.Normal, lightDir);
+                half4 c; c.rgb = s.Albedo * _LightColor0.rgb * (NdotL * atten * 2); c.a = s.Alpha;
+                return c;
+            }
+
+            half _Gain;
+            half _Knee;
+            half _Compress;
+            
+            inline half3 TonemapLight (half3 i) {
+                i *= _Gain;
+                return (i &gt; _Knee)? (((i - _Knee)*_Compress)+_Knee): i;
+            }
+
+            inline fixed4 LightingTonemapped_SingleLightmap (SurfaceOutput s, fixed4 color) {
+                half3 lm = TonemapLight(DecodeLightmap (color));
+                return fixed4(lm, 0);
+            }
+
+            inline fixed4 LightingTonemapped_DualLightmap (SurfaceOutput s, fixed4 totalColor, fixed4 indirectOnlyColor, half indirectFade) {
+                half3 lm = TonemapLight(lerp (DecodeLightmap (indirectOnlyColor), DecodeLightmap (totalColor), indirectFade));
+                return fixed4(lm, 0);
+            }
+
+            inline fixed4 LightingTonemapped_StandardLightmap (SurfaceOutput s, fixed4 color, fixed4 scale, bool surfFuncWritesNormal) {
+                UNITY_DIRBASIS
+
+                half3 lm = TonemapLight(DecodeLightmap (color));
+                half3 scalePerBasisVector = DecodeLightmap (scale);
+
+                if (surfFuncWritesNormal)
+                {
+                    half3 normalInRnmBasis = saturate (mul (unity_DirBasis, s.Normal));
+                    lm *= dot (normalInRnmBasis, scalePerBasisVector);
+                }
+
+                return fixed4(lm, 0);
+            }
+
+            struct Input {
+                float2 uv_MainTex;
+            };
+            
+            sampler2D _MainTex;
+            
+            void surf (Input IN, inout SurfaceOutput o) {
+                o.Albedo = tex2D (_MainTex, IN.uv_MainTex).rgb;
+            }
+            ENDCG
+        }
+        Fallback &quot;Diffuse&quot;
+    }
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-SurfaceShaderLighting.html"></a></span><div class="tip">Custom Lighting models in Surface Shaders</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-SurfaceShaderTessellation.html"></a></span><div class="tip">Surface Shaders with DX11 Tessellation</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

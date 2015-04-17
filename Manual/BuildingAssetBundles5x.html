@@ -1,0 +1,334 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual:  BuildingAssetBundles in 5.x</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/BuildingAssetBundles5x.html">English</a></li>
+<li><a href="/es/current/Manual/BuildingAssetBundles5x.html">Español</a></li>
+<li><a href="/ru/current/Manual/BuildingAssetBundles5x.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture HOWTOs</li>
+<li><a href="AssetBundlesIntro.html">AssetBundles</a></li>
+<li> BuildingAssetBundles in 5.x</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="abfaq.html"></a></span><div class="tip">AssetBundles FAQ</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EnhancedAssetBundle.html"></a></span><div class="tip">Enhanced Asset Bundle Workflow</div>
+</div>
+</div></div>
+<h1>BuildingAssetBundles in 5.x</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>Authoring Asset Bundles</h2>
+
+<p>In Unity 4.x asset bundles were created using editor scripts. To simplify this process Unity 5.x Editor includes asset bundle authoring tools. Now, if you select an Asset in the editor a drop down will appear at the bottom of the Inspector window inviting you to specify which asset bundle (if any) the asset should be packaged into. By default the asset bundle option is set to None, meaning the asset will not be written into an asset bundle. You can create new asset bundles, give them names, and then use these new asset bundle names as the destination for the asset.</p>
+
+<figure>
+<img src="../uploads/Main/AssetBundleEditor.png" alt="Asset bundle creation">
+<figcaption>Asset bundle creation</figcaption></figure>
+
+<p>In the picture the StateMachine asset has been added to an asset bundle called scene1/animdata. This asset bundle may contain other assets which have previously been added.</p>
+
+<p>Empty asset bundles can be created by using the “New…” menu option. After you have created a new, empty asset bundle it will appear in the list allowing you to add assets to it. Asset bundle names are always lower-case. If you use upper-case characters in the name they will be converted to lower-case. Using a forward slash in the name of the asset bundle effectively creates folders, and the menu will have sub-menus, as the picture above shows.</p>
+
+<p>If you create asset bundles which have no assets assigned to them, then the “Remove Unused Names” option can be used. This will delete the empty asset bundle.</p>
+
+<p>The meta file belonging to an Asset will have the chosen asset bundle name written into it.</p>
+
+<h2>Exporting Asset Bundles</h2>
+
+<p>Asset bundles are exported from the editor using script code. (This is similar to the 4.x approach.) The following script exports asset bundles:</p>
+
+<pre><code>using UnityEditor;
+
+public class CreateAssetBundles
+{
+    [MenuItem (&quot;Assets/Build AssetBundles&quot;)]
+    static void BuildAllAssetBundles ()
+    {
+        BuildPipeline.BuildAssetBundles (&quot;AssetBundles&quot;);
+    }
+}
+</code></pre>
+
+<p>This script creates a menu item at the bottom of the Assets menu. When that menu item is selected the function will be called and the asset bundles will be built. This will start a build dialog with a progress bar. The BuildAssetBundles function will create the asset bundles into an output folder called “AssetBundles”. This folder must have been created in the project folder. Within that folder the asset bundles that have been labelled will be created.</p>
+
+<p>Each asset bundle that is exported will have the name created in the asset bundle menu. Additionally, each asset bundle will have an associated file with a .manifest extension. This manifest file is a text file that you can open with any text editor. It provides information such as the file CRC and asset dependencies. The asset bundle in the example above has a manifest file that looks like this:</p>
+
+<pre><code>ManifestFileVersion: 0
+CRC: 2422268106
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8b6db55a2344f068cf8a9be0a662ba15
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 37ad974993dbaa77485dd2a0c38f347a
+HashAppended: 0
+ClassTypes:
+- Class: 91
+  Script: {instanceID: 0}
+Assets:
+  Asset_0: Assets/Mecanim/StateMachine.controller
+Dependencies: {}
+</code></pre>
+
+<p>In addition to these, there are another two files created: another asset bundle and another manifest file. These two are always created whenever asset bundles are created. They are created for each folder that asset bundles are created in, thus if you always create asset bundles in the same place, you will only get two extra files. The additional manifest file - in this example AssetBundles.manifest - can be used in much the same way as other manifest files but will show information on how asset bundles relate and depend on each other. In this case, since we only have a single asset bundle, it has no other dependencies.</p>
+
+<pre><code>ManifestFileVersion: 0
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: scene1assetbundle
+      Dependencies: {}
+</code></pre>
+
+<h2>Asset Bundle Editor Tools</h2>
+
+<h3>Getting names of asset bundles</h3>
+
+<p>The following editor script can display the names of the asset bundles which the build process can create.</p>
+
+<pre><code>using UnityEditor;
+using UnityEngine;
+
+public class GetAssetBundleNames
+{
+    [MenuItem (&quot;Assets/Get Asset Bundle names&quot;)]
+    static void GetNames ()
+    {
+        var names = AssetDatabase.GetAllAssetBundleNames();
+        foreach (var name in names)
+            Debug.Log (&quot;Asset Bundle: &quot; + name);
+    }
+}
+</code></pre>
+
+<h3>Getting told when an asset changes asset bundle</h3>
+
+<p>You can use the OnPostprocessAssetbundleNameChanged method from the AssetPostprocessor class, to get a callback when the asset bundle an asset is associated with changes. </p>
+
+<pre><code>using UnityEngine;
+using UnityEditor;
+
+public class MyPostprocessor : AssetPostprocessor {
+
+    void OnPostprocessAssetbundleNameChanged ( string path,
+            string previous, string next) {
+        Debug.Log(&quot;AB: &quot; + path + &quot; old: &quot; + previous + &quot; new: &quot; + next);
+    }
+}
+</code></pre>
+
+<h2>Asset Bundle Variants</h2>
+
+<p>Asset Bundle Variants is a new 5.0 feature. This can be used to achieve a result similar to virtual assets. For example, you can ser AssetBundle a variants like “MyAssets.hd” and “MyAssets.sd”. Make sure the assets exactly match. The objects in these two variant AssetBundles will have the exactly same internal IDs which is ensured by the Unity build pipeline. So these two variant AssetBundles can be switched out arbitrarily with AssetBundles of different variant extension at runtime.</p>
+
+<p>How to set assetbundle variants:
+1. From the editor use the one extra variant name, to the right of the asset labels GUI.
+2. In code use AssetImporter.assetBundleVariant option.</p>
+
+<figure>
+<img src="../uploads/Main/AssetBundle50Editor.png" alt="Asset bundle variants">
+<figcaption>Asset bundle variants</figcaption></figure>
+
+<p>The full AssetBundle name will be the combination of the AssetBundle name and the variant name. For example, if you want to add “MyAssets.hd” as a variant AssetBundle, you should set the AssetBundle name to “MyAssets” and AssetBundle variant to “hd”. And the final AssetBundle is “MyAssets.hd”.</p>
+
+<p>But if you only set the AssetBundle name like “MyAssets.hd”, then it’s just a normal AssetBundle which is not variant AssetBundle. “MyAssets”+“hd” and “MyAssets.hd”+”” cannot coexist as they lead to the same full AssetBundle name.</p>
+
+<h2>Scripting Advice</h2>
+
+<h3>API to mark the asset into AssetBundle</h3>
+
+<ul>
+<li>You can use AssetImporter.assetBundleName to set the AssetBundle name.</li>
+</ul>
+
+<h3>Simple APIs</h3>
+
+<p>Simple APIs are available to build AssetBundles, BuildPipeline.BuildAssetBundles().These APIs are pretty simple, you only need to provide:</p>
+
+<ul>
+<li>Output path for all the AssetBundles.</li>
+<li>BuildAssetBundleOptions which will be described later.</li>
+<li>BuildTarget which is same as before.</li>
+<li>Also have one overloaded version to provide an array of AssetBundleBuild which contains one map from assets to AsssetBundles. This provides flexibility to you, you can set your mapping information by script and build from it. And this mapping information won’t break/replace the existed one in the asset database.</li>
+</ul>
+
+<h3>APIs to manipulate AssetBundle names in the asset database</h3>
+
+<ul>
+<li>AssetDatabase.GetAllAssetBundleNames() which returns all the AssetBundle names in the asset database.</li>
+<li>AssetDatabase.GetAssetPathsFromAssetBundle to return the asset paths marked in the given AssetBundle.</li>
+<li>AssetDatabase.RemoveAssetBundleName() which removes a given AssetBundle name in the asset database.</li>
+<li>AssetDatabase.GetUnusedAssetBundleNames() which returns the unused AssetBundle names.</li>
+<li>AssetDatabase.RemoveUnusedAssetBundleNames() which removes all the unused AssetBundle names in the asset database.</li>
+<li>AssetPostProcessor.OnPostprocessAssetbundleNameChanged callback which will be called if user change the AssetBundle name of an asset.</li>
+</ul>
+
+<h3>BuildAssetBundleOptions</h3>
+
+<ul>
+<li>CollectDependencies &amp; DeterministicAssetBundle are always enabled.</li>
+<li>CompleteAssets is ingored as we always start from assets rather than objects, it should be complete by default.</li>
+<li>ForceRebuildAssetBundle is added. Even there is no change to the assets, you can force rebuild the AssetBundles by setting this flag.</li>
+<li>IngoreTypeTreeChanges is added. Even type tree changes, you can ignore the type tree changes with this flag.</li>
+<li>DisableWriteTypeTree conflicts with IngoreTypeTreeChanges. You can’t ignore type tree changes if you disable type tree.</li>
+</ul>
+
+<h3>Manifest file</h3>
+
+<p>We generate the manifest file for every AssetBundle which contains the following information:
+ * The manifest file is next to the AssetBundle.
+ * CRC
+ * Asset file hash. A single hash for all the assets included in this AssetBundle, only used for incremental build check.
+ * Type tree hash. A single hash for all the types included in this AssetBundle, only used for incremental build check.
+ * Class types. All the class types included in this AssetBundle. These are used to get the new single hash when doing the type tree incremental build check.
+ * Asset names. All the assets explicitly included in this AssetBundle.
+ * Dependent AssetBundle names. All the AssetBundles which this AssetBundle depends on.
+ * This manifest file is only used for incremental build, not necessary for runtime.</p>
+
+<h3>Single manifest file</h3>
+
+<p>We generate a single manifest file which includes:
+ * All the AssetBundles.
+ * All the AssetBundle dependencies.</p>
+
+<h3>Single manifest AssetBundle</h3>
+
+<p>It only contains an AssetBundleManifest object which has following APIs:
+ * GetAllAssetBundles() which returns all the AssetBundle names in this build.
+ * GetDirectDependencies() which returns the direct dependent AssetBundle names.
+ * GetAllDependencies() which returns all the dependent AssetBundle names
+ * GetAssetBundleHash(string) which returns the hash for the specified AssetBundle.
+ * GetAllAssetBundlesWithVariant() which returns all the AssetBundles with variant.</p>
+
+<h3>AssetBundle loading APIs changed</h3>
+
+<p>Now we have:
+ * AssetBundle.GetAllAssetNames(). Return all the asset names in the AssetBundle.
+ * AssetBundle.GetAllScenePaths(). Return all the scene asset paths if it’s a streamed scene AssetBundle.
+ * AssetBundle.LoadAsset(). Load asset from AssetBundle.
+ * AssetBundle.LoadAllAssets()
+ * AssetBundle.LoadAssetWithSubAssets()
+ * Asynchronous version also provided
+ * We won’t return component type any more, please load the game object first and then look up the component on the object.</p>
+
+<h3>Typetrees</h3>
+
+<p>A typetree is written to the AssetBundle by default. The only exception is Metro as it has different serialization solution.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="abfaq.html"></a></span><div class="tip">AssetBundles FAQ</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="EnhancedAssetBundle.html"></a></span><div class="tip">Enhanced Asset Bundle Workflow</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

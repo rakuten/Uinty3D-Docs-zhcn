@@ -1,0 +1,373 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual:  Global Illumination Quickstart</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/GlobalIllumination.html">English</a></li>
+<li><a href="/es/current/Manual/GlobalIllumination.html">Español</a></li>
+<li><a href="/ru/current/Manual/GlobalIllumination.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsOverview.html">Graphics Overview</a></li>
+<li><a href="LightingOverview.html">Lighting</a></li>
+<li> Global Illumination Quickstart</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LightPerformance.html"></a></span><div class="tip">Light Troubleshooting and Performance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="LightProbes.html"></a></span><div class="tip">Light Probes </div>
+</div>
+</div></div>
+<h1>Global Illumination Quickstart</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity now uses <a href="http://www.geomerics.com/enlighten/">Enlighten</a> real-time global illumination (GI) technology. Enlighten by Geomerics is the industry’s most advanced dynamic lighting technology. It is the only product with proven ability to deliver real-time global illumination on today’s and tomorrow’s consoles and gaming platforms.</p>
+
+<p>Enlighten gives you lightmaps, lightprobes and cubemaps that are updated in real-time during the game. This is achieved by only computing the bounced lighting, and, because this is generally low-frequency (smooth), it can be stored in low resolution lightmaps. When using the dynamic GI features the direct lighting and shadows are computed in real-time using the GPU.</p>
+
+<p>In order to prepare for real-time updates a precompute stage is necessary. This means that the lighting bounces between static geometry only. Dynamic geometry such as characters are lit by using dynamically updated light probes. This means that light bounce from dynamic geometry unto static geometry is not supported. </p>
+
+<p>Enlighten also supports baking static lightmaps at high resolution comprising: direct lighting with shadows, indirect bounced lighting and ambient occlusion. This is similar to the previous lightmapping support (3.x, 4.x).</p>
+
+<p>You can pick and choose when to use the dynamic and/or baked features. This is simply done by marking the sources of the light appropriately. The integration seamlessly blends the dynamic and baked contributions.</p>
+
+<p>Finally, Enlighten supports dynamic GI on mobile devices.</p>
+
+<h2>GI workflow</h2>
+
+<p>We have moved away from the “bake button” mode and will provide workflows that are more interactive. We have the following workflows:</p>
+
+<h3>Iterative</h3>
+
+<p>In this mode the Editor picks up all the scene changes and updates the precomputed data for dynamic GI and baked data automatically. Any change that will affect either dynamic or baked lighting triggers jobs to “repair” the data needed to show the current lighting setup. </p>
+
+<h3>Snapshot</h3>
+
+<p>Mode that allows freezing the current lightmapping state in the form of a snapshot. The snapshot data will live in the Assets folder and can be versioned.</p>
+
+<h2>Prerequisites</h2>
+
+<p>Currently the following combinations of shaders and rendering paths work:</p>
+
+<ul>
+<li>Standard shader and Deferred</li>
+<li>Surface shaders and:
+
+<ul>
+<li>Legacy Deferred (two pass)</li>
+<li>Forward as long as fullforwardshadows surface param is explicitly used (see <a href="SL-SurfaceShaders.html">Writing Surface Shaders</a>)</li>
+</ul>
+</li>
+</ul>
+
+<p>The Scene View Lighting mode is now serialized per project with the layout. Make sure that it’s turned on in the <a href="ViewModes.html">Scene View Control Bar</a> (it’s the light icon). </p>
+
+<h2>Cookbook</h2>
+
+<h3>Baked lightmaps</h3>
+
+<ul>
+<li>Use the Standard shader in the materials.</li>
+<li>Switch to the deferred rendering path in the Camera and/or Player Settings.</li>
+<li>Open the Lighting window.</li>
+<li>Enable Continuous Baking.</li>
+<li>Switch to the Object tab.</li>
+<li>Select MeshRenderer’s you want to be lightmapped and mark them as <span class="doc-prop">Lightmap Static</span>.</li>
+<li>Add a Light and enable shadows.</li>
+<li>Assign a Texture to the Emission slot in a material using the Standard shader.</li>
+</ul>
+
+<p>Note: currently using the Standard shader doesn’t allow to switch to dynamic emission. To try it out you can use surface shaders with legacy deferred rendering path.</p>
+
+<h3>Dynamic lightmaps</h3>
+
+<ul>
+<li>Change light’s Lightmapping mode from the default Static GI and Realtime to Dynamic GI.</li>
+<li>Change Sky Light Color and Sky Light Intensity in the Lighting window.
+
+<ul>
+<li>Alternatively assign a skybox material in the slot.</li>
+</ul>
+</li>
+</ul>
+
+<p>Note: skylight affects just the dynamic lightmaps and dynamic light probes.</p>
+
+<h2>Optimizing the precomputation stage</h2>
+
+<p>The Enlighten precomputation stage is divided into two main stages: 1) Pre-compute, 2) Baking. The two stages use different texel densities (resolutions). </p>
+
+<p>The precompute resolution needs to be low so it can be updated quickly, usually a texel per meter is sufficient. This is fine as it only contains bounced light, which is low frequency. </p>
+
+<p>The baked resolution needs to be higher as it also contains (shadowed) direct lighting, which is high frequency. However, the indirect component of the baked lightmaps uses an upsampled version of the dynamic output (the low resolution textures). So one of the more important things to get right is the precompute <em>and</em> baked resolutions. </p>
+
+<p>In order for the stages to be fast and lean you need to do the following things:</p>
+
+<ul>
+<li>Set the global Realtime Resolution.</li>
+<li>Set the global Baked Resolution.</li>
+<li>Set per instance <span class="doc-prop">Scale in Lightmap</span>.</li>
+<li>Make sure your UVs are laid out nicely with as few charts as possible.</li>
+<li>Detail geometry, such as foliage and debris, should not be marked Lightmap Static. Such instances should be lit with light probes instead. In a later release we will add a simpler way to light such props.</li>
+</ul>
+
+<p>A chart is another term for a UV island, so a set of UVs that are connected with edges (directly or indirectly).</p>
+
+<h2>Visualisations</h2>
+
+<p>Different GI specific visualisations are available via the dropdown in the upper left corner of the scene view.</p>
+
+<h3>Textured</h3>
+
+<p>Shows the scene fully lit.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Textured.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>Lightmap Resolution</h3>
+
+<p>Shows fully lit scene with baking resolution overlaid on top. Note: because of the modes below, this mode is superfluous and will be removed.</p>
+
+<h3>GI - Albedo*</h3>
+
+<p>Shows the albedo used in the calculation of the dynamic GI.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Albedo.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Emissive*</h3>
+
+<p>Shows the emissiveness used in the calculation of the dynamic GI.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Emissive.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Charts*</h3>
+
+<p>Shows the optimized UV layout used in the calculation of the dynamic GI. It is automatically generated by the precompute. It is available as soon as the Instance precompute stage is completed.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Charts.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Irradiance*</h3>
+
+<p>Shows the indirect lighting only (the contents of dynamic lightmaps).</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Irradiance.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Directional*</h3>
+
+<p>Shows directional information matching the irradiance. Note: not used in the current Alpha.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Directional.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Systems*</h3>
+
+<p>The precompute stage will automatically subdivide the scene into systems based on proximity and settings. This is mainly done to allow multithreading and optimizations in the precompute. This visualization shows the systems with different colors.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Systems.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Clustering (Advanced)</h3>
+
+<p>The GI algorithm uses a clustering of the geometry in the scene as input to the dynamic indirect lighting calculation. The clustering provides the light environment for all light that is not directly emitted from a light source. Each cluster acts as an indirect emitter emitting a single light intensity and color. Too large clusters will result in light/shadow bleeding and too small clusters slow down the precompute. This visulization shows how the geometry has been clustered by assigning a different color to each cluster. </p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/Clustering.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Lit Clustering (Advanced)</h3>
+
+<p>As above but colors the clusters with the lighting they currently emit.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/LitClustering.png" alt="">
+<figcaption></figcaption></figure>
+
+<h3>GI - Static Lightmap*</h3>
+
+<p>Shows the baked lightmaps only.</p>
+
+<figure>
+<img src="../uploads/GlobalIllumination/Visualizations/StaticLightmap.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>*) When an object is selected a 2D view showing the respective texture is displayed and a wireframe rendering of the UVs of the selected instance is overlaid on top. It shows the system (see GI - Systems) the object belongs to.
+The resolution overlay can be toggled via Show Resolution in the Lightmap Display window (visible when the Lightmapping window is open).</p>
+
+<h2>Light probes</h2>
+
+<p>The workflow for placing light probes is the same as in <a href="LightProbes.html">Light Probes</a> docs.
+Light probes contain only dynamic lighting (lights marked as Dynamic GI, skylight and emissive materials marked dynamic).</p>
+
+<p>Note: baked light probes are in the works.</p>
+
+<h2>Light settings</h2>
+
+<ul>
+<li>“Realtime” with indirect scale set to 0 : all lighting is realtime, same as the old “Realtime Only”.</li>
+<li>“Realtime” with indirect scale greater than 0 : direct lighting realtime, indirect in dynamic lightmaps and light probes.</li>
+<li>“Mixed” : direct lighting and indirect in baked lightmaps, dynamic objects still lit by that light, same as the old “Auto”.</li>
+<li>“Baked” : direct lighting and indirect in baked lightmaps, the light skipped early when preparing data for culling, does not affect any dynamic objects and is never available in uniforms holding light data for an object.</li>
+</ul>
+
+<h2>Runtime</h2>
+
+<p>The Enlighten runtime is running asynchronously and whenever new lighting data is ready it is updated.
+Changes to lights marked as “Dynamic GI” and skylight changes are picked up automatically. Material updates (such as albedo and emissive changes to materials) can be triggered via the DynamicGI API.</p>
+
+<p>The reason for material changes not being picked up automatically at runtime is that tracking this data is currently expensive. We are looking into ways to make it cheap and automatic.</p>
+
+<h2>Known issues</h2>
+
+<p>Issues with existing features:</p>
+
+<ul>
+<li>Some combinations of shaders and rendering paths are not functional (see Prerequisites).</li>
+<li>Bleeding albedo/emissive.</li>
+<li>Library/GiCache is never purged, so might need to be cleared manually.</li>
+<li>Scale In Lightmap equal 0 not fully respected (the instance should not get lightmaps, just influence the surroundings).</li>
+<li>Emission from the Standard shader is only baked.</li>
+<li>Skybox needs to use the RenderFX/Skybox shader and the textures used need to have Read/Write Enabled.</li>
+<li>Emissive is clamped at 1.0f.</li>
+</ul>
+
+<h2>Limitations</h2>
+
+<p>Not yet implemented features:</p>
+
+<ul>
+<li>Terrain support.</li>
+<li>Baked probes.</li>
+<li>Baked environment lighting.</li>
+<li>Baked area lights.</li>
+<li>Baked transparency.</li>
+<li>Baked cookies.</li>
+<li>Dynamic cubemaps.</li>
+<li>Skinned Mesh Renderers support.</li>
+<li>Additive scene loading.</li>
+<li>Cache Server for GI data sharing.</li>
+<li>Dynamic visibility for point and spot lights (direct lighting for GI is not shadowed). This limitation does not affect baking.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="LightPerformance.html"></a></span><div class="tip">Light Troubleshooting and Performance</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="LightProbes.html"></a></span><div class="tip">Light Probes </div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

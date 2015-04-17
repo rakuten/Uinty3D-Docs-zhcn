@@ -1,0 +1,345 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Network View</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-NetworkView.html">English</a></li>
+<li><a href="/es/current/Manual/class-NetworkView.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-NetworkView.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Editor.html">Editor</a></li>
+<li><a href="EditorReference.html">Editor Reference</a></li>
+<li><a href="comp-NetworkGroup.html">Network Group</a></li>
+<li>Network View</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-NetworkGroup.html"></a></span><div class="tip">Network Group</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Graphics.html"></a></span><div class="tip">Graphics</div>
+</div>
+</div></div>
+<h1>Network View</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/NetworkView.html' title='Go to NetworkView page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Network Views</span> are the gateway to creating networked multiplayer games in Unity. They are simple to use, but they are extremely powerful. For this reason, it is recommended that you understand the fundamental concepts behind networking before you start experimenting with Network Views. You can learn and discover the fundamental concepts in the <a href="NetworkReferenceGuide.html">Network Reference Guide</a>.</p>
+
+<figure>
+<img src="../uploads/Main/Inspector-NetworkView.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>In order to use any networking capabilities, including <span class="doc-keyword">State Synchronization</span> or <span class="doc-keyword">Remote Procedure Calls</span>, your <span class="doc-keyword">GameObject</span> must have a Network View attached.</p>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">State Synchronization</span></td>
+	<td style="text-align:left;">The type of <a href="net-StateSynchronization.html">State Synchronization</a> used by this Network View</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Off</span>
+</td>
+	<td style="text-align:left;">No State Synchronization will be used. This is the best option if you only want to send <a href="net-RPCDetails.html">RPCs</a>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Reliable Delta Compressed</span>
+</td>
+	<td style="text-align:left;">The difference between the last state and the current state will be sent, if nothing has changed nothing will be sent. This mode is ordered. In the case of packet loss, the lost packet is re-sent automatically</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Unreliable</span>
+</td>
+	<td style="text-align:left;">The complete state will be sent. This uses more bandwidth, but the impact of packet loss is minimized</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Observed</span></td>
+	<td style="text-align:left;">The <span class="doc-keyword">Component</span> data that will be sent across the network</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">View ID</span></td>
+	<td style="text-align:left;">The unique identifier for this Network View. These values are read-only in the Inspector</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Scene ID</span>
+</td>
+	<td style="text-align:left;">The number id of the Network View in this particular scene</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Type</span>
+</td>
+	<td style="text-align:left;">Either saved to the <span class="doc-prop">Scene</span> or <span class="doc-prop">Allocated</span> at runtime</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Details</h2>
+
+<p>When you add a Network View to a GameObject, you must decide two things</p>
+
+<ol>
+<li>What kind of data you want the Network View to send</li>
+<li>How you want to send that data</li>
+</ol>
+
+<h3>Choosing data to send</h3>
+
+<p>The <span class="doc-prop">Observed</span> property of the Network View can contain a single Component. This can be a <span class="doc-keyword">Transform</span>, an <span class="doc-keyword">Animation</span>, a <span class="doc-keyword">RigidBody</span>, or a script. Whatever the <span class="doc-prop">Observed</span> Component is, data about it will be sent across the network. You can select a Component from the drop-down, or you can drag any Component header directly to the variable. If you are not directly sending data, just using RPC calls, then you can turn off synchronization (no data directly sent) and nothing needs to be set as the Observed property. RPC calls just need a single network view present so you don’t need to add a view specifically for RPC if a view is already present.</p>
+
+<h3>How to send the data</h3>
+
+<p>You have 2 options to send the data of the <span class="doc-prop">Observed</span> Component: <span class="doc-keyword">State Synchronization</span> and <span class="doc-keyword">Remote Procedure Calls</span>.</p>
+
+<p>To use State Synchronization, set <span class="doc-prop">State Synchronization</span> of the Network View to <span class="doc-prop">Reliable Delta Compressed</span> or <span class="doc-prop">Unreliable</span>. The data of the <span class="doc-prop">Observed</span> Component will now be sent across the network automatically. </p>
+
+<p>
+<span class="doc-prop">Reliable Delta Compressed</span> is ordered. Packets are always received in the order they were sent. If a packet is dropped, that packet will be re-sent. All later packets are queued up until the earlier packet is received. Only the difference between the last transmissions values and the current values are sent and nothing is sent if there is no difference.</p>
+
+<p>If it is observing a Script, you must explicitly Serialize data within the script. You do this within the <span class="doc-prop">OnSerializeNetworkView()</span> function.</p>
+
+<pre><code>using UnityEngine;
+using UnityEngine.Network;
+using System.Collections;
+
+public class ExampleScript : MonoBehaviour {
+    void OnSerializeNetworkView (BitStream stream, NetworkMessageInfo info) {
+        float horizontalInput = Input.GetAxis (&quot;Horizontal&quot;);
+        stream.Serialize (horizontalInput);
+    }
+}
+</code></pre>
+
+<p><em>C# script example</em></p>
+
+<pre><code>function OnSerializeNetworkView (stream : BitStream, info : NetworkMessageInfo) {
+    var horizontalInput : float = Input.GetAxis (&quot;Horizontal&quot;);
+    stream.Serialize (horizontalInput);
+}
+</code></pre>
+
+<p><em>JS script example</em></p>
+
+<p>The above function always writes (an update from the stream) into horizontalInput, when receiving an update and reads from the variable writing into the stream otherwise. If you want to do different things when receiving updates or sending you can use the <span class="doc-prop">isWriting</span> attribute of the BitStream class.</p>
+
+<pre><code>using UnityEngine;
+using UnityEngine.Network;
+using System.Collections;
+
+public class ExampleScript : MonoBehaviour {
+    void OnSerializeNetworkView (BitStream stream, NetworkMessageInfo info) {
+        float horizontalInput = 0.0;
+        if (stream.isWriting) {
+            // Sending
+            horizontalInput = Input.GetAxis (&quot;Horizontal&quot;);
+            stream.Serialize (horizontalInput);
+        } else {    
+            // Receiving
+            stream.Serialize (horizontalInput);
+            // ... do something meaningful with the received variable
+        }
+    }
+}
+</code></pre>
+
+<p><em>C# script example</em></p>
+
+<pre><code>function OnSerializeNetworkView (stream : BitStream, info : NetworkMessageInfo) {
+    var horizontalInput : float = 0.0;
+    if (stream.isWriting) {
+        // Sending
+        horizontalInput = Input.GetAxis (&quot;Horizontal&quot;);
+        stream.Serialize (horizontalInput);
+    } else {
+        // Receiving
+        stream.Serialize (horizontalInput);
+        // ... do something meaningful with the received variable
+    }
+}
+</code></pre>
+
+<p><em>JS script example</em></p>
+
+<p>
+<span class="doc-prop">OnSerializeNetworkView</span> is called according to the <span class="doc-prop">sendRate</span> specified in the network manager project settings. By default this is 15 times per second.</p>
+
+<p>If you want to use Remote Procedure Calls in your script all you need is a NetworkView component present in the same GameObject the script is attached to. The NetworkView can be used for something else, or in case it’s only used for sending RPCs it can have no script observed and state synchronization turned off. The function which is to be callable from the network must have the <span class="doc-prop">@RPC</span> attribute. Now, from any script attached to the same GameObject, you call <a href="../ScriptReference/NetworkView.RPC.html">networkView.RPC()</a> to execute the Remote Procedure Call.</p>
+
+<pre><code>using UnityEngine;
+using UnityEngine.Network;
+using System.Collections;
+
+public class ExampleScript : MonoBehaviour {
+    GameObject playerBullet;
+    NetworkView networkView;
+
+    void Start () {
+        networkView = new NetworkView ();
+    }
+
+    void Update () {
+        if (Input.GetButtonDown (&quot;Fire1&quot;)) {
+            networkView.RPC (&quot;PlayerFire&quot;, RPCMode.All);
+        }
+    }
+    
+    [RPC]
+    void PlayerFire () {
+        Instantiate (playerBullet, playerBullet.transform.position, playerBullet.transform.rotation);
+    }
+}
+</code></pre>
+
+<p><em>C# script example</em></p>
+
+<pre><code>var playerBullet : GameObject;
+
+function Update () {
+    if (Input.GetButtonDown (&quot;Fire1&quot;)) {
+        networkView.RPC (&quot;PlayerFire&quot;, RPCMode.All);
+    }
+}
+
+@RPC
+function PlayerFire () {
+    Instantiate (playerBullet, playerBullet.transform.position, playerBullet.transform.rotation);
+}
+</code></pre>
+
+<p><em>JS script example</em></p>
+
+<p>RPCs are transmitted reliably and ordered. For more information about RPCs, see the <a href="net-RPCDetails.html">RPC Details</a> page.</p>
+
+<h2>Hints</h2>
+
+<ul>
+<li>Read through the <a href="NetworkReferenceGuide.html">Network Reference Guide</a> if you’re still unclear about how to use Network Views</li>
+<li>State Synchronization does not need to be disabled to use Remote Procedure Calls</li>
+<li>If you have more than one Network View and want to call an RPC on a specific one, use <span class="doc-prop">GetComponents(NetworkView)[i].RPC()</span>.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-NetworkGroup.html"></a></span><div class="tip">Network Group</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="Graphics.html"></a></span><div class="tip">Graphics</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

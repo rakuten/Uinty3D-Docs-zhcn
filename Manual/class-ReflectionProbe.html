@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Reflection Probe</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-ReflectionProbe.html">English</a></li>
+<li><a href="/es/current/Manual/class-ReflectionProbe.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-ReflectionProbe.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="comp-RenderingGroup.html">Rendering Components</a></li>
+<li>Reflection Probe</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Skybox.html"></a></span><div class="tip">Skybox</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-LODGroup.html"></a></span><div class="tip">LOD Group</div>
+</div>
+</div></div>
+<h1>Reflection Probe</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/ReflectionProbe.html' title='Go to ReflectionProbe page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>A <span class="doc-keyword">Reflection Probe</span> is rather like a camera that captures a spherical view of its surroundings in all directions. The captured image is then stored as a <a href="class-Cubemap.html">Cubemap</a> that can be used by objects with reflective materials. Several reflection probes can be used in a given scene and objects can be set to use the cubemap produced by the nearest probe. The result is that the reflections on the object can change convincingly according to its environment.</p>
+
+<figure>
+<img src="../uploads/Main/ReflectionProbeScene.png" alt="Reflection Probe used to display reflections">
+<figcaption>Reflection Probe used to display reflections</figcaption></figure>
+
+<figure>
+<img src="../uploads/Main/RefProbeInspector.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Properties</h2>
+
+<h4>General</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Type</span></td>
+	<td style="text-align:left;">Selects between <strong>Baked</strong>, <strong>Custom</strong> or <strong>Realtime</strong> types.</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>
+<strong>Baked probes</strong>
+
+<ul>
+<li>Generates a static cubemap automatically from objects marked as <strong>ReflectionProbeStatic</strong>, baking only occurs in Editor. That means objects which are dynamic won’t be baked into cubemap.</li>
+</ul>
+</li>
+<li>
+<strong>Custom probes</strong>
+
+<ul>
+<li>Generates a static cubemap manually when <strong>Bake</strong> button is click in ReflectionProbe inspector, you can also assign your own custom <a href="class-Cubemap.html">cubemap</a>.</li>
+</ul>
+</li>
+<li>
+<strong>Realtime probes</strong>
+
+<ul>
+<li>Generates a cubemap during runtime, all objects (both static and dynamic) are baked into the cubemap. Because these probes are quite costly, consider when you want to update them, this can be controlled via properties or scripting, see below.</li>
+</ul>
+</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/ReflectionProbeCustomSetting.png" alt="Custom Setting Selected">
+<figcaption>Custom Setting Selected</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Objects</span></td>
+	<td style="text-align:left;">Forces objects which are not marked as <em>Static</em> to be baked in to the probe .</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cubemap</span></td>
+	<td style="text-align:left;">Sets a custom <a href="class-Cubemap.html">cubemap</a> for the probe .</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/ReflectionProbeRealtimeSetting.png" alt="Realtime Setting Selected">
+<figcaption>Realtime Setting Selected</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Refresh Mode</span></td>
+	<td style="text-align:left;">Selects how the probe will automatically refresh (re-render) in the Player.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">On Awake</span></td>
+	<td style="text-align:left;">Unity will refresh the probe only once and only when it first becomes active</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Every Frame</span></td>
+	<td style="text-align:left;">Unity will refresh the probe every frame, optionally using <strong>Time Slicing</strong>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Via Scripting</span></td>
+	<td style="text-align:left;">Refreshing this probe will be done exclusively via a custom script. Unity will never automatically render the reflection probe.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Time Slicing</span></td>
+	<td style="text-align:left;">Rendering a probe is a costly operation. First, Unity must render the scene from 6 different viewpoints to update its <strong>Cubemap</strong>. Then, each mipmap level of this Cubemap goes through a special blurring phase in order to support <strong>Glossy Reflections</strong>. When a realtime probe’s Refresh Mode is set to update <strong>Every Frame</strong>, this option controls how the rendering can be scheduled over several frames to reduce the impact on the framerate.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">All Faces At Once</span></td>
+	<td style="text-align:left;">All faces will be rendered at once, then over the next 6 frames, Unity will blur a face of the first level mipmap. After this, Unity will blur the remaining mipmap levels in one frame, and finally it will copy the result to the target <strong>Cubemap</strong>. Using this option, updating the probe will take 9 frames</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Individual Faces</span></td>
+	<td style="text-align:left;">Same as above, except that Unity will spread the rendering of each face over several frames. Using this option, updating the probe will take 14 frames. This option greatly reduces the impact on framerate, however it may produce incorrect results, especially in scenes where lighting conditions change over these 14 frames</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">No Time Slicing</span></td>
+	<td style="text-align:left;">Sets the probe to completely render and blur all faces in one frame. This produces probes with perfectly synchronized reflections, but incurs the highest performance hit</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Runtime settings</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Importance</span></td>
+	<td style="text-align:left;">Sets how important (the higher the value, the more important probe is) is the reflection probe for the game objects, if multiple probes are affecting the geometry, more important probes will be always chosen over less important probes. This setting also affects <strong>Blending</strong>, explained below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Intensity</span></td>
+	<td style="text-align:left;">Thee intensity modifier that is applied to the texture of reflection probe in the shader.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Box Projection</span></td>
+	<td style="text-align:left;">Turn on/off box projection for reflection UV mappings.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Size</span></td>
+	<td style="text-align:left;">Size of the zone within which objects will receive the probe’s cubemap. Also used by <strong>Box Projection</strong>.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Probe Origin</span></td>
+	<td style="text-align:left;">Center of the zone within which objects will receive the probe’s cubemap, this position is also used while baking the probe. Also used by <strong>Box Projection</strong>.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Cubemap Capture settings</h4>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Resolution</span></td>
+	<td style="text-align:left;">Resolution of the captured image.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">HDR</span></td>
+	<td style="text-align:left;">Should High Dynamic Range rendering be enabled for the cubemap? Depending on this setting, probes are saved to <strong>*.exr</strong> or <strong>*.png</strong> format.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Shadow Distance</span></td>
+	<td style="text-align:left;">Shadow drawing distance when rendering the probe.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Clear Flags</span></td>
+	<td style="text-align:left;">Option to specify how empty background areas of the cubemap will be filled.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Background</span></td>
+	<td style="text-align:left;">Background color of the cubemap.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Culling Mask</span></td>
+	<td style="text-align:left;">Selection of layers on which objects will be included in the cubemap.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Clipping Planes</span></td>
+	<td style="text-align:left;">Near and far clipping planes of the probe’s “camera”.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Baking reflection probes</h2>
+
+<p>The reflection probe’s cubemap is being generated from game object’s (which has ReflectionProbe component attached) position in combination with <strong>Probe Origin</strong>. There are two options which control which objects are baked in to the probe - <strong>Culling Mask</strong> and <strong>Clipping Planes</strong>.</p>
+
+<ul>
+<li>
+<p><strong>Baked probes</strong></p>
+
+<ul>
+<li>When <strong>Continuous Baking</strong> is enabled, probes are baked automatically, when it’s disabled you’ll have to press <strong>Build</strong> button (in <a href="Lighting.html">Lighting</a> window) or <strong>Bake</strong> button in ReflectionProbe inspector.
+Baking is done asynchronously, so you can continue to work while it’s baking. Only objects marked as <strong>ReflectionProbeStatic</strong> are baked into the cubemap.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/RefProbeInspectorStatic.png" alt="">
+<figcaption></figcaption></figure>
+
+<p>
+<strong>Note:</strong> If you move an object marked as <em>Static</em> or change its material during bake process, baking will restart.</p>
+</li>
+<li>
+<strong>Custom probes</strong>
+
+<ul>
+<li>Can be generated by either clicking <strong>Bake</strong> button in ReflectionProbe inspector or you can assign your own custom <a href="class-Cubemap.html">cubemap</a>.
+Unlike <strong>Baked</strong> probes, you can also force dynamic objects to be baked (which are not marked as <strong>ReflectionProbeStatic</strong>).</li>
+</ul>
+</li>
+<li>
+<p>
+<strong>Realtime probes</strong> </p>
+
+<ul>
+<li>When working in the Editor, realtime probes behave similarly to <strong>Baked probes</strong> except that they render much more quickly. To update them automatically when working, <strong>Continuous Baking</strong> must be enabled. When it’s disabled you’ll have to press “Bake Reflection Probes” option under the Build button (in Lighting window). Realtime probes will reflect dynamic objects, however when working in the Editor changes to dynamic objects do not trigger a refresh of the realtime probes.</li>
+</ul>
+</li>
+</ul>
+
+<h2>Details</h2>
+
+<p>To make use of the cubemap, an object must have the <em>Reflection Probes</em> option enabled on its <a href="class-MeshRenderer.html">Mesh Renderer</a> and also be using a shader that supports reflection probes. When the object passes within the volume set by the probe’s <em>Size</em> and <em>Probe Origin</em> properties, the probe’s cubemap will be applied to the object.</p>
+
+<p>You can also manually set which reflection probe to use:</p>
+
+<ul>
+<li>Select the object which should affected by reflection probe</li>
+<li>Ensure <strong>Use Reflection Probes</strong> is checked</li>
+<li>Drag the reflection probe on <strong>Anchor Override</strong>
+</li>
+</ul>
+
+<p>
+<strong>Note:</strong> If three or more reflection probes are affecting the object, the algorithm for choosing which probes to use is as follows:</p>
+
+<ul>
+<li>Compare <strong>Importance</strong> property, more important probes are chosen over less important probes</li>
+<li>Compare intersection volumes (reflection probe vs object)</li>
+</ul>
+
+<h2>Interreflections</h2>
+
+<p>Controlled by <strong>Reflection Bounces</strong> setting in <a href="Lighting.html">Lighting</a> window, interreflections occur when there are two objects reflecting in each other.</p>
+
+<p>In real world scenario (for ex., when mirror is placed in front of the other mirror) this will produce infinite reflections.</p>
+
+<p>By default <strong>Reflection Bounces</strong> is set to 1, that means when reflection probe is baked and a reflective object is used, on the first pass it will be black, if you’ll encounter such scenario simply increase <strong>Reflection Bounces</strong>.</p>
+
+<p>
+<strong>Note:</strong> Increasing <strong>Reflection Bounces</strong> increases how many time the reflection probe is baked.</p>
+
+<h2>Box Projection</h2>
+
+<p>It’s a feature to calculate cubemap coordinates using reflection probe’s bounding volume. <strong>Box Projection</strong> is enabled on platforms which support <strong>shader model 3.0 or better</strong>. For ex., if you have a room which you want to reflect, ensure that reflection bounding box’s is of similar dimensions, this way you’ll get the best results.
+Let’s take for instance this cubemap and see how it’s reflected on the plane with and without box projection.</p>
+
+<figure>
+<img src="../uploads/Main/ReflectionProbeBoxProjectionCubemap.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Box Projection On</strong></th>
+	<th style="text-align:left;"><strong>Box Projection Off</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><img src="../uploads/Main/ReflectionProbeBoxProjectionOn.png" alt=""></td>
+	<td style="text-align:left;"><img src="../uploads/Main/ReflectionProbeBoxProjectionOff.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+
+<h2>Blending</h2>
+
+<p>It’s a feature which allows objects to use two reflection probes at once. It can be used on platforms with <strong>shader model 3.0 or better</strong>. You can enable it in <a href="class-MeshRenderer.html">Mesh Renderer</a>, by choosing <strong>Blend Probes</strong> or <strong>Blend Probes and Skybox</strong>.</p>
+
+<p>Let’s say two reflection probes (<strong>Importance</strong> property matches in both reflection probes) are affecting the object, the weights for blending are calculated in the following way, we acquire two intersection bounding boxes:</p>
+
+<ul>
+<li>First reflection bounding box vs object’s bounding box</li>
+<li>Second reflection bounding box vs object’s bounding box</li>
+</ul>
+
+<p>We then calculate two volumes, by using these values we determine how much the reflection probe is affecting the object.
+For ex., if the first volume is 1.0 and the second is 2.0, then first probe’s influence will be 1.0 / (1.0 + 2.0) = 0.33, the second probe’s influence will be 2.0 / (1.0 + 2.0) = 0.67</p>
+
+<p>A special case is applied if one probe is inside the other probe, the blending values are then calculated in the following way:</p>
+
+<ul>
+<li>If object is inside the smaller probe (at the same time the object is inside the bigger probe as well), the influence value for that probe will be 1.0, while the second probe it will be 0.0</li>
+<li>When the object is leaving the bounding box of the smaller probe, the influence value for the smaller probe is calculated, intersection volume (small probe vs object) / object volume. For ex., if intersection volume is 1.0 and object is volume 2.0, then influence for the first probe will 1.0 / 2.0 = 0.5, the influence for the second probe will be 1.0 - 1.0 / 2.0 = 0.5.
+This ensures that reflections are gradually fade from first probe to the second probe</li>
+</ul>
+
+<p>If object is affected by two reflection probes with different <strong>Importance</strong> value, the blending values are calculated the same way as described above. This ensures that object will try to use reflections from more important probe as much as possible.</p>
+
+<h4>
+<strong>Blend Probes</strong> and <strong>Blend Probes And Skybox</strong>
+</h4>
+
+<p>
+<strong>Blend Probes</strong> should be used for interior objects, that way you’ll ensure that object won’t accidentally use reflections from skybox (a.k.a default reflection).</p>
+
+<p>
+<strong>Blend Probes And Skybox</strong> should be used for exterior objects, that way when object leaves the bounding box of reflection probe, it will gradually switch reflections from reflection probe to skybox. </p>
+
+<h2>Quickstart</h2>
+
+<ul>
+<li>Create a reflection probe:
+
+<ul>
+<li>Create an empty game object</li>
+<li>Add a component <code>Rendering-&gt;Reflection Probe</code>
+</li>
+</ul>
+</li>
+<li>Create an object which will receive reflections:
+
+<ul>
+<li>Create a sphere</li>
+<li>Create a material, set <code>Standard</code> shader, and assign it to the sphere</li>
+<li>Select the material:
+
+<ul>
+<li>Set <code>Metallic</code> to 1.0</li>
+<li>Set <code>Smoothness</code> to 1.0</li>
+</ul>
+</li>
+<li>
+<em>(Optional)</em> Select the sphere, in the <code>Mesh Renderer</code> component drag reflection probe object on to <code>Anchor Override</code>, this way you’ll force the sphere to use the reflection probe even it’s outside reflection probe’s bounding volume</li>
+</ul>
+</li>
+</ul>
+
+<h2>FAQ</h2>
+
+<ul>
+<li>Can I rotate the reflection probe?
+
+<ul>
+<li>No</li>
+</ul>
+</li>
+<li>Can I set different <code>Reflection Bounces</code> for different reflection probes?
+
+<ul>
+<li>No</li>
+</ul>
+</li>
+<li>Can blending be done on per-pixel level?
+
+<ul>
+<li>No, this was not implemented due performance reasons</li>
+</ul>
+</li>
+<li>Whenever I change a static object, it takes forever to bake reflection probe, because lightmapping is baking, how can I improve it?
+
+<ul>
+<li>Disable <code>Continuous Baking</code> in <a href="Lighting.html">Lighting window</a>. Whenever you want to update the reflection probe, click <code>Bake</code> button in reflection probe inspector. You can also temporarily switch probe type to <code>Custom</code> and click <code>Bake</code> then, this ensures that reflection probe will never wait for the lightmapping to finish.</li>
+</ul>
+</li>
+<li>How can I set skybox reflections?
+
+<ul>
+<li>Go to <a href="Lighting.html">Lighting window</a>, choose <code>Custom</code> in Reflection Source, and select a custom cubemap.</li>
+</ul>
+</li>
+<li>Changing a dynamic object does not refresh realtime probes in <code>Continuous Baking</code> mode.
+
+<ul>
+<li>This is a current limitation. To force update of realtime probes, press the <code>Bake Reflection Probes</code> option under the Bake button in the lighting window.</li>
+</ul>
+</li>
+<li>Using several <code>Realtime</code> probes in my scene causes the framerate to drop significantly.
+
+<ul>
+<li>Reduce the size of the Cubemap used by your probes.</li>
+<li>Use <code>Time Slicing</code> on some of the “less important” probes.</li>
+<li>Set the probe’s <code>RefreshMode</code> to <code>ViaScripting</code> and create your own probe scheduling logic using a script and only refresh the probe when you need to.</li>
+</ul>
+</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Skybox.html"></a></span><div class="tip">Skybox</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-LODGroup.html"></a></span><div class="tip">LOD Group</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

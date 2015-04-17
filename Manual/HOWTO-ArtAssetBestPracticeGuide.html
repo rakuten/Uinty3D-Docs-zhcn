@@ -1,0 +1,292 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Art Asset Best Practice Guide</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/HOWTO-ArtAssetBestPracticeGuide.html">English</a></li>
+<li><a href="/es/current/Manual/HOWTO-ArtAssetBestPracticeGuide.html">Español</a></li>
+<li><a href="/ru/current/Manual/HOWTO-ArtAssetBestPracticeGuide.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li>Graphics HOWTOs</li>
+<li>Art Asset Best Practice Guide</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HOWTO-exportFBX.html"></a></span><div class="tip">FBX export guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="HOWTO-importObject.html"></a></span><div class="tip">How do I import Models from my 3D app?</div>
+</div>
+</div></div>
+<h1>Art Asset Best Practice Guide</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity supports textured 3D models from a variety of programs or sources. This short guide has been put together by games artists with developers at Unity, to help you create assets that work better and more efficiently in your Unity project.</p>
+
+<h2>Scale &amp; Units</h2>
+
+<ul>
+<li>Set your system and project units for your software to work consistently with Unity e.g. Metric.
+
+<ul>
+<li>Working to scale can be important for both lighting and physics simulation.</li>
+<li>Be aware that, for example, the Max system unit default is inches and Maya is centimetres.</li>
+<li>Unity has different scaling for FBX and 3D application files on import; check the FBX import scale setting in Inspector.</li>
+<li>If in doubt export a metre cube with your scene to match in Unity.</li>
+</ul>
+</li>
+<li>Animation frame rate defaults can be different in packages, is a good idea to set consistently across your pipeline, for example 30fps.</li>
+</ul>
+
+<h2>Files &amp; Objects</h2>
+
+<ul>
+<li>Name objects in your scene sensibly and uniquely. This can help you locate and troubleshoot specific meshes in your project.</li>
+<li>Avoid special characters <code>*()?&quot;#$</code> etc.</li>
+<li>Use simple but descriptive names for both objects and files (allow for duplication later).</li>
+<li>Keep your hierarchies as simple as you can.</li>
+<li>With big projects in your 3D application, consider having a working file outside your Unity project directory. This can often save time consuming updates and importing unnecessary data.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/HierarchyWrongRight.png" alt="Sensibly named objects help you find things quickly">
+<figcaption>Sensibly named objects help you find things quickly</figcaption></figure>
+
+<h1>Mesh</h1>
+
+<ul>
+<li>Build with an efficient topology. Use polygons only where you need them.</li>
+<li>Optimise your geometry if it has too many polygons. Many character models need to be intelligently optimised or even rebuilt by an artist especially if sourced/built from:
+
+<ul>
+<li>3D capture data</li>
+<li>Poser</li>
+<li>Zbrush</li>
+<li>Other high density Nurbs/Patch models designed for render</li>
+</ul>
+</li>
+<li>Where you can afford them, evenly spaced polygons in buildings, landscape and architecture will help spread lighting and avoid awkward kinks.</li>
+<li>Avoid really long thin triangles.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/GeomWrongRight.png" alt="Stairway to framerate heaven">
+<figcaption>Stairway to framerate heaven</figcaption></figure>
+
+<p>The method you use to construct objects can have a massive affect on the number of polygons, especially when not optimised. In this digram the same shape mesh has 156 triangles on the right and 726 on the left. 726 may not sound like a great deal of polygons, but if this is used 40 times in a level, you will really start to see the savings. A good rule of thumb is often to start simple and add detail where needed. It’s always easier to add polygon than take them away.</p>
+
+<h1>Textures</h1>
+
+<p>If you author your textures to a power of two (e.g. 512x512 or 256x1024), the textures will be more efficient and won’t need rescaling at build time. You can use up to 4096x4096 pixels, (although 2048x2048 is the highest available on many graphics cards/platforms). Search online for expert advice on creating good textures, but some of these guidelines can help you get the most efficient results from your project:</p>
+
+<ul>
+<li>Work with a high-resolution source file outside your unity project (such as a PSD or Gimp file). You can always downsize from source but not the other way round.</li>
+<li>Use the texture resolution output you require in your scene (save a copy, for example a 256x256 optimised PNG or a TGA file). You can make a judgement based on where the texture will be seen and where it is mapped.</li>
+<li>Store your output texture files together in your Unity project (for example: \Assets\textures).</li>
+<li>Make sure your 3D working file is referring to the same textures for consistency when you save/export.</li>
+<li>Make use of the available space in your texture, but be aware of different materials requiring different parts of the same texture. You can end up using/loading that texture multiple times.</li>
+<li>For alpha (cutout) and elements that may require different shaders, separate the textures. For example, the single texture below (left) has been replaced by three smaller textures below (right)</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/Pack_WrongRight2.png" alt="One texture (left) vs three textures (right)">
+<figcaption>One texture (left) vs three textures (right)</figcaption></figure>
+
+<ul>
+<li>Make use of tiling textures (which seamlessly repeat) then you can use better resolution repeating over space.</li>
+<li>Remove easily noticeable repeating elements from your bitmap, and be careful with contrast. If you want to add details use decals and objects to break up the repeats.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/TexWrongRight.png" alt="Tiling textures ftw">
+<figcaption>Tiling textures ftw</figcaption></figure>
+
+<ul>
+<li>Unity takes care of compression for the output platform, so unless your source is already a JPG of the correct resolution it’s better to use a lossless format for your textures.</li>
+<li>When creating a texture page from photographs, reduce the page to individual modular sections that can repeat. For example, you don’t need twelve of the same windows using up texture space. That way you can have more pixel detail for that one window.</li>
+</ul>
+
+<figure>
+<img src="../uploads/Main/BuildingWrongRight.png" alt="Do you need ALL those windows?">
+<figcaption>Do you need ALL those windows?</figcaption></figure>
+
+<h1>Materials</h1>
+
+<ul>
+<li>Organise and name the materials in your scene. This way you can find and edit your materials in Unity more easily when they’ve imported</li>
+<li>You can choose to create materials in Unity from either:
+
+<ul>
+<li>&lt;modelname&gt; material name&gt; or:</li>
+<li>&lt;texture name&gt; - make sure you are aware of which you want.</li>
+</ul>
+</li>
+<li>Settings for materials in your native package will not all be imported to Unity:
+
+<ul>
+<li>Diffuse Colour, Diffuse texture and Names are usually supported</li>
+<li>Shader model, specular, normal, other secondary textures and substance material settings will not be recognised/imported</li>
+</ul>
+</li>
+</ul>
+
+<h1>Import/Export</h1>
+
+<p>Unity can use two types of files: Saved 3D application files and Exported 3D formats. Which you decide to use can be quite important:</p>
+
+<h2>Saved application files</h2>
+
+<p>Unity can import, through conversion: Max, Maya, Blender, Cinema4D, Modo, Lightwave &amp; cheetah3D files, e.g. .MAX, .MB, .MA etc.
+see more in <a href="HOWTO-importObject.html">Importing Objects</a>.</p>
+
+<p>
+<strong>Advantages</strong>:</p>
+
+<ul>
+<li>Quick iteration process (save and Unity updates)</li>
+<li>Simple initially</li>
+</ul>
+
+<p>
+<strong>Disadvantages</strong>:</p>
+
+<ul>
+<li>A licensed copy of that software must be installed on all machines using the Unity project</li>
+<li>Files can become bloated with unnecessary data</li>
+<li>Big files can slow Unity updates</li>
+<li>Less Validation and harder to troubleshoot problems</li>
+</ul>
+
+<h2>Exported 3D formats</h2>
+
+<p>Unity can also read FBX, OBJ, 3DS, DAE &amp; DXF files. For a general export guide you can refer to <a href="HOWTO-exportFBX.html">this section</a>.</p>
+
+<p>
+<strong>Advantages</strong>:</p>
+
+<ul>
+<li>Only export the data you need</li>
+<li>Verify your data (re-import into 3D package) before Unity</li>
+<li>Generally smaller files</li>
+<li>Encourages modular approach</li>
+</ul>
+
+<p>
+<strong>Disadvantages</strong>:</p>
+
+<ul>
+<li>Can be slower pipeline or prototyping and iterations</li>
+<li>Easier to lose track of versions between source (working file) and game data (exported FBX)</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="HOWTO-exportFBX.html"></a></span><div class="tip">FBX export guide</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="HOWTO-importObject.html"></a></span><div class="tip">How do I import Models from my 3D app?</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

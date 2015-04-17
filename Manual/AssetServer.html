@@ -1,0 +1,383 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Asset Server (Pro Only)</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/AssetServer.html">English</a></li>
+<li><a href="/es/current/Manual/AssetServer.html">Español</a></li>
+<li><a href="/ru/current/Manual/AssetServer.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Architecture.html">Architecture</a></li>
+<li>Architecture Overview</li>
+<li><a href="AssetImportandCreation.html">Asset Import and Creation</a></li>
+<li>Asset Server (Pro Only)</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetStoreAdmin.html"></a></span><div class="tip">Publisher Admin Section Overview</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SettinguptheAssetServer.html"></a></span><div class="tip">Setting up the Asset Server</div>
+</div>
+</div></div>
+<h1>Asset Server (Pro Only)</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<h2>Unity Asset Server Overview</h2>
+
+<p>The <span class="doc-keyword">Unity Asset Server</span> is an asset and version control system with a graphical user interface integrated into Unity. It is meant to be used by team members working together on a project on different computers either in-person or remotely. The Asset Server is highly optimized for handling large binary assets in order to cope with large multi gigabyte project folders. When uploading assets, <span class="doc-keyword">Import Settings</span> and other meta data about each asset is uploaded to the asset server as well. Renaming and moving files is at the core of the system and well supported.</p>
+
+<p>It is available only for Unity Pro. To purchase Unity Pro, please visit the Unity store at <a href="http://unity3d.com/store">http://unity3d.com/store</a>
+</p>
+
+<h2>New to Source Control?</h2>
+
+<p>If you have never used Source Control before, it can be a little unfriendly to get started with any versioning system. Source Control works by storing an entire collection of all your assets - meshes, textures, materials, scripts, and everything else - in a database on some kind of server. That server might be your home computer, the same one that you use to run Unity. It might be a different computer in your local network. It might be a remote machine colocated in a different part of the world. It could even be a virtual machine. There are a lot of options, but the location of the server doesn’t matter at all. The important thing is that you can access it somehow over your network, and that it stores your game data.</p>
+
+<p>In a way, the Asset Server functions as a backup of your Project Folder. You do not directly manipulate the contents of the Asset Server while you are developing. You make changes to your Project locally, then when you are done, you <span class="doc-menu">Commit Changes</span> to the Project on the Server. This makes your local Project and the Asset Server Project identical.</p>
+
+<p>Now, when your fellow developers make a change, the Asset Server is identical to their Project, but not yours. To synchronize your local Project, you request to <span class="doc-menu">Update from Server</span>. Now, whatever changes your team members have made will be downloaded from the server to your local Project.</p>
+
+<p>This is the basic workflow for using the Asset Server. In addition to this basic functionality, the Asset Server allows for rollback to previous versions of assets, detailed file comparison, merging two different scripts, resolving conflicts, and recovering deleted assets.</p>
+
+<h2>Setting up the Asset Server</h2>
+
+<p>The Asset Server requires a one time server setup and a client configuration for each user. You can read about how to do that in the <a href="SettinguptheAssetServer.html">Asset Server Setup page</a>.</p>
+
+<p>The rest of this guide explains how to deploy, administrate, and regularly use the Asset Server.</p>
+
+<h2>Daily use of the Asset Server</h2>
+
+<p>This section explains the common tasks, workflow and best practices for using the Asset Server on a day-to-day basis.</p>
+
+<h2>Getting Started</h2>
+
+<p>If you are joining a team that has a lot of work stored on the Asset Server already, this is the quickest way to get up and running correctly.</p>
+
+<ol>
+<li>Create a new empty Project with no packages imported</li>
+<li>Go to <span class="doc-menu">Edit-&gt;Project Settings-&gt;Editor</span> and select <span class="doc-menu">Asset Server</span> as the version control mode</li>
+<li>From the menubar, select <span class="doc-menu">Window-&gt;Version Control</span>
+</li>
+<li>Click the <span class="doc-menu">Connection</span> button</li>
+<li>Enter your user name and password (provided by your Asset Server administrator)</li>
+<li>Click <span class="doc-menu">Show Projects</span> and select the desired project</li>
+<li>Click <span class="doc-menu">Connect</span>
+</li>
+<li>Click the <span class="doc-menu">Update</span> tab</li>
+<li>Click the <span class="doc-menu">Update</span> button</li>
+<li>If a conflict occurs, discard all local versions</li>
+<li>Wait for the update to complete</li>
+<li>You are ready to go</li>
+</ol>
+
+<h2>Workflow Fundamentals</h2>
+
+<p>When using the Asset Server with a multi-person team, it is generally good practice to Update all changed assets from the server when you begin working, and Commit your changes at the end of the day, or whenever you’re done working. You should also commit changes when you have made significant progress on something, even if it is in the middle of the day. Committing your changes regularly and frequently is recommended.</p>
+
+<h2>Understanding the Server View</h2>
+
+<p>The <span class="doc-keyword">Server View</span> is your window into the Asset Server you’re connected to. You can open the Server View by selecting <span class="doc-menu">Window-&gt;Version Control</span>.</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-ServerView.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;Overview&lt;/span&gt; tab">
+<figcaption>The <span class="doc-keyword">Overview</span> tab</figcaption></figure>
+
+<p>The Server View is broken into tabs: <span class="doc-keyword">Overview</span> <span class="doc-keyword">Update</span>, and <span class="doc-keyword">Commit</span>. <span class="doc-keyword">Overview</span> will show you any differences between your local project and the latest version on the server with options to quickly commit local changes or download the latest updates. <span class="doc-keyword">Update</span> will show you the latest remote changes on the server and allow you to download them to your local project. <span class="doc-keyword">Commit</span> allows you to create a <span class="doc-keyword">Changeset</span> and commit it to the server for others to download.</p>
+
+<h3>Connecting to the server</h3>
+
+<p>Before you can use the asset server, you must connect to it. To do this you click the <span class="doc-menu">Connection</span> button, which takes you to the connection screen:</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-Connection.png" alt="The Asset Server connection screen">
+<figcaption>The Asset Server connection screen</figcaption></figure>
+
+<p>Here you need to fill in:</p>
+
+<ol>
+<li>Server address</li>
+<li>Username</li>
+<li>Password</li>
+</ol>
+
+<p>By clicking <span class="doc-menu">Show projects</span> you can now see the available projects on the asset server, and choose which one to connect to by clicking <span class="doc-menu">Connect</span>. Note that the username and password you use can be obtain from your system administrator. Your system administrator created accounts when they installed Asset Server.</p>
+
+<h3>Updating from the Server</h3>
+
+<p>To download all updates from the server, select the <span class="doc-menu">Update</span> tab from the Overview tab and you will see a list of the latest committed Changesets. By selecting one of these you can see what was changed in the project as well as the provided commit message. Click <span class="doc-menu">Update</span> and you will begin downloading all Changeset updates.</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-UpdateTab.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;Update&lt;/span&gt; Tab">
+<figcaption>The <span class="doc-keyword">Update</span> Tab</figcaption></figure>
+
+<h3>Committing Changes to the Server</h3>
+
+<p>When you have made a change to your local project and you want to store those changes on the server, you use the top <span class="doc-menu">Commit</span> tab.</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-UploadAssets.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;Commit&lt;/span&gt; tab">
+<figcaption>The <span class="doc-keyword">Commit</span> tab</figcaption></figure>
+
+<p>Now you will be able to see all the local changes made to the project since your last update, and will be able to select which changes you wish to upload to the server. You can add changes to the changeset either by manually dragging them into the changeset field, or by using the buttons placed below the commit message field. Remember to type in a commit message which will help you when you compare versions or revert to an earlier version later on, both of which are discussed below. </p>
+
+<h3>Resolving conflicts</h3>
+
+<p>With multiple people working on the same collection of data, conflicts will inevitably arise. Remember, there is no need to panic! If a conflict exists, you will be presented with the <span class="doc-keyword">Conflict Resolution</span> dialog when updating your project.</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-ResolveConflict.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;Conflict Resolution&lt;/span&gt; screen">
+<figcaption>The <span class="doc-keyword">Conflict Resolution</span> screen</figcaption></figure>
+
+<p>Here, you will be informed of each individual conflict, and be presented with different options to resolve each individual conflict. For any single conflict, you can select <span class="doc-menu">Skip Asset</span> (which will not download that asset from the server), <span class="doc-menu">Discard My Changes</span> (which will completely overwrite your local version of the asset) or <span class="doc-menu">Ignore Server Changes</span> (which will ignore the changes others made to the asset and after this update you will be able to commit your local changes over server ones) for each individual conflict. Additionally, you can select <span class="doc-menu">Merge</span> for text assets like scripts to merge the server version with the local version.</p>
+
+<p>
+<strong>Note:</strong> If you choose to discard your changes, the asset will be updated to the latest version from the server (i.e., it will incorporate other users’ changes that have been made while you were working). If you want to get the asset back as it was when you started working, you should revert to the specific version that you checked out. (See <em>Browsing revision history and reverting assets</em> below.)</p>
+
+<p>If you run into a conflict while you are committing your local changes, Unity will refuse to commit your changes and inform you that a conflict exists. To resolve the conflicts, select <span class="doc-menu">Update</span>. Your local changes will not automatically be overwritten. At this point you will see the <span class="doc-keyword">Conflict Resolution</span> dialog, and can follow the instructions in the above paragraph.</p>
+
+<h3>Browsing revision history and reverting assets</h3>
+
+<p>The Asset Server retains all uploaded versions of an asset in its database, so you can revert your local version to an earlier version at any time. You can either select to restore the entire project or single files. To revert to an older version of an asset or a project, select the Overview tab then click <span class="doc-keyword">Show History</span> listed under Asset Server Actions. You will now see a list of all commits and be able to select and restore any file or all project to an older version. </p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-RevertingAsset.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;History&lt;/span&gt; dialog">
+<figcaption>The <span class="doc-keyword">History</span> dialog</figcaption></figure>
+
+<p>Here, you can see the version number and added comments with each version of the asset or project. This is one reason why descriptive comments are helpful. Select any asset to see its history or <span class="doc-menu">Entire Project</span> for all changes made in project. Find revision you need. You can either select whole revision or particular asset in revision. Then click <span class="doc-menu">Download Selected File</span> to get your local asset replaced with a copy of the selected revision. <span class="doc-menu">Revert All Project</span> will revert entire project to selected revision.</p>
+
+<p>Prior to reverting, if there are any differences between your local version and the selected server version, those changes will be lost when the local version is reverted.</p>
+
+<p>If you only want to abandon the changes made to the local copy, you don’t have to revert. You can discard those local modifications by selecting <span class="doc-menu">Discard Changes</span> in the main asset server window. This will immediately download the current version of the project from the server to your local Project.</p>
+
+<h3>Comparing asset versions</h3>
+
+<p>If you’re curious to see the differences between two particular versions you can explicitly compare them. To do this, open <span class="doc-menu">History</span> window, select revision and asset you want to compare and press <span class="doc-menu">Compare to Local Version</span>. If you need to compare two different revisions of an asset - right click on it, in the context menu select <span class="doc-menu">Compare to Another Revision</span> then find revision you want to compare to and select it. </p>
+
+<p>
+<em>Note</em>: this feature requires that you have one of supported file diff/merge tools installed. Supported tools are:</p>
+
+<ul>
+<li>On Windows:
+
+<ul>
+<li>TortoiseMerge: part of <a href="http://tortoisesvn.net/">TortoiseSVN</a> or a separate download from the <a href="http://sourceforge.net/project/showfiles.php?group_id=138498">project site</a>.</li>
+<li>
+<a href="http://winmerge.org/">WinMerge</a>.</li>
+<li>
+<a href="http://www.sourcegear.com/diffmerge/">SourceGear Diff/Merge</a>.</li>
+<li>
+<a href="http://www.perforce.com/perforce/products/merge.html">Perforce Merge (p4merge)</a>: part of Perforce’s visual client suite (P4V).</li>
+<li>
+<a href="http://sourceforge.net/projects/tkdiff/">TkDiff</a>.</li>
+</ul>
+</li>
+<li>On Mac OS X:
+
+<ul>
+<li>
+<a href="http://www.sourcegear.com/diffmerge/">SourceGear Diff/Merge</a>.</li>
+<li>FileMerge: part of Apple’s <a href="http://developer.apple.com">XCode development tools</a>.</li>
+<li>
+<a href="http://sourceforge.net/projects/tkdiff/">TkDiff</a>.</li>
+<li>
+<a href="http://www.perforce.com/perforce/products/merge.html">Perforce Merge (p4merge)</a>: part of Perforce’s visual client suite (P4V).</li>
+</ul>
+</li>
+</ul>
+
+<h3>Recovering deleted assets</h3>
+
+<p>Deleting a local asset and committing the delete to the server will in fact not delete an asset permanently. Just as any previous version of an asset can be restored through <span class="doc-menu">History</span> window from the Overview tab.</p>
+
+<figure>
+<img src="../uploads/Main/AssetServer-RecoverDeleted.png" alt="The &lt;span class=&quot;doc-keyword&quot;&gt;History&lt;/span&gt; dialog">
+<figcaption>The <span class="doc-keyword">History</span> dialog</figcaption></figure>
+
+<p>Expand <span class="doc-menu">Deleted Assets</span> item, find and select assets from the list and hit <span class="doc-menu">Recover</span>, the selected assets will be downloaded and re-added to the local project. If the folder that the asset was located in before the deletion still exists, the asset will be restored to the original location, otherwise it will be added to the root of the Assets folder in the local project.</p>
+
+<h3>Best Practices &amp; Common Issues</h3>
+
+<p>This is a compilation of best practices and solutions to problems which will help you when using the Asset Server:</p>
+
+<ol>
+<li>Backup, Backup, Backup
+
+<ul>
+<li>Maintain a backup of your database. It is very important to do this. In the unfortunate case that you have a hardware problem, a virus, a user error, etc you may loose all of your work. Therefore make sure you have a backup system in place. You can find lots of resources online for setting up backup systems.</li>
+</ul>
+</li>
+<li>Stop the server before shutting the machine down
+
+<ul>
+<li>This can prevent “fast shutdowns” from being generated in the PostgreSQL (Asset Server) log. If this occurs the Asset Server has to do a recovery due to an improper shut down. This can take a very long time if you have a large project with many commits.</li>
+</ul>
+</li>
+<li>Resetting you password from Console
+
+<ul>
+<li>You can reset your password directly from a shell, console or command line using the following command:</li>
+</ul>
+
+<p>psql -U unitysrv -d template1 -c“alter role admin with password ‘MYPASSWORD’” </p>
+</li>
+<li>Can’t connect to Asset Server
+
+<ul>
+<li>The password may have expired. Try resetting your password.</li>
+<li>Also the username is case sensitive: “Admin” != “admin”. Make sure you are using the correct case.</li>
+<li>Make sure the server is actually running:
+
+<ul>
+<li>On OS X or Linux you can type on the terminal: ps -aux</li>
+<li>On Windows you can use the Task Manager.</li>
+</ul>
+</li>
+<li>Verify that the Asset Server is not running on more than one computer in your Network. You could be connecting to the wrong one.</li>
+</ul>
+</li>
+<li>The Asset Server doesn’t work in 64-bit Linux
+
+<ul>
+<li>The asset server can run OK on 64-bit Linux machines if you install 32-bit versions of the required packages. You can use “dpkg -i –force-architecture” to do this.</li>
+</ul>
+</li>
+<li>Use the Asset Server logs to get more information
+
+<ul>
+<li>Windows:
+
+<ul>
+<li><code>ProgramFiles\Unity\AssetServer\log</code></li>
+</ul>
+</li>
+<li>OS X:
+
+<ul>
+<li><code>/Library/UnityAssetServer/log</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>“The application failed to initialize properly (0xc0000135)” in Windows XP
+
+<ul>
+<li>In this case Service Pack 2 is required, and you should install .NET 2.0.</li>
+</ul>
+</li>
+</ol>
+
+<h2>Asset Server training complete</h2>
+
+<p>You should now be equipped with the knowledge you need to start using the Asset Server effectively. Get to it, and don’t forget the good workflow fundamentals. Commit changes often, and don’t be afraid of losing anything.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="AssetStoreAdmin.html"></a></span><div class="tip">Publisher Admin Section Overview</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SettinguptheAssetServer.html"></a></span><div class="tip">Setting up the Asset Server</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

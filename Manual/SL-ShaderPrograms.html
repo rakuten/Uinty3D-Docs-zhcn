@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Writing vertex and fragment shaders</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SL-ShaderPrograms.html">English</a></li>
+<li><a href="/es/current/Manual/SL-ShaderPrograms.html">Español</a></li>
+<li><a href="/ru/current/Manual/SL-ShaderPrograms.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="SL-Reference.html"> Shader Reference</a></li>
+<li>Writing vertex and fragment shaders</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-SurfaceShaderTessellation.html"></a></span><div class="tip">Surface Shaders with DX11 Tessellation</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-VertexFragmentShaderExamples.html"></a></span><div class="tip">Vertex and Fragment Shader Examples</div>
+</div>
+</div></div>
+<h1>Writing vertex and fragment shaders</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">ShaderLab</span> shaders encompass more than just “hardware shaders”. They do many things. They describe properties that are displayed in the Material Inspector, contain multiple shader implementations for different graphics hardware, configure fixed function hardware state and so on. The actual programmable shaders - like vertex and fragment programs - are just a part of the whole ShaderLab’s “shader” concept. Take a look at <a href="ShaderTut2.html">shader tutorial</a> for a basic introduction. Here we’ll call the low-level hardware shaders <span class="doc-keyword">shader programs</span>.</p>
+
+<p>
+<strong>If you want to write shaders that interact with lighting, take a look at <a href="SL-SurfaceShaders.html">Surface Shaders</a> documentation</strong>. For some examples, take a look at <a href="SL-VertexFragmentShaderExamples.html"><span class="doc-keyword">Vertex and Fragment Shader Examples</span></a>. The rest of this page will assume shaders that do not interact with Unity lights (e.g. special effects, <a href="comp-ImageEffects.html">Image Effects</a> etc.)</p>
+
+<p>Shader programs are written in Cg / HLSL language, by embedding “snippets” in the shader text, somewhere inside the <a href="SL-Pass.html">Pass</a> command. They usually look like this:</p>
+
+<pre><code>  Pass {
+      // ... the usual pass state setup ...
+      
+      CGPROGRAM
+      // compilation directives for this snippet, e.g.:
+      #pragma vertex vert
+      #pragma fragment frag
+      
+      // the Cg/HLSL code itself
+      
+      ENDCG
+      // ... the rest of pass setup ...
+  }
+</code></pre>
+
+<h2>Cg snippets</h2>
+
+<p>Cg program snippets are written between <span class="doc-prop">CGPROGRAM</span> and <span class="doc-prop">ENDCG</span>.</p>
+
+<p>At the start of the snippet compilation directives can be given as <span class="doc-prop">#pragma</span> statements. Directives indicating which shader functions to compile:</p>
+
+<ul>
+<li>
+<span class="doc-prop">#pragma vertex <em>name</em></span> - compile function <em>name</em> as the vertex shader.</li>
+<li>
+<span class="doc-prop">#pragma fragment <em>name</em></span> - compile function <em>name</em> as the fragment shader.</li>
+<li>
+<span class="doc-prop">#pragma geometry <em>name</em></span> - compile function <em>name</em> as DX10 geometry shader. Having this option automatically turns on <span class="doc-prop">#pragma target 4.0</span>, described below.</li>
+<li>
+<span class="doc-prop">#pragma hull <em>name</em></span> - compile function <em>name</em> as DX11 hull shader. Having this option automatically turns on <span class="doc-prop">#pragma target 5.0</span>, described below.</li>
+<li>
+<span class="doc-prop">#pragma domain <em>name</em></span> - compile function <em>name</em> as DX11 domain shader. Having this option automatically turns on <span class="doc-prop">#pragma target 5.0</span>, described below.</li>
+</ul>
+
+<p>Other compilation directives:</p>
+
+<ul>
+<li>
+<span class="doc-prop">#pragma target <em>name</em></span> - which shader target to compile to. See <em>Shader targets</em> below for details.</li>
+<li>
+<span class="doc-prop">#pragma only_renderers <em>space separated names</em></span> - compile shader only for given renderers. By default shaders are compiled for all renderers. See <em>Renderers</em> below for details.</li>
+<li>
+<span class="doc-prop">#pragma exclude_renderers <em>space separated names</em></span> - do not compile shader for given renderers. By default shaders are compiled for all renderers. See <em>Renderers</em> below for details.</li>
+<li>
+<span class="doc-prop">#pragma multi_compile …_</span> - for working with <a href="SL-MultipleProgramVariants.html">multiple shader variants</a>.</li>
+<li>
+<span class="doc-prop">#pragma enable_d3d11_debug_symbols</span> - generate debug information for shaders compiled for DirectX 11, this will allow you to debug shaders via Visual Studio 2012 (or higher) Graphics debugger.</li>
+</ul>
+
+<p>Each snippet must contain at least a vertex program and a fragment program. Thus <span class="doc-prop">#pragma vertex</span> and <span class="doc-prop">#pragma fragment</span> directives are required.</p>
+
+<p>Compilation directives that don’t do anything starting with Unity 5.0 and can be safely removed: <code>#pragma glsl</code>, <code>#pragma glsl_no_auto_normalization</code>, <code>#pragma profileoption</code>, <code>#pragma fragmentoption</code>.</p>
+
+<h2>Shader targets</h2>
+
+<p>By default, Unity compiles shaders into roughly shader model 2.0 equivalent. Using <span class="doc-prop">#pragma target</span> allows shaders to be compiled into other capability levels. Currently these targets are supported:</p>
+
+<ul>
+<li>
+<span class="doc-prop">#pragma target 2.0</span> <em>(default)</em> - roughly shader model 2.0
+
+<ul>
+<li>Shader Model 2.0 on Direct3D 9.</li>
+<li>Limited amount of arithmetic &amp; texture instructions; no vertex texture sampling; no derivatives in fragment shaders.</li>
+</ul>
+</li>
+<li>
+<span class="doc-prop">#pragma target 3.0</span> - compile to shader model 3.0:
+
+<ul>
+<li>Shader Model 3.0 on Direct3D 9.</li>
+</ul>
+</li>
+<li>
+<span class="doc-prop">#pragma target 4.0</span> - compile to DX10 shader model 4.0. This target is currently only supported by DirectX 11 and XboxOne/PS4 platforms.</li>
+<li>
+<span class="doc-prop">#pragma target 5.0</span> - compile to DX11 shader model 5.0. This target is currently only supported by DirectX 11 and XboxOne/PS4 platforms.</li>
+</ul>
+
+<p>Note that all OpenGL-like platforms (including mobile) are treated as “capable of shader model 3.0”. WP8/WinRT platforms (DX11 feature level 9.x) are treated as only capable of shader model 2.0.</p>
+
+<h2>Rendering platforms</h2>
+
+<p>Unity supports several rendering APIs (e.g. Direct3D 9 and OpenGL), and by default all shader programs are compiled into all supported renderers. You can indicate which renderers to compile to using <span class="doc-prop">#pragma only_renderers</span> or <span class="doc-prop">#pragma exclude_renderers</span> directives. This is mostly useful in cases where you are explicitly using some shader language features that you know aren’t possible on some platforms. Currently supported renderer names are:</p>
+
+<ul>
+<li>
+<span class="doc-prop">d3d9</span> - Direct3D 9.</li>
+<li>
+<span class="doc-prop">d3d11</span> - Direct3D 11.</li>
+<li>
+<span class="doc-prop">opengl</span> - OpenGL.</li>
+<li>
+<span class="doc-prop">gles</span> - OpenGL ES 2.0.</li>
+<li>
+<span class="doc-prop">gles3</span> - OpenGL ES 3.0.</li>
+<li>
+<span class="doc-prop">metal</span> - iOS Metal.</li>
+<li>
+<span class="doc-prop">d3d11_9x</span> - Direct3D 11 9.x feature level, as commonly used on WSA/WP8 platforms.</li>
+<li>
+<span class="doc-prop">xbox360</span> - Xbox 360.</li>
+<li>
+<span class="doc-prop">xboxone</span> - Xbox One.</li>
+<li>
+<span class="doc-prop">ps3</span> - PlayStation 3.</li>
+<li>
+<span class="doc-prop">ps4</span> - PlayStation 4.</li>
+<li>
+<span class="doc-prop">psp2</span> - PlayStation Vita.</li>
+<li>
+<span class="doc-prop">psm</span> - PlayStation Mobile.</li>
+</ul>
+
+<p>For example, this line would only compile shader into D3D9 mode:</p>
+
+<pre><code>#pragma only_renderers d3d9
+</code></pre>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-SurfaceShaderTessellation.html"></a></span><div class="tip">Surface Shaders with DX11 Tessellation</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-VertexFragmentShaderExamples.html"></a></span><div class="tip">Vertex and Fragment Shader Examples</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

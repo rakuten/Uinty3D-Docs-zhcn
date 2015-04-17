@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Execution Order of Event Functions</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/ExecutionOrder.html">English</a></li>
+<li><a href="/es/current/Manual/ExecutionOrder.html">Español</a></li>
+<li><a href="/ru/current/Manual/ExecutionOrder.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="ScriptingSection.html">Scripting</a></li>
+<li><a href="ScriptingConcepts.html">Scripting Overview</a></li>
+<li>Execution Order of Event Functions</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Attributes.html"></a></span><div class="tip">Attributes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnderstandingAutomaticMemoryManagement.html"></a></span><div class="tip">Understanding Automatic Memory Management</div>
+</div>
+</div></div>
+<h1>Execution Order of Event Functions</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>In Unity scripting, there are a number of event functions that get executed in a predetermined order as a script executes. This execution order is described below:</p>
+
+<h2>Editor</h2>
+
+<ul>
+<li>
+<strong>Reset:</strong> Reset is called to initialize the script’s properties when it is first attached to the object and also when the <em>Reset</em> command is used.</li>
+</ul>
+
+<h2>First Scene Load</h2>
+
+<p>These functions get called when a scene starts (once for each object in the scene). </p>
+
+<ul>
+<li>
+<strong>Awake:</strong> This function is always called before any Start functions and also just after a prefab is instantiated. (If a GameObject is inactive during start up Awake is not called until it is made active, or a function in any script attached to it is called.)</li>
+<li>
+<strong>OnEnable:</strong> (only called if the Object is active): This function is called just after the object is enabled. This happens when a MonoBehaviour instance is created, such as when a level is loaded or a GameObject with the script component is instantiated.</li>
+</ul>
+
+<p>Note that for objects added to the scene, the Awake and OnEnable functions for <em>all</em> scripts will be called before Start, Update, etc are called for any of them. Naturally, this cannot be enforced when an object is instantiated during gameplay.</p>
+
+<h2>Before the first frame update</h2>
+
+<ul>
+<li>
+<strong>Start:</strong> Start is called before the first frame update only if the script instance is enabled.</li>
+</ul>
+
+<p>For objects added to the scene, the Start function will be called on all scripts before Update, etc are called for any of them. Naturally, this cannot be enforced when an object is instantiated during gameplay.</p>
+
+<h2>In between frames</h2>
+
+<ul>
+<li>
+<strong>OnApplicationPause:</strong> This is called at the end of the frame where the pause is detected, effectively between the normal frame updates. One extra frame will be issued after <span class="doc-prop">OnApplicationPause</span> is called to allow the game to show graphics that indicate the paused state.</li>
+</ul>
+
+<h2>Update Order</h2>
+
+<p>When you’re keeping track of game logic and interactions, animations, camera positions, etc., there are a few different events you can use. The common pattern is to perform most tasks inside the <span class="doc-prop">Update</span> function, but there are also other functions you can use.</p>
+
+<ul>
+<li><p>
+<strong>FixedUpdate:</strong> <span class="doc-prop">FixedUpdate</span> is often called more frequently than <span class="doc-prop">Update</span>. It can be called multiple times per frame, if the frame rate is low and it may not be called between frames at all if the frame rate is high. All physics calculations and updates occur immediately after <span class="doc-prop">FixedUpdate</span>. When applying movement calculations inside <span class="doc-prop">FixedUpdate</span>, you do not need to multiply your values by <span class="doc-prop">Time.deltaTime</span>. This is because <span class="doc-prop">FixedUpdate</span> is called on a reliable timer, independent of the frame rate.</p></li>
+<li><p>
+<strong>Update:</strong> <span class="doc-prop">Update</span> is called once per frame. It is the main workhorse function for frame updates.</p></li>
+<li><p>
+<strong>LateUpdate:</strong> <span class="doc-prop">LateUpdate</span> is called once per frame, after <span class="doc-prop">Update</span> has finished. Any calculations that are performed in <span class="doc-prop">Update</span> will have completed when <span class="doc-prop">LateUpdate</span> begins. A common use for <span class="doc-prop">LateUpdate</span> would be a following third-person camera. If you make your character move and turn inside <span class="doc-prop">Update</span>, you can perform all camera movement and rotation calculations in <span class="doc-prop">LateUpdate</span>. This will ensure that the character has moved completely before the camera tracks its position.</p></li>
+</ul>
+
+<h2>Rendering</h2>
+
+<ul>
+<li>
+<strong>OnPreCull:</strong> Called before the camera culls the scene. Culling determines which objects are visible to the camera. OnPreCull is called just before culling takes place.</li>
+<li>
+<strong>OnBecameVisible/OnBecameInvisible:</strong> Called when an object becomes visible/invisible to any camera.</li>
+<li>
+<strong>OnWillRenderObject:</strong> Called <strong>once</strong> for each camera if the object is visible.</li>
+<li>
+<strong>OnPreRender:</strong> Called before the camera starts rendering the scene.</li>
+<li>
+<strong>OnRenderObject:</strong> Called after all regular scene rendering is done. You can use GL class or Graphics.DrawMeshNow to draw custom geometry at this point.</li>
+<li>
+<strong>OnPostRender:</strong> Called after a camera finishes rendering the scene.</li>
+<li>
+<strong>OnRenderImage:</strong> Called after scene rendering is complete to allow postprocessing of the screen image.</li>
+<li>
+<strong>OnGUI:</strong> Called multiple times per frame in response to GUI events. The Layout and Repaint events are processed first, followed by a Layout and keyboard/mouse event for each input event.</li>
+<li>
+<strong>OnDrawGizmos</strong> Used for drawing Gizmos in the scene view for visualisation purposes.</li>
+</ul>
+
+<h2>Coroutines</h2>
+
+<p>Normal coroutine updates are run after the Update function returns. A coroutine is a function that can suspend its execution (yield) until the given YieldInstruction finishes.
+Different uses of Coroutines:</p>
+
+<ul>
+<li>
+<strong>yield</strong> The coroutine will continue after all Update functions have been called on the next frame.</li>
+<li>
+<strong>yield WaitForSeconds</strong> Continue after a specified time delay, after all Update functions have been called for the frame</li>
+<li>
+<strong>yield WaitForFixedUpdate</strong> Continue after all FixedUpdate has been called on all scripts</li>
+<li>
+<strong>yield WWW</strong> Continue after a WWW download has completed.</li>
+<li>
+<strong>yield StartCoroutine</strong> Chains the coroutine, and will wait for the MyFunc coroutine to complete first.</li>
+</ul>
+
+<h2>When the Object is Destroyed</h2>
+
+<ul>
+<li>
+<strong>OnDestroy:</strong> This function is called after all frame updates for the last frame of the object’s existence (the object might be destroyed in response to Object.Destroy or at the closure of a scene).</li>
+</ul>
+
+<h2>When Quitting</h2>
+
+<p>These functions get called on all the active objects in your scene:</p>
+
+<ul>
+<li>
+<strong>OnApplicationQuit:</strong> This function is called on all game objects before the application is quit. In the editor it is called when the user stops playmode. In the web player it is called when the web view is closed.</li>
+<li>
+<strong>OnDisable:</strong> This function is called when the behaviour becomes disabled or inactive.</li>
+</ul>
+
+<h2>Script Lifecycle Flowchart</h2>
+
+<p>The following diagram summarises the ordering and repetition of event functions during a script’s lifetime.</p>
+
+<figure>
+<img src="../uploads/Main/monobehaviour_flowchart.svg" alt="">
+<figcaption></figcaption></figure>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="Attributes.html"></a></span><div class="tip">Attributes</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="UnderstandingAutomaticMemoryManagement.html"></a></span><div class="tip">Understanding Automatic Memory Management</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

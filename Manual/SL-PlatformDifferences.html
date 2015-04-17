@@ -1,0 +1,241 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Platform Specific Rendering Differences</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/SL-PlatformDifferences.html">English</a></li>
+<li><a href="/es/current/Manual/SL-PlatformDifferences.html">Español</a></li>
+<li><a href="/ru/current/Manual/SL-PlatformDifferences.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsReference.html">Graphics Reference</a></li>
+<li><a href="SL-Reference.html"> Shader Reference</a></li>
+<li><a href="SL-AdvancedTopics.html">Advanced ShaderLab topics</a></li>
+<li>Platform Specific Rendering Differences</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-CameraDepthTexture.html"></a></span><div class="tip"> Camera's Depth Texture</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderLOD.html"></a></span><div class="tip">Shader Level of Detail</div>
+</div>
+</div></div>
+<h1>Platform Specific Rendering Differences</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Unity runs on various platforms and in some cases there are differences in how things behave. Most of the time Unity hides the differences from you, but sometimes you can still bump into them.</p>
+
+<h2>Render Texture Coordinates</h2>
+
+<p>Vertical texture coordinate conventions differ between Direct3D, OpenGL and OpenGL ES:</p>
+
+<ul>
+<li>In Direct3D, the coordinate is zero at the top, and increases downwards.</li>
+<li>In OpenGL and OpenGL ES, the coordinate is zero at the bottom, and increases upwards.</li>
+</ul>
+
+<p>Most of the time this does not really matter, except when rendering into a <a href="class-RenderTexture.html">Render Texture</a>. In that case, Unity internally flips rendering upside down when rendering into a texture on Direct3D, so that the conventions match between the platforms.</p>
+
+<p>One case where this does not happen, is when <a href="comp-ImageEffects.html">Image Effects</a> and Anti-Aliasing is used. In this case, Unity renders to screen to get anti-aliasing, and then “resolves” rendering into a RenderTexture for further processing with an Image Effect. The resulting source texture for an image effect is <em>not flipped upside down</em> on Direct3D (unlike all other Render Textures).</p>
+
+<p>If your Image Effect is a simple one (processes one texture at a time) then this does not really matter because <a href="../ScriptReference/Graphics.Blit.html">Graphics.Blit</a> takes care of that.</p>
+
+<p>However, <strong>if you’re processing more than one RenderTexture together</strong> in your Image Effect, most likely they will come out at different vertical orientations (only in Direct3D-like platforms, and only when anti-aliasing is used). You need to manually “flip” the screen texture upside down in your vertex shader, like this:</p>
+
+<pre><code>// On D3D when AA is used, the main texture and scene depth texture
+// will come out in different vertical orientations.
+// So flip sampling of the texture when that is the case (main texture
+// texel size will have negative Y).
+
+#if UNITY_UV_STARTS_AT_TOP
+if (_MainTex_TexelSize.y &lt; 0)
+        uv.y = 1-uv.y;
+#endif
+</code></pre>
+
+<p>Check out the Edge Detection scene in the <a href="http://unity3d.com/support/resources/example-projects/shader-replacement">Shader Replacement sample project</a> for an example of this. Edge detection there uses both the screen texture and the Camera’s <a href="SL-CameraDepthTexture.html">Depth+Normals texture</a>.</p>
+
+<h2>Semantics used by shaders</h2>
+
+<p>To get shaders working on all platforms, some special shader values should use these semantics:</p>
+
+<ul>
+<li>Vertex shader output (clip space) position: <code>SV_POSITION</code>. Sometimes shaders use <code>POSITION</code> semantics for that, but this will not work on Sony PS4 and will not work when tessellation is used.</li>
+<li>Fragment shader output color: <code>SV_Target</code>. Sometimes shaders use <code>COLOR</code> or <code>COLOR0</code> for that, but again that will not work on PS4.</li>
+</ul>
+
+<h2>AlphaTest and programmable shaders</h2>
+
+<p>Some platforms, most notably mobile (OpenGL ES &amp; Metal) and Direct3D 11, do not have fixed function <a href="SL-AlphaTest.html">alpha testing</a> functionality. When you are using programmable shaders, it’s advisable to use the Cg/HLSL <code>clip()</code> function in the pixel shader instead.</p>
+
+<h2>Direct3D 11 shader compiler is more picky about syntax</h2>
+
+<p>Direct3D platforms use Microsoft’s HLSL shader compiler. The HLSL compiler is more picky than other compilers about various subtle shader errors. For example, it won’t accept function output values that aren’t initialized properly.</p>
+
+<p>The most common places where you would run into this are:</p>
+
+<ul>
+<li><p>A <a href="SL-SurfaceShaders.html">Surface shader</a> vertex modifier that has an “out” parameter. Make sure to initialize the output like this:
+ void vert (inout appdata_full v, out Input o)
+ {
+ <strong>UNITY_INITIALIZE_OUTPUT(Input,o);</strong>
+ // …
+ }</p></li>
+<li><p>Partially initialized values, e.g. a function returns float4, but the code only sets the .xyz values of it. Make sure to set all values or else change to float3 if you only need three values.</p></li>
+<li><p>Using <code>tex2D</code> in the vertex shader. This is not valid since UV derivatives don’t exist in the vertex shader; you need to sample an explicit mip level instead, e.g. use <code>tex2Dlod (tex, float4(uv,0,0))</code>. You’ll need to add <code>#pragma target 3.0</code> since tex2Dlod is a shader model 3.0 feature.</p></li>
+</ul>
+
+<h2>DirectX 11 HLSL syntax and Surface Shaders</h2>
+
+<p>Currently some parts of the <a href="SL-SurfaceShaders.html">surface shader</a> compilation pipeline do not understand DX11-specific HLSL syntax. If you’re using HLSL features like StructuredBuffers, RWTextures and other non-DX9 syntax, you have to wrap them in a DX11-only preprocessor macro:</p>
+
+<pre><code>#ifdef SHADER_API_D3D11
+// DX11-specific code, e.g.
+StructuredBuffer&lt;float4&gt; myColors;
+RWTexture2D&lt;float4&gt; myRandomWriteTexture;
+#endif
+</code></pre>
+
+<h2>Using OpenGL Shading Language (GLSL) shaders with OpenGL ES 2.0</h2>
+
+<p>OpenGL ES 2.0 provides only limited native support for the OpenGL Shading Language (GLSL). For example, the OpenGL ES 2.0 layer provides no built-in parameters to the shader.</p>
+
+<p>Unity implements built-in parameters for you the same way as OpenGL does, except that the following built-in parameters are missing:</p>
+
+<ul>
+<li><span class="doc-prop">gl_ClipVertex</span></li>
+<li><span class="doc-prop">gl_SecondaryColor</span></li>
+<li><span class="doc-prop">gl_DepthRange</span></li>
+<li>
+<span class="doc-prop">halfVector</span> property of the <span class="doc-prop">gl_LightSourceParameters</span> structure</li>
+<li><span class="doc-prop">gl_FrontFacing</span></li>
+<li><span class="doc-prop">gl_FrontLightModelProduct</span></li>
+<li><span class="doc-prop">gl_BackLightModelProduct</span></li>
+<li><span class="doc-prop">gl_BackMaterial</span></li>
+<li><span class="doc-prop">gl_Point</span></li>
+<li><span class="doc-prop">gl_PointSize</span></li>
+<li><span class="doc-prop">gl_ClipPlane</span></li>
+<li>
+<span class="doc-prop">gl_EyePlaneR</span>, <span class="doc-prop">gl_EyePlaneS</span>, <span class="doc-prop">gl_EyePlaneT</span>, <span class="doc-prop">gl_EyePlaneQ</span>
+</li>
+<li>
+<span class="doc-prop">gl_ObjectPlaneR</span>, <span class="doc-prop">gl_ObjectPlaneS</span>, <span class="doc-prop">gl_ObjectPlaneT</span>, <span class="doc-prop">gl_ObjectPlaneQ</span>
+</li>
+<li><span class="doc-prop">gl_Fog</span></li>
+</ul>
+
+<h2>iPad2 and MSAA and alpha-blended geometry</h2>
+
+<p>There is a bug in Apple driver resulting in artifacts when MSAA is enabled and alpha-blended geometry is drawn with non RGBA colorMask. To prevent artifacts we force RGBA colorMask when this configuration is encountered, though it will render built-in Glow FX unusable (as it needs DST_ALPHA for intensity value). Also, please update your shaders if you wrote them yourself (see “Render Setup -&gt; ColorMask” in <a href="SL-Pass.html">Pass Docs</a>).</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="SL-CameraDepthTexture.html"></a></span><div class="tip"> Camera's Depth Texture</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="SL-ShaderLOD.html"></a></span><div class="tip">Shader Level of Detail</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

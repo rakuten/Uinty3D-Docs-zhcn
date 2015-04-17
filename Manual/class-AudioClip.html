@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Audio Clip</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-AudioClip.html">English</a></li>
+<li><a href="/es/current/Manual/class-AudioClip.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-AudioClip.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Audio.html">Audio</a></li>
+<li>Audio Reference</li>
+<li><a href="comp-AudioGroup.html">Audio Components</a></li>
+<li>Audio Clip</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-AudioGroup.html"></a></span><div class="tip">Audio Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AudioListener.html"></a></span><div class="tip">Audio Listener</div>
+</div>
+</div></div>
+<h1>Audio Clip</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/AudioClip.html' title='Go to AudioClip page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Audio Clips</span> contain the audio data used by <a href="class-AudioSource.html">Audio Sources</a>. Unity supports mono, stereo and multichannel audio assets (up to eight channels). The audio file formats that Unity can import are <strong>.aif</strong>, <strong>.wav</strong>, <strong>.mp3</strong>, and <strong>.ogg</strong>. Unity can also import <a href="TrackerModules.html">tracker modules</a> in the <strong>.xm</strong>, <strong>.mod</strong>, <strong>.it</strong>, and <strong>.s3m</strong> formats. The tracker module assets behave the same way as any other audio assets in Unity although no waveform preview is available in the asset import inspector.</p>
+
+<figure>
+<img src="../uploads/Main/AudioClipImporter35.png" alt="The Audio Clip inspector">
+<figcaption>The Audio Clip inspector</figcaption></figure>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Audio Format</span></td>
+	<td style="text-align:left;">The specific format that will be used for the sound at runtime.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Native</span></td>
+	<td style="text-align:left;">This option offers higher quality at the expense of larger file size and is best for very short sound effects.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Compressed</span></td>
+	<td style="text-align:left;">The compression results in smaller files but with somewhat lower quality compared to native audio. This format is best for medium length sound effects and music.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">3D Sound</span></td>
+	<td style="text-align:left;">If enabled, the sound will play back in 3D space. Both Mono and Stereo sounds can be played in 3D.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Force to mono</span></td>
+	<td style="text-align:left;">If enabled, the audio clip will be down-mixed to a single channel sound.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Load Type</span></td>
+	<td style="text-align:left;">The method Unity uses to load audio assets at runtime.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Decompress on load</span></td>
+	<td style="text-align:left;">Audio files will be decompressed as soon as they are loaded. Use this option for smaller compressed sounds to avoid the performance overhead of decompressing on the fly. Be aware that decompressing sounds on load will use about ten times more memory than keeping them compressed, so don’t use this option for large files.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Compressed in memory</span></td>
+	<td style="text-align:left;">Keep sounds compressed in memory and decompress while playing. This option has a slight performance overhead (especially for Ogg/Vorbis compressed files) so only use it for bigger files where decompression on load would use a prohibitive amount of memory. Note that, due to technical limitations, this option will silently switch to <em>Stream From Disc</em> (see below) for Ogg Vorbis assets on platforms that use FMOD audio.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"></td>
+	<td style="text-align:left;"><span class="doc-prop">Stream from disc</span></td>
+	<td style="text-align:left;">Stream audio data directly from disc. The memory used by this option is typically a small fraction of the file size, so it is very useful for music or other very long tracks. For performance reasons, it is usually advisable to stream only one or two files from disc at a time but the number of streams that can comfortably be handled depends on the hardware.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Compression</span></td>
+	<td style="text-align:left;">Amount of Compression to be applied to a <span class="doc-prop">Compressed</span> clip. Statistics about the file size can be seen under the slider. A good approach to tuning this value is to drag the slider to a place that leaves the playback “good enough” while keeping the file small enough for your distribution requirements.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Hardware Decoding</span></td>
+	<td style="text-align:left;">(iOS only) On iOS devices, Apple’s hardware decoder can be used resulting in lower CPU overhead during decompression. Check out platform specific details for more info.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">Gapless looping</span></td>
+	<td style="text-align:left;">(Android/iOS only) Use this when compressing a seamless looping audio source file (in a non-compressed PCM format) to ensure perfect continuity is preserved at the seam. Standard MPEG encoders introduce a short silence at the loop point, which will be audible as a brief “click” or “pop”.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Preview Window</h2>
+
+<p>The Preview window contains three icons.</p>
+
+<p>
+<img src="../uploads/Main/AudioPreviewAuto.png" alt="Turn Auto Play On/Off">
+When Auto Play is on the clips will play as soon as they are selected.</p>
+
+<p>
+<img src="../uploads/Main/AudioPreviewLoop.png" alt="Turn Loop On/Off">
+When Loop is on the clips will play in a continual loop.</p>
+
+<p>
+<img src="../uploads/Main/AudioPreviewPlay.png" alt="Play">
+This will play the clip.</p>
+
+<h2>Importing Audio Assets</h2>
+
+<p>Unity supports both <em>Compressed</em> and <em>Native</em> Audio. Any type of file (except MP3/Ogg Vorbis) will be initially imported as <em>Native</em>. Compressed audio files must be decompressed by the CPU while the game is running, but have smaller file size. If <em>Stream</em> is checked the audio is decompressed <em>on the fly</em>, otherwise it is decompressed completely as soon as it loads. Native PCM formats (WAV, AIFF) have the benefit of giving higher fidelity without increasing the CPU overhead, but files in these formats are typically much larger than compressed files. Module files (.mod,.it,.s3m..xm) can deliver very high quality with an extremely low footprint.</p>
+
+<p>As a general rule of thumb, <em>Compressed</em> audio (or modules) are best for long files like background music or dialog, while <em>Native</em> is better for short sound effects. You should tweak the amount of Compression using the compression slider. Start with high compression and gradually reduce the setting to the point where the loss of sound quality is perceptible. Then, increase it again slightly until the perceived loss of quality disappears.</p>
+
+<h2>Using 3D Audio</h2>
+
+<p>If an audio clip is marked as a <span class="doc-prop">3D Sound</span> then it will be played back so as to simulate its position in the game world’s 3D space. 3D sounds emulate the distance and location of sounds by attenuating volume and panning across speakers. Both mono and multiple channel sounds can be positioned in 3D. For multiple channel audio, use the <em>spread</em> option on the <a href="class-AudioSource.html">Audio Source</a> to spread and split out the discrete channels in speaker space. Unity offers a variety of options to control and fine-tune the audio behavior in 3D space - see the <a href="class-AudioSource.html">Audio Source</a> component reference for further details. </p>
+
+<h2>Platform specific details</h2>
+
+<h3>IOS</h3>
+
+<p>On mobile platforms compressed audio is encoded as MP3 to take advantage of hardware decompression. </p>
+
+<p>To improve performance, audio clips can be played back using the Apple hardware codec. To enable this option, check the “Hardware Decoding” checkbox in the Audio Importer.
+Note that only one hardware audio stream can be decompressed at a time, including the background iPod audio. </p>
+
+<p>If the hardware decoder is not available, the decompression will fall back on the software decoder (on iPhone 3GS or later, Apple’s software decoder is used in preference to Unity’s own decoder (FMOD)).</p>
+
+<h3>Android</h3>
+
+<p>On mobile platforms compressed audio is encoded as MP3 to take advantage of hardware decompression.</p>
+
+<h2>Hints</h2>
+
+<ul>
+<li>Audio streaming from AssetBundles is not supported in Unity 4.x</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="comp-AudioGroup.html"></a></span><div class="tip">Audio Components</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-AudioListener.html"></a></span><div class="tip">Audio Listener</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

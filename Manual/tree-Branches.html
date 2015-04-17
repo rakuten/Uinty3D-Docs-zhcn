@@ -1,0 +1,445 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Branch Group Properties</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/tree-Branches.html">English</a></li>
+<li><a href="/es/current/Manual/tree-Branches.html">Español</a></li>
+<li><a href="/ru/current/Manual/tree-Branches.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Graphics.html">Graphics</a></li>
+<li><a href="GraphicsOverview.html">Graphics Overview</a></li>
+<li><a href="class-Tree.html">Tree Creator</a></li>
+<li>Branch Group Properties</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="tree-Structure.html"></a></span><div class="tip">Tree Creator Basics</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="tree-Leaves.html"></a></span><div class="tip">Leaf Group Properties</div>
+</div>
+</div></div>
+<h1>Branch Group Properties</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>Branch groups node is responsible for generating branches and fronds. Its properties appear when you have selected a branch, frond or branch + frond node.</p>
+
+<h2>Distribution</h2>
+
+<p>Adjusts the count and placement of branches in the group. Use the curves to fine tune position, rotation and scale. The curves are relative to the parent branch or to the area spread in case of a trunk.</p>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesDistribution.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Group Seed</span></td>
+	<td style="text-align:left;">The seed for this group of branches. Modify to vary procedural generation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frequency</span></td>
+	<td style="text-align:left;">Adjusts the number of branches created for each parent branch.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Distribution</span></td>
+	<td style="text-align:left;">The way the branches are distributed along their parent.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Twirl</span></td>
+	<td style="text-align:left;">Twirl around the parent branch.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Whorled Step</span></td>
+	<td style="text-align:left;">Defines how many nodes are in each whorled step when using Whorled distribution. For real plants this is normally a Fibonacci number.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Growth Scale</span></td>
+	<td style="text-align:left;">Defines the scale of nodes along the parent node. Use the curve to adjust and the slider to fade the effect in and out.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Growth Angle</span></td>
+	<td style="text-align:left;">Defines the initial angle of growth relative to the parent. Use the curve to adjust and the slider to fade the effect in and out.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Geometry</h2>
+
+<p>Select what type of geometry is generated for this branch group and which materials are applied. <span class="doc-prop">LOD Multiplier</span> allows you to adjust the quality of this group relative to tree’s <span class="doc-prop">LOD Quality</span>.</p>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesGeometry.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">LOD Multiplier</span></td>
+	<td style="text-align:left;">Adjusts the quality of this group relative to tree’s LOD Quality, so that it is of either higher or lower quality than the rest of the tree.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Geometry Mode</span></td>
+	<td style="text-align:left;">Type of geometry for this branch group: Branch Only, Branch + Fronds, Fronds Only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Branch Material</span></td>
+	<td style="text-align:left;">The primary material for the branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Material</span></td>
+	<td style="text-align:left;">Material for capping broken branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Material</span></td>
+	<td style="text-align:left;">Material for the fronds.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Shape</h2>
+
+<p>Adjusts the shape and growth of the branches. Use the curves to fine tune the shape, all curves are relative to the branch itself.</p>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesShape.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Length</span></td>
+	<td style="text-align:left;">Adjusts the length of the branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Relative Length</span></td>
+	<td style="text-align:left;">Determines whether the radius of a branch is affected by its length.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Radius</span></td>
+	<td style="text-align:left;">Adjusts the radius of the branches, use the curve to fine-tune the radius along the length of the branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cap Smoothing</span></td>
+	<td style="text-align:left;">Defines the roundness of the cap/tip of the branches. Useful for cacti.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Growth</strong></td>
+	<td style="text-align:left;">Adjusts the growth of the branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Crinkliness</span></td>
+	<td style="text-align:left;">Adjusts how crinkly/crooked the branches are, use the curve to fine-tune.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Seek Sun</span></td>
+	<td style="text-align:left;">Use the curve to adjust how the branches are bent upwards/downwards and the slider to change the scale.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Surface Noise</strong></td>
+	<td style="text-align:left;">Adjusts the surface noise of the branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Noise</span></td>
+	<td style="text-align:left;">Overall noise factor, use the curve to fine-tune.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Noise Scale U</span></td>
+	<td style="text-align:left;">Scale of the noise around the branch, lower values will give a more wobbly look, while higher values gives a more stochastic look.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Noise Scale V</span></td>
+	<td style="text-align:left;">Scale of the noise along the branch, lower values will give a more wobbly look, while higher values gives a more stochastic look.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Flare</strong></td>
+	<td style="text-align:left;">Defines a flare for the trunk.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Flare Radius</span></td>
+	<td style="text-align:left;">The radius of the flares, this is added to the main radius, so a zero value means no flares.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Flare Height</span></td>
+	<td style="text-align:left;">Defines how far up the trunk the flares start.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Flare Noise</span></td>
+	<td style="text-align:left;">Defines the noise of the flares, lower values will give a more wobbly look, while higher values gives a more stochastic look.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Breaking</strong></td>
+	<td style="text-align:left;">Controls the breaking of branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Chance</span></td>
+	<td style="text-align:left;">Chance of a branch breaking, i.e. 0 = no branches are broken, 0.5 = half of the branches are broken, 1.0 = all the branches are broken.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Location</span></td>
+	<td style="text-align:left;">This range defines where the branches will be broken. Relative to the length of the branch.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesShapeFrond.png" alt="">
+<figcaption></figcaption></figure>
+
+<p><strong>These properties are for child branches only, not trunks.</strong></p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong>Welding </strong></th>
+	<th style="text-align:left;"><strong>Defines the welding of branches onto their parent branch. Only valid for secondary branches.</strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Weld Length</span></td>
+	<td style="text-align:left;">Defines how far up the branch the weld spread starts.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Spread Top</span></td>
+	<td style="text-align:left;">Weld’s spread factor on the top-side of the branch, relative to it’s parent branch. Zero means no spread.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Spread Bottom</span></td>
+	<td style="text-align:left;">Weld’s spread factor on the bottom-side of the branch, relative to it’s parent branch. Zero means no spread.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Fronds</h2>
+
+<p>Here you can adjust the number of fronds and their properties. This tab is only available if you have Frond geometry enabled in the <span class="doc-prop">Geometry</span> tab.</p>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesFronds.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Count</span></td>
+	<td style="text-align:left;">Defines the number of fronds per branch. Fronds are always evenly spaced around the branch.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Width</span></td>
+	<td style="text-align:left;">The width of the fronds, use the curve to adjust the specific shape along the length of the branch.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Range</span></td>
+	<td style="text-align:left;">Defines the starting and ending point of the fronds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Rotation</span></td>
+	<td style="text-align:left;">Defines rotation around the parent branch.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Frond Crease</span></td>
+	<td style="text-align:left;">Adjust to crease / fold the fronds.</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Wind</h2>
+
+<p>Adjusts the parameters used for animating this group of branches. The wind zones are only active in Play Mode.</p>
+
+<figure>
+<img src="../uploads/Main/TreeNode-BranchPropertiesAnimation.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Main Wind</span></td>
+	<td style="text-align:left;">Primary wind effect. This creates a soft swaying motion and is typically the only parameter needed for primary branches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Edge Turbulence</span></td>
+	<td style="text-align:left;">Turbulence along the edge of fronds. Useful for ferns, palms, etc.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Create Wind Zone</span></td>
+	<td style="text-align:left;">Creates a <a href="class-WindZone.html">Wind Zone</a>.</td>
+</tr>
+</tbody>
+</table>
+
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="tree-Structure.html"></a></span><div class="tip">Tree Creator Basics</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="tree-Leaves.html"></a></span><div class="tip">Leaf Group Properties</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,1557 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Player Settings</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-PlayerSettings.html">English</a></li>
+<li><a href="/es/current/Manual/class-PlayerSettings.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-PlayerSettings.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="Editor.html">Editor</a></li>
+<li><a href="EditorReference.html">Editor Reference</a></li>
+<li><a href="comp-ManagerGroup.html">Settings Managers</a></li>
+<li>Player Settings</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Physics2DManager.html"></a></span><div class="tip">Physics 2D Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-QualitySettings.html"></a></span><div class="tip">Quality Settings</div>
+</div>
+</div></div>
+<h1>Player Settings</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/PlayerSettings.html' title='Go to PlayerSettings page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The <span class="doc-keyword">Player Settings</span> (menu: <span class="doc-menu">Edit &gt; Project Settings &gt; Player</span>) let you set various options for the final game built by Unity. There are a few settings that are the same regardless of the build target but most are platform-specific and divided into the following sections:</p>
+
+<ul>
+<li>
+<strong>Resolution and Presentation</strong>: settings for screen resolution and other presentation details such as whether the game should default to fullscreen mode.</li>
+<li>
+<strong>Icon</strong>: the game icon(s) as shown on the desktop.</li>
+<li>
+<strong>Splash Image</strong>: the image shown while the game is launching.</li>
+<li>
+<strong>Other Settings</strong>: any remaining settings specific to the platform.</li>
+<li>
+<strong>Publishing Settings</strong>: details of how the built application is prepared for delivery from the app store or host webpage.</li>
+</ul>
+
+<p>The general settings are covered below. Settings specific to a platform can be found separately in the <a href="PlatformSpecific.html">platform’s own manual section</a>.</p>
+
+<h2>General Settings</h2>
+
+<figure>
+<img src="../uploads/Main/PlayerSetInspTop.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Cross-Platform Properties</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Company Name</span></td>
+	<td style="text-align:left;">The name of your company. This is used to locate the preferences file.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Product Name</span></td>
+	<td style="text-align:left;">The name that will appear on the menu bar when your game is running and is used to locate the preferences file also.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Icon</span></td>
+	<td style="text-align:left;">The default icon that the application will have on every platform. You can override this for specific platforms.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Cursor</span></td>
+	<td style="text-align:left;">The default cursor that the application will have on every supported platform.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Cursor Hotspot</span></td>
+	<td style="text-align:left;">Cursor hotspot in pixels from the top left of the default cursor.</td>
+</tr>
+</tbody>
+</table>
+
+<h1>Per-Platform Settings</h1>
+
+<h2>Web-Player</h2>
+
+<h4><em>Resolution And Presentation</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetWebResPres.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Resolution</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Screen Width</span></td>
+	<td style="text-align:left;">Screen Width the player will be generated with.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Screen Height</span></td>
+	<td style="text-align:left;">Screen Height the plater will be generated with.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Run in background</span></td>
+	<td style="text-align:left;">Check this if you don’t want to stop executing your game if the player loses focus.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>WebPlayer Template</strong></td>
+	<td style="text-align:left;">For more information you should check the <a href="UsingWebPlayertemplates.html">“Using WebPlayer templates page”</a>, note that for each built-in and custom template there will be an icon in this section.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Icon</em></h4>
+
+<p>Icons don’t have any meaning for webplayer builds (you can set icons for Native Client builds in the Native Client section of the Player Settings).</p>
+
+<h4><em>Other Settings</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetWebOther.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Rendering</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Rendering Path</span></td>
+	<td style="text-align:left;">This property is shared between Standalone and WebPlayer content.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Vertex Lit</span>
+</td>
+	<td style="text-align:left;">Lowest lighting fidelity, no shadows support. Best used on old machines or limited mobile platforms.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Forward with Shaders</span>
+</td>
+	<td style="text-align:left;">Good support for lighting features; limited support for shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Deferred Lighting</span>
+</td>
+	<td style="text-align:left;">Best support for lighting and shadowing features, but requires certain level of hardware support. Best used if you have many realtime lights.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Color Space</span></td>
+	<td style="text-align:left;">The color space to be used for rendering</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">GammaSpace Rendering</span>
+</td>
+	<td style="text-align:left;">Rendering is gamma-corrected</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Linear Rendering Hardware Sampling</span>
+</td>
+	<td style="text-align:left;">Rendering is done in linear space</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use Direct3D 11</span></td>
+	<td style="text-align:left;">Use Direct3D 11 for rendering. When D3D11 is not available or this flag is off, D3D9 will be used. Changing this flag in Windows Editor will switch it between D3D11 and D3D9.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Static Batching</span></td>
+	<td style="text-align:left;">Set this to use Static batching on your build (Inactive by default in webplayers).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Batching</span></td>
+	<td style="text-align:left;">Set this to use Dynamic Batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Streaming</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">First Streamed Level</span></td>
+	<td style="text-align:left;">If you are publishing a Streamed Web Player, this is the index of the first level that will have access to all Resources.Load assets.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Configuration</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Define Symbols</span></td>
+	<td style="text-align:left;">Custom compilation flags (see the <a href="PlatformDependentCompilation.html">platform dependent compilation</a> page for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Optimization</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Optimize Mesh Data</span></td>
+	<td style="text-align:left;">Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).</td>
+</tr>
+</tbody>
+</table>
+
+<h2>Standalone</h2>
+
+<h4><em>Resolution And Presentation</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetPCResPres.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Resolution</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Screen Width</span></td>
+	<td style="text-align:left;">Screen Width the stand alone game will be using by default.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Screen Height</span></td>
+	<td style="text-align:left;">Screen Height the plater will be using by default.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Run in background</span></td>
+	<td style="text-align:left;">Check this if you dont want to stop executing your game if it looses focus.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Standalone Player Options</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default is Full Screen</span></td>
+	<td style="text-align:left;">Check this if you want to start your game by default in full screen mode.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Capture Single Screen</span></td>
+	<td style="text-align:left;">If enabled, standalone games in fullscreen mode will not darken the secondary monitor in multi-monitor setups (This is no longer supported on Mac OS X).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><span class="doc-prop">DisplayResolution Dialog</span></td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Disabled</span>
+</td>
+	<td style="text-align:left;">No resolution dialog will appear when starting the game.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Enabled</span>
+</td>
+	<td style="text-align:left;">Resolution dialog will always appear when the game is launched.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Hidden by default</span></td>
+	<td style="text-align:left;">The resolution player is possible to be opened only if you have pressed the “alt” key when starting the game.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use Player Log</span></td>
+	<td style="text-align:left;">Write a log file with debugging information. If you plan to submit your application to the Mac App Store you will want to leave this option un-ticked. Ticked is the default.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Resizable Window</span></td>
+	<td style="text-align:left;">Allow user to resize the standalone player window.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mac App Store Validation</span></td>
+	<td style="text-align:left;">Enable receipt validation for the Mac App Store.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mac Fullscreen Mode</span></td>
+	<td style="text-align:left;">Options for fullscreen mode on Mac builds</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Capture Display</span>
+</td>
+	<td style="text-align:left;">Unity will take over the whole display (ie, GUI from other apps will not appear and the user cannot switch apps until fullscreen mode is exited).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Fullscreen Window</span>
+</td>
+	<td style="text-align:left;">Unity runs in a window that covers the whole screen at desktop resolution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Fullscreen Window with Menu Bar and Dock</span>
+</td>
+	<td style="text-align:left;">As fullscreen window mode but the standard menu bar and dock will also be shown.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Supported Aspect Ratios</span></td>
+	<td style="text-align:left;">Aspect Ratios selectable in the Resolution Dialog will be monitor-supported resolutions of enabled items from this list.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Icon</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetPCIcon.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override for Standalone</span></td>
+	<td style="text-align:left;">Check if you want to assign a custom icon you would like to be used for your standalone game. Different sizes of the icon should fill in the squares below.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Splash Image</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetPCSplash.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Config Dialog Banner</span></td>
+	<td style="text-align:left;">Add your custom splash image that will be displayed when the game is starting.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Other Settings</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetPCOther.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><strong>Rendering</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Rendering Path</span></td>
+	<td style="text-align:left;">This property is shared between Standalone and WebPlayer content.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Vertex Lit</span>
+</td>
+	<td style="text-align:left;">Lowest lighting fidelity, no shadows support. Best used on old machines or limited mobile platforms.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Forward with Shaders</span>
+</td>
+	<td style="text-align:left;">Good support for lighting features; limited support for shadows.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Deferred Lighting</span>
+</td>
+	<td style="text-align:left;">Best support for lighting and shadowing features, but requires certain level of hardware support. Best used if you have many realtime lights.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Color Space</span></td>
+	<td style="text-align:left;">The color space to be used for rendering</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">GammaSpace Rendering</span>
+</td>
+	<td style="text-align:left;">Rendering is gamma-corrected</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Linear Rendering Hardware Sampling</span>
+</td>
+	<td style="text-align:left;">Rendering is done in linear space</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Static Batching</span></td>
+	<td style="text-align:left;">Set this to use Static batching on your build (Inactive by default in webplayers).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Batching</span></td>
+	<td style="text-align:left;">Set this to use Dynamic Batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Configuration</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Backend</span></td>
+	<td style="text-align:left;">Mono or il2cpp</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Disable Analytics</span></td>
+	<td style="text-align:left;">Prevent built app from reporting usage to Unity servers.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Define Symbols</span></td>
+	<td style="text-align:left;">Custom compilation flags (see the <a href="PlatformDependentCompilation.html">platform dependent compilation</a> page for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Optimization</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">API Compatibility Level</span></td>
+	<td style="text-align:left;">See below</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0</span>
+</td>
+	<td style="text-align:left;">.Net 2.0 libraries. Maximum .net compatibility, biggest file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0 Subset</span>
+</td>
+	<td style="text-align:left;">Subset of full .net compatibility, smaller file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Optimize Mesh Data</span></td>
+	<td style="text-align:left;">Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).</td>
+</tr>
+</tbody>
+</table>
+
+<h4>API Compatibility Level</h4>
+
+<p>You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get “Reflector” on windows. </p>
+
+<ol>
+<li>Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/</li>
+<li>Also drag in your 3rd party assembly.</li>
+<li>Right click your 3rd party assembly, and select “Analyze”.</li>
+<li>In the analysis report, inspect the “Depends on” section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.</li>
+</ol>
+
+<h3>iOS</h3>
+
+<h4><em>Resolution And Presentation</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSResPres.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Resolution</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Orientation</span></td>
+	<td style="text-align:left;">(This setting is shared between iOS and Android devices)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait</span>
+</td>
+	<td style="text-align:left;">The device is in portrait mode, with the device held upright and the home button at the bottom.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait Upside Down</span>
+</td>
+	<td style="text-align:left;">The device is in portrait mode but upside down, with the device held upright and the home button at the top.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Right</span>
+</td>
+	<td style="text-align:left;">The device is in landscape mode, with the device held upright and the home button on the <strong>left</strong> side.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Left</span>
+</td>
+	<td style="text-align:left;">The device is in landscape mode, with the device held upright and the home button on the <strong>right</strong> side.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Auto Rotation</span>
+</td>
+	<td style="text-align:left;">The screen orientation is automatically set based on the physical device orientation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Auto Rotation settings</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Use Animated Autorotation</span>
+</td>
+	<td style="text-align:left;">When checked, orientation change is animated. This only applies when Default orientation is set to Auto Rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Allowed Orientations for Auto Rotation</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait</span>
+</td>
+	<td style="text-align:left;">When checked, portrait orientation is allowed. This only applies when Default orientation is set to Auto Rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait Upside Down</span>
+</td>
+	<td style="text-align:left;">When checked, portrait upside down orientation is allowed. This only applies when Default orientation is set to Auto Rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Right</span>
+</td>
+	<td style="text-align:left;">When checked, landscape right (home button on the <strong>left</strong> side) orientation is allowed. This only applies when Default orientation is set to Auto Rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Left</span>
+</td>
+	<td style="text-align:left;">When checked, landscape left (home button is on the <strong>right</strong> side) orientation is allowed. This only applies when Default orientation is set to Auto Rotation.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Status Bar</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Status Bar Hidden</span></td>
+	<td style="text-align:left;">Specifies whether the status bar is initially hidden when the application launches.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Status Bar Style</span></td>
+	<td style="text-align:left;">Specifies the style of the status bar as the application launches</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">        <span class="doc-prop">Default</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">        <span class="doc-prop">Black Translucent</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2">        <span class="doc-prop">Black Opaque</span>
+</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use 32-bit Display Buffer</span></td>
+	<td style="text-align:left;">Specifies if Display Buffer should be created to hold 32-bit color values (16-bit by default). Use it if you see banding, or need alpha in your ImageEffects, as they will create RTs in same format as Display Buffer.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Show Loading Indicator</span></td>
+	<td style="text-align:left;">Options for the loading indicator</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Don’t Show</span>
+</td>
+	<td style="text-align:left;">No indicator</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">White Large</span>
+</td>
+	<td style="text-align:left;">Indicator shown large and in white</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">White</span>
+</td>
+	<td style="text-align:left;">Indicator shown at normal size in white</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Gray</span>
+</td>
+	<td style="text-align:left;">Indicator shown at normal size in gray</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Icon</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSIcon.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override for iOS</span></td>
+	<td style="text-align:left;">Check if you want to assign a custom icon you would like to be used for your iPhone/iPad game. Different sizes of the icon should fill in the squares below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Prerendered icon</span></td>
+	<td style="text-align:left;">If unchecked iOS applies sheen and bevel effects to the application icon.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Splash Image</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSSplash.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mobile Splash Screen (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS Splash Screen. Standard Splash Screen size is 320x480.(This is shared between Android and iOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPhone 3.5&quot;/Retina (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS 3.5&quot; Retina Splash Screen. Splash Screen size is 640x960.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPhone 4&quot;/Retina (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used for iOS 4&quot; Retina Splash Screen. Splash Screen size is 640x1136.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPad Portrait (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as iPad Portrait orientation Splash Screen. Standard Splash Screen size is 768x1024.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High Res. iPad Portrait</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as the high res iPad Portrait orientation Splash Screen. Standard Splash Screen size is 1536x2048.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">iPad Landscape (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as iPad Landscape orientation Splash Screen. Standard Splash Screen size is 1024x768.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High res. iPad Landscape (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used as the high res iPad Landscape orientation Splash Screen. Standard Splash Screen size is 2048x1536.</td>
+</tr>
+</tbody>
+</table>
+
+<h4><em>Other Settings</em></h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetiOSOther.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Rendering</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Static Batching</span></td>
+	<td style="text-align:left;">Set this to use Static batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Batching</span></td>
+	<td style="text-align:left;">Set this to use Dynamic Batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Identification</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Identifier</span></td>
+	<td style="text-align:left;">The string used in your provisioning certificate from your Apple Developer Network account(This is shared between iOS and Android)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Version</span></td>
+	<td style="text-align:left;">Specifies the build version number of the bundle, which identifies an iteration (released or unreleased) of the bundle. The version is specified in the common format of a string containing numbers separated by dots (eg, 4.3.2).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Configuration</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Device</span></td>
+	<td style="text-align:left;">Specifies application target device type.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">iPhone Only</span>
+</td>
+	<td style="text-align:left;">Application is targeted for iPhone devices only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">iPad Only</span>
+</td>
+	<td style="text-align:left;">Application is targeted for iPad devices only.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">iPhone + iPad</span>
+</td>
+	<td style="text-align:left;">Application is targeted for both iPad and iPhone devices.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target Resolution</span></td>
+	<td style="text-align:left;">Resolution you want to use on your deployed device.(This setting will not have any effect on devices with maximum resolution of 480x320)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Native(Default Device Resolution)</span>
+</td>
+	<td style="text-align:left;">Will use the device native resolution.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Auto (Best Performance)</span>
+</td>
+	<td style="text-align:left;">Chooses resolution automatically, favouring performance over graphic quality.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Auto (Best Quality)</span>
+</td>
+	<td style="text-align:left;">Chooses resolution automatically, favouring graphic quality over performance.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">320p (iPhone)</span>
+</td>
+	<td style="text-align:left;">Pre-Retina iPhone display.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">640p (iPhone Retina Display)</span>
+</td>
+	<td style="text-align:left;">iPhone with Retina.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">768p (iPad)</span>
+</td>
+	<td style="text-align:left;">iPad display.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Graphics Level</span></td>
+	<td style="text-align:left;">OpenGL version.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">OpenGL ES 1.x</span>
+</td>
+	<td style="text-align:left;">OpenGL ES 1.x versions.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">OpenGL ES 2.0</span>
+</td>
+	<td style="text-align:left;">OpenGL ES 2.0.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Accelerometer Frequency</span></td>
+	<td style="text-align:left;">How often the accelerometer is sampled</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Disabled</span>
+</td>
+	<td style="text-align:left;">Accelerometer is not sampled</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">15Hz</span>
+</td>
+	<td style="text-align:left;">15 samples per second</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">30Hz</span>
+</td>
+	<td style="text-align:left;">30 samples per second</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">60Hz</span>
+</td>
+	<td style="text-align:left;">60 samples per second</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">100Hz</span>
+</td>
+	<td style="text-align:left;">100 samples per second</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override iPod Music</span></td>
+	<td style="text-align:left;">If selected, the application will silence user’s iPod music. Otherwise user’s iPod music will continue playing in the background.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">UI Requires Persistent WiFi</span></td>
+	<td style="text-align:left;">Specifies whether the application requires a Wi-Fi connection. iOS maintains the active Wi-Fi connection open while the application is running.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Exit on Suspend</span></td>
+	<td style="text-align:left;">Specifies whether the application should quit when suspended to background on iOS versions that support multitasking.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Submit HW Statistics</span></td>
+	<td style="text-align:left;">Specifies whether the application should send anonymous HW data to Unity servers.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Define Symbols</span></td>
+	<td style="text-align:left;">Custom compilation flags (see the <a href="PlatformDependentCompilation.html">platform dependent compilation</a> page for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Optimization</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Api Compatibility Level</span></td>
+	<td style="text-align:left;">Specifies active .NET API profile. See below</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0</span>
+</td>
+	<td style="text-align:left;">.Net 2.0 libraries. Maximum .net compatibility, biggest file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0 Subset</span>
+</td>
+	<td style="text-align:left;">Subset of full .net compatibility, smaller file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">AOT compilation options</span></td>
+	<td style="text-align:left;">Additional AOT compiler options.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">SDK Version</span></td>
+	<td style="text-align:left;">Specifies iPhone OS SDK version to use for building in Xcode</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Device SDK</span>
+</td>
+	<td style="text-align:left;">SDK to run on actual hardware.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Simulator SDK</span>
+</td>
+	<td style="text-align:left;">SDK to run only on the simulator.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Target iOS Version</span></td>
+	<td style="text-align:left;">Specifies lowest iOS version where final application will able to run; ranges from iOS 4.0 to 6.0.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Stripping Level</span></td>
+	<td style="text-align:left;">Options to strip out scripting features to reduce built player size (This setting is shared between iOS and Android Platforms)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Disabled</span>
+</td>
+	<td style="text-align:left;">No reduction is done.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip Assemblies</span>
+</td>
+	<td style="text-align:left;">Level 1 size reduction.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip ByteCode</span>
+</td>
+	<td style="text-align:left;">Level 2 size reduction (includes reductions from Level 1).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Use micro mscorlib</span>
+</td>
+	<td style="text-align:left;">Level 3 size reduction (includes reductions from Levels 1 and 2).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Script Call Optimization</span></td>
+	<td style="text-align:left;">Optionally disable exception handling for a speed boost at runtime</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Slow and Safe</span>
+</td>
+	<td style="text-align:left;">Full exception handling will occur with some performance impact on the device</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Fast but no Exceptions</span>
+</td>
+	<td style="text-align:left;">No data provided for exceptions on the device, but the game will run faster</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Optimize Mesh Data</span></td>
+	<td style="text-align:left;">Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).</td>
+</tr>
+</tbody>
+</table>
+
+<p>
+<strong>Note:</strong> If you build for example for iPhone OS 3.2, and then select Simulator 3.2 in Xcode you will get a ton of errors. So you <strong>MUST</strong> be sure to select a proper Target SDK in Unity Editor.</p>
+
+<h4>API Compatibility Level</h4>
+
+<p>You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get “Reflector” on windows. </p>
+
+<ol>
+<li>Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/</li>
+<li>Also drag in your 3rd party assembly.</li>
+<li>Right click your 3rd party assembly, and select “Analyze”.</li>
+<li>In the analysis report, inspect the “Depends on” section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.</li>
+</ol>
+
+<h3>Android</h3>
+
+<h4>Resolution And Presentation</h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetAndroidResPres.png" alt="Resolution and presentation for your Android project builds.">
+<figcaption>Resolution and presentation for your Android project builds.</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Resolution</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Default Orientation</span></td>
+	<td style="text-align:left;">(This setting is shared between iOS and Android devices)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait</span>
+</td>
+	<td style="text-align:left;">The device is in portrait mode, with the device held upright and the home button at the bottom.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Portrait Upside Down</span>
+</td>
+	<td style="text-align:left;">The device is in portrait mode but upside down, with the device held upright and the home button at the top (only available with Android OS 2.3 and later).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Right</span>
+</td>
+	<td style="text-align:left;">The device is in landscape mode, with the device held upright and the home button on the <strong>left</strong> side (only available with Android OS 2.3 and later).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Landscape Left</span>
+</td>
+	<td style="text-align:left;">The device is in landscape mode, with the device held upright and the home button on the <strong>right</strong> side.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use 32-bit Display Buffer</span></td>
+	<td style="text-align:left;">Specifies if Display Buffer should be created to hold 32-bit color values (16-bit by default). Use it if you see banding, or need alpha in your ImageEffects, as they will create RTs in same format as Display Buffer. Not supported on devices running pre-Gingerbread OS (will be forced to 16-bit).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Use 24-bit Depth Buffer</span></td>
+	<td style="text-align:left;">If set Depth Buffer will be created to hold (at least) 24-bit depth values. Use it only if you see ‘z-fighting’ or other artifacts, as it may have performance implications.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Icon</h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetAndroidIcon.png" alt="Different icons that your project will have when built.">
+<figcaption>Different icons that your project will have when built.</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Override for Android</span></td>
+	<td style="text-align:left;">Check if you want to assign a custom icon you would like to be used for your Android game. Different sizes of the icon should fill in the squares below.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Splash Image</h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetAndroidSplash.png" alt="Splash image that is going to be displayed when your project is launched.">
+<figcaption>Splash image that is going to be displayed when your project is launched.</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Mobile Splash Screen (Pro-only feature)</span></td>
+	<td style="text-align:left;">Specifies texture which should be used by the Splash Screen. Standard Splash Screen size is 320x480. (This is shared between Android and iOS)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Splash Scaling</span></td>
+	<td style="text-align:left;">Specifies how will be the splash image scaling on the device.</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Other Settings</h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetAndroidOther.png" alt="">
+<figcaption></figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;" colspan="2"></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Rendering</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Static Batching</span></td>
+	<td style="text-align:left;">Set this to use Static batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Dynamic Batching</span></td>
+	<td style="text-align:left;">Set this to use Dynamic Batching on your build (Activated by default).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Identification</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Identifier</span></td>
+	<td style="text-align:left;">The string used in your provisioning certificate from your Apple Developer Network account(This is shared between iOS and Android)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Version</span></td>
+	<td style="text-align:left;">Specifies the build version number of the bundle, which identifies an iteration (released or unreleased) of the bundle. The version is specified in the common format of a string containing numbers separated by dots (eg, 4.3.2). (This is shared between iOS and Android.)</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bundle Version Code</span></td>
+	<td style="text-align:left;">An internal version number. This number is used only to determine whether one version is more recent than another, with higher numbers indicating more recent versions. This is not the version number shown to users; that number is set by the versionName attribute. The value must be set as an integer, such as “100”. You can define it however you want, as long as each successive version has a higher number. For example, it could be a build number. Or you could translate a version number in “x.y” format to an integer by encoding the “x” and “y” separately in the lower and upper 16 bits. Or you could simply increase the number by one each time a new version is released.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Minimum API Level</span></td>
+	<td style="text-align:left;">Minimum API version required to support the build.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><strong>Configuration</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Graphics Level</span></td>
+	<td style="text-align:left;">Select either ES 1.1 (‘fixed function’) or ES 2.0 (‘shader based’) Open GL level. When using the AVD (emulator) only ES 1.x is supported.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Install Location</span></td>
+	<td style="text-align:left;">Specifies application install location on the device (for detailed information, please refer to http://developer.android.com/guide/appendix/install-location.html).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Automatic</span>
+</td>
+	<td style="text-align:left;">Let OS decide. User will be able to move the app back and forth.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Prefer External</span>
+</td>
+	<td style="text-align:left;">Install app to external storage (SD-Card) if possible. OS does not guarantee that will be possible; if not, the app will be installed to internal memory.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Force Internal</span>
+</td>
+	<td style="text-align:left;">Force app to be installed into internal memory. User will be unable to move the app to external storage.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Internet Access</span></td>
+	<td style="text-align:left;">When set to Require, will enable networking permissions even if your scripts are not using this. Automatically enabled for development builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Write Access</span></td>
+	<td style="text-align:left;">When set to External (SDCard), will enable write access to external storage such as the SD-Card. Automatically enabled for development builds.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Scripting Define Symbols</span></td>
+	<td style="text-align:left;">Custom compilation flags (see the <a href="PlatformDependentCompilation.html">platform dependent compilation</a> page for details).</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Optimization</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Api Compatibility Level</span></td>
+	<td style="text-align:left;">Specifies active .NET API profile. See below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0</span>
+</td>
+	<td style="text-align:left;">.Net 2.0 libraries. Maximum .net compatibility, biggest file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">.Net 2.0 Subset</span>
+</td>
+	<td style="text-align:left;">Subset of full .net compatibility, smaller file sizes</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Stripping Level</span></td>
+	<td style="text-align:left;">Options to strip out scripting features to reduce built player size (This setting is shared between iOS and Android Platforms)</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Disabled</span>
+</td>
+	<td style="text-align:left;">No reduction is done.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip Assemblies</span>
+</td>
+	<td style="text-align:left;">Level 1 size reduction.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Strip ByteCode (iOS only)</span>
+</td>
+	<td style="text-align:left;">Level 2 size reduction (includes reductions from Level 1).</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Use micro mscorlib</span>
+</td>
+	<td style="text-align:left;">Level 3 size reduction (includes reductions from Levels 1 and 2).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable “logcat” profiler</span></td>
+	<td style="text-align:left;">Enable this if you want to get feedback from your device while testing your projects. So adb logcat prints logs from the device to the console (only available in development builds).</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Optimize Mesh Data</span></td>
+	<td style="text-align:left;">Remove any data from meshes that is not required by the material applied to them (tangents, normals, colors, UV).</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>API Compatibility Level</strong></p>
+
+<p>You can choose your mono api compatibility level for all targets except the webplayer. Sometimes a 3rd party .net dll will use things that are outside of the .net compatibility level that you would like to use. In order to understand what is going on in such cases, and how to best fix it, get “Reflector” on windows. </p>
+
+<ol>
+<li>Drag the .net assemblies for the api compatilibity level in question into reflector. You can find these in Frameworks/Mono/lib/mono/YOURSUBSET/</li>
+<li>Also drag in your 3rd party assembly.</li>
+<li>Right click your 3rd party assembly, and select “Analyze”.</li>
+<li>In the analysis report, inspect the “Depends on” section. Anything that the 3rd party assembly depends on, but is not available in the .net compatibility level of your choice will be highlighted in red there.</li>
+</ol>
+
+<h4>Publishing Settings</h4>
+
+<figure>
+<img src="../uploads/Main/PlayerSetAndroidPublish.png" alt="Publishing settings for Android Market">
+<figcaption>Publishing settings for Android Market</figcaption></figure>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Keystore</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Use Existing Keystore / Create New Keystore</span>
+</td>
+	<td style="text-align:left;">Use this to choose whether to create a new Keystore or use an existing one.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Browse Keystore</span>
+</td>
+	<td style="text-align:left;">Lets you select an existing Keystore.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Keystore password</span>
+</td>
+	<td style="text-align:left;">Password for the Keystore.</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Confirm password</span>
+</td>
+	<td style="text-align:left;">Password confirmation, only enabled if the Create New Keystore option is chosen.</td>
+</tr>
+<tr>
+	<td style="text-align:left;" colspan="2"><strong>Key</strong></td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Alias</span>
+</td>
+	<td style="text-align:left;">Key alias</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Password</span>
+</td>
+	<td style="text-align:left;">Password for key alias</td>
+</tr>
+<tr>
+	<td style="text-align:left;">        <span class="doc-prop">Split Application Binary</span>
+</td>
+	<td style="text-align:left;">Flag to split the application into expansion files. Useful only with Google Play Store when the finished build exceeds 50MB.</td>
+</tr>
+</tbody>
+</table>
+
+<p>Note that for security reasons, Unity will save neither the keystore password nor the key password. Also, note that the signing must be done from Unity’s player settings - using jarsigner will not work. The unsigned debug keystore is located by default at <code>~/.android/debug.keystore</code> on OS X and <code>%USERPROFILE%\.android\debug.keystore</code> on Windows.</p>
+
+<h1>Details</h1>
+
+<p>The Player Settings window is where many technical preference defaults are set. See also <a href="class-QualitySettings.html">Quality Settings</a> where the different graphics quality levels can be set up.</p>
+
+<h3>Publishing a web player</h3>
+
+<p>
+<span class="doc-prop">Default Web Screen Width</span> and <span class="doc-prop">Default Web Screen Height</span> determine the size used in the html file. You can modify the size in the html file later.</p>
+
+<p>
+<span class="doc-prop">Default Screen Width</span> and <span class="doc-prop">Default Screen Height</span> are used by the Web Player when entering fullscreen mode through the context menu in the Web Player at runtime.</p>
+
+<h3>Customizing your Resolution Dialog</h3>
+
+<figure>
+<img src="../uploads/Main/Resolution-GameLauncher.png" alt="The Resolution Dialog, presented to end-users">
+<figcaption>The Resolution Dialog, presented to end-users</figcaption></figure>
+
+<p>You have the option of adding a custom banner image to the Screen Resolution Dialog in the Standalone Player. The maximum image size is 432 x 163 pixels. The image will not be scaled up to fit the screen selector. Instead it will be centered and cropped.</p>
+
+<h3>Publishing to Mac App Store</h3>
+
+<p>
+<span class="doc-prop">Use Player Log</span> enables writing a log file with debugging information. This is useful to find out what happened if there are problems with your game. When publishing games for Apple’s Mac App Store, it is recommended to turn this off, because Apple may reject your submission otherwise. See <a href="LogFiles.html">this manual page</a> for further information about log files.</p>
+
+<p>
+<span class="doc-prop">Use Mac App Store Validation</span> enables receipt validation for the Mac App Store. If this is enabled, your game will only run when it contains a valid receipt from the Mac App Store. Use this when submitting games to Apple for publishing on the App Store. This prevents people from running the game on any computer then the one it was purchased on. Note that this feature does not implement any strong copy protection. In particular, any potential crack against one Unity game would work against any other Unity content. For this reason, it is recommended that you implement your own receipt validation code on top of this using Unity’s plugin feature. However, since Apple requires plugin validation to initially happen before showing the screen setup dialog, you should still enable this check, or Apple might reject your submission. </p>
+
+<h2>iOS</h2>
+
+<h3>Bundle Identifier</h3>
+
+<p>The <span class="doc-prop">Bundle Identifier</span> string must match the provisioning profile of the game you are building. The basic structure of the identifier is <span class="doc-prop">com.CompanyName.GameName</span>. This structure may vary internationally based on where you live, so always default to the string provided to you by Apple for your Developer Account. Your GameName is set up in your provisioning certificates, that are manageable from the Apple iPhone Developer Center website. Please refer to the <a href="http://developer.apple.com/iphone/">Apple iPhone Developer Center website</a> for more information on how this is performed.</p>
+
+<h3>Stripping Level</h3>
+
+<p>Most games don’t use all necessary dlls. With this option, you can strip out unused parts to reduce the size of the built player on iOS devices. If your game is using classes that would normally be stripped out by the option you currently have selected, you’ll be presented with a Debug message when you make a build.</p>
+
+<h3>Script Call Optimization</h3>
+
+<p>A good development practice on iOS is to never rely on exception handling (either internally or through the use of try/catch blocks). When using the default <span class="doc-prop">Slow and Safe</span> option, any exceptions that occur on the device will be caught and a stack trace will be provided. When using the <span class="doc-prop">Fast but no Exceptions</span> option, any exceptions that occur will crash the game, and no stack trace will be provided. However, the game will run faster since the processor is not diverting power to handle exceptions. When releasing your game to the world, it’s best to publish with the <span class="doc-prop">Fast but no Exceptions</span> option.</p>
+
+<h2>Android</h2>
+
+<h3>Bundle Identifier</h3>
+
+<p>The <span class="doc-prop">Bundle Identifier</span> string is the unique name of your application when published to the Android Market and installed on the device. The basic structure of the identifier is <span class="doc-prop">com.CompanyName.GameName</span>, and can be chosen arbitrarily. In Unity this field is shared with the iOS Player Settings for convenience.</p>
+
+<h3>Stripping Level</h3>
+
+<p>Most games don’t use all the functionality of the provided dlls. With this option, you can strip out unused parts to reduce the size of the built player on Android devices.</p>
+
+<h2>Windows Store Apps</h2>
+
+<figure>
+<img src="../uploads/Main/WSA-PlayerSettings.png" alt="Player Settings">
+<figcaption>Player Settings</figcaption></figure>
+
+<p>Most of these settings are transferred to Package.appxmanifest when creating Visual Studio solution for the first time.</p>
+
+<p>
+<strong>Note:</strong> If you build your project on top of the existing one, Unity won’t overwrite Package.appxmanifest file if it’s already present, that means if you change something in Player Settings be sure to check Package.appxmanifest, if you want Package.appxmanifest to be regenerated, simply delete it, and rebuild your project from Unity.</p>
+
+<p>To read more about App package manifest, please visit http://msdn.microsoft.com/en-us/library/windows/apps/br211474.aspx.</p>
+
+<p>Settings from Packaging, Application UI, Tile, Splash screen, Capabilities directly transfer to settings in Package.appxmanifest file.</p>
+
+<h3>Certificate</h3>
+
+<p>Every Windows Store App needs a certificate which identifies a developer, Unity will create a default certificate, if you won’t provide your own.</p>
+
+<h3>Compilation</h3>
+
+<p>As you know, Unity uses Mono when compiling script files, and you can use the API located in .NET 3.5. Compilation Overrides allows you to use .NET for Windows Store Apps (also known as .NET Core) in your C# files, the API is available <a href="http://msdn.microsoft.com/en-us/library/windows/apps/br230232.aspx">here</a>.</p>
+
+<p>When Compilation Overrides is set to:</p>
+
+<ol>
+<li>
+<strong>None</strong> - C# files are compiled using Mono compiler.</li>
+<li>
+<strong>Use .Net Core</strong> - C# files are compiled using Microsoft compiler and .NET Core, you can use Windows Runtime API, but classes implemented in C# files aren’t accessible from the JS language.
+Note: when using API from Windows Runtime, it’s advisable to wrap the code with NETFX_CORE define, because the API is only avaible when building to Windows Store Apps, and it’s not available in Unity Editor.</li>
+<li>
+<strong>Use .Net Core Partially</strong> - C# files not located in Plugins, Standard Assets, Pro Standard Assets folders are compiled using Microsoft compiler and .NET Core, all other C# files are compiled using Mono compiler. The advantage is that classes implemented in C# are accessible from the JS language.</li>
+</ol>
+
+<p>
+<strong>Note:</strong> You won’t be able to test .NET Core API in Unity Editor, because it doesn’t have access to .NET Core, so you’ll be able to test the API only when running Windows Store App.</p>
+
+<p>
+<strong>Note:</strong> You cannot use .NET Core API in JS scripts.</p>
+
+<p>Here’s a simple example how to use .NET Core API in scripts.</p>
+
+<pre><code>string GetTemporaryFolder()
+{
+#if NETFX_CORE
+    return Windows.Storage.ApplicationData.Current.TemporaryFolder.Path;
+#else
+    return &quot;LocalFolder&quot;;
+#endif
+}
+</code></pre>
+
+<h3>Run In Background</h3>
+
+<p>Enabling this option will cause Windows Application Certification to fail.</p>
+
+<h3>Misc</h3>
+
+<p>Unprocessed Plugins contains a list of plugins which are ignored by Unity’s preprocessing tools (like SerializationWeaver, AssemblyPreprocessor, rrw), usually you don’t need to modify this list, unless you’re getting an error that Unity’s failed to preprocess your plugin. </p>
+
+<p><strong>What will happen if you’ll add a plugin to this list?</strong></p>
+
+<p>Unity won’t inject additional IL code into your assembly used for serialization purposes, but if you’re plugin isn’t referencing UnityEngine.dll, that’s totally fine, because Unity won’t serialize any data from your plugin.</p>
+
+<h5>Independent Input Source</h5>
+
+<p>Let’s you enable an option for independent input source, you can read more <a href="http://msdn.microsoft.com/en-us/library/windows/apps/windows.ui.xaml.controls.swapchainpanel.createcoreindependentinputsource">here</a>. Basically this makes your input more responsive, and usually you want this option to be enabled.</p>
+
+<h5>Low Latency Presentation API</h5>
+
+<p>Let’s you enable Low Latency Presentation API, basically this create D3D11 swapchain with DXGI_SWAP_CHAIN_FLAG_FRAME_LATENCY_WAITABLE_OBJECT flag, read more <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/bb173076(v=vs.85).aspx">here</a> and should increase input responsiveness. This option is disabled by default because on hardware with older GPU drivers, this option makes game laggy, if you enable this option - be sure to profile your game if the performance is still acceptable.</p>
+
+<h5>Capabilities</h5>
+
+<p>These options are directly copied to Package.appxmanifest.</p>
+
+<p>
+<strong>Note:</strong>_ If you’re build your game on top of previous package, Package.appxmanifest won’t be overwritten.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-Physics2DManager.html"></a></span><div class="tip">Physics 2D Manager</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-QualitySettings.html"></a></span><div class="tip">Quality Settings</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

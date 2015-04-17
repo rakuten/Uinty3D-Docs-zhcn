@@ -1,0 +1,200 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: WebGL: Building &amp; Running</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/webgl-building.html">English</a></li>
+<li><a href="/es/current/Manual/webgl-building.html">Español</a></li>
+<li><a href="/ru/current/Manual/webgl-building.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PlatformSpecific.html">Platform Specific</a></li>
+<li>WebGL</li>
+<li><a href="webgl-gettingstarted.html">Getting Started with WebGL Development</a></li>
+<li>WebGL: Building &amp; Running</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="webgl-gettingstarted.html"></a></span><div class="tip">Getting Started with WebGL Development</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="webgl-performance.html"></a></span><div class="tip">WebGL performance considerations</div>
+</div>
+</div></div>
+<h1>WebGL: Building &amp; Running</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>The following is a step-by-step guide to build and run a new project exported to WebGL.</p>
+
+<ol>
+<li>Create your Unity content.</li>
+<li>Choose File-&gt;Build Settings to bring up the Build Settings dialog and add your scene(s).</li>
+<li>Change the Platform to WebGL</li>
+<li>Press the Build &amp; Run button.</li>
+</ol>
+
+<p>Unity will build a folder with an index.html file which embeds your content in a web page, as well as:</p>
+
+<ul>
+<li>a JavaScript file containing the converted code of your content.</li>
+<li>a .mem file containing a binary image to initialize the heap memory of your content.</li>
+<li>a .data file containing the content asset data and scenes.</li>
+<li>some supporting .js files to initialize and load the content</li>
+</ul>
+
+<p>To view your WebGL content you can open the index.html file in Firefox. Note that other browsers may require you to host the file on a local http server due to access restrictions on file:// urls. The Build &amp; Run button will do that for you, it will spawn a local web server hosting the content, and open it in your default brower. Make sure your default browser supports running Unity WebGL content (currently supported browsers are Firefox and Chrome).</p>
+
+<p>As with the other build targets, there are Player settings that you can specify. </p>
+
+<h2>The Build Process</h2>
+
+<p>When running a build for Unity WebGL, Unity will first run all your script assemblies (your C#/UnityScript code) through our IL2CPP compiler to generate corresponding C++ source files. Then it will run the emscripten compiler to compile these into JavaScript, along with the Unity runtime. </p>
+
+<h2>Build Player Options</h2>
+
+<p>WebGL allows you to select an Optimization level in the Build Player window. These correspond to optimization flags (-O1 - -O3) passed to the emscripten compiler. In general, “Slow” produces unoptimized builds, but has much lower build times then the other options, so it can be used for iterating on code issues. “Fast” produces optimized builds, and “Fastest” enabled some additional optimizations, but makes your builds take very long to complete (so you might want to use it only for final releases).</p>
+
+<p>When you tick the “Development Build” checkbox, Unity will generate a development builds (with Profiler support and the development console for errors, like on other platforms). Additionally, Development builds are non-minified, so the generated JavaScript is human-readable and preserves function names (so you will get useful stack traces for errors), but very large to distribute.</p>
+
+<p>The “Autoconnect Profiler” checkbox must be used when you want to profile your Unity WebGL content. It is not possible to connect the Profiler to a running build like on other platforms, as the profiler connection is handled using WebSockets on WebGL, but the browser will only allow outgoing connections from the content, so the only way to use the Profiler in WebGL is to check “Autoconnect Profiler” to have the content connect to the Editor.</p>
+
+<h2>Player Settings</h2>
+
+<p>WebGL has some additional options in the Player Settings (Edit menu-&gt;Project Settings-&gt;Player).</p>
+
+<p>The “Stripping Level” popup in “Other Settings” lets you enable code stripping for WebGL. Note that WebGL does not differentiate between different stripping levels, it is either enabled or not. If you enable Stripping, Unity will not include code for any classes you don’t use - so if you don’t use any physics components or methods for instance, the whole physics engine will be stripped from your build.</p>
+
+<p>The “WebGL memory size” field in “Publishing Settings” lets you specifiy how much memory (in MB) the content should allocate for it’s heap. If this value is too low, you will get out of memory errors when your loaded content and scenes would not fit into the available memory. But if you set this value too high, your content might fail to load in some browsers or on some machines, because the browser might not have enough available memory to allocate the requested heap size.</p>
+
+<p>The “Enable Exceptions” popup in “Publishing Settings” lets you enable exception support in WebGL. It is advised to set this to “None” and not to use exceptions in WebGL for best performance. Any exception thrown will cause your content to stop with an error in that setting. But if you must use exceptions, you can set it to:
+<em>“Explicitly Thrown Exceptions Only”, which will allow catching exceptions which are explictly thrown from a “throw” statement. This will make the generated JavaScript code bigger and slower.
+</em>“Full”, which, additional to the above, will also generate exceptions for Null References and for out of bounds array access. These are generated by embedding checks for any access to references into the generated code, so it will cause additional code size increases and slowdowns. Also, this will add managed stack traces to exceptions. It is advisable to use this mode only when you need to debug issues in your code.</p>
+
+<h2>Distribution size</h2>
+
+<p>When publishing for WebGL, it is important to keep your build size low so people get reasonable download times before the content will start. For generic tips on reducing asset sizes, see <a href="ReducingFileSize.html">here</a>. Some additonal comments specific to WebGL:</p>
+
+<ul>
+<li>Don’t build Development builds, they are unminified to preserve function names.</li>
+<li>Set Optimization Level to “Fastest”</li>
+<li>Set “Enable Exceptions” in Player Settings to “None”</li>
+<li>Enable “Stripping Level” in Player Settings.</li>
+</ul>
+
+<p>Note that Unity does not compress either the generated code or data for distribution. The reason for this is that the http protocol actually supports gzip compression on a protocol level, which is then handled natively by the browser, and thus decompresses faster then Unity could handle decompression by itself in JavaScript code. However, this means that you need to make sure that your http server actually compresses the transfers. You can check that by loading your content and inspecting network transfers in your browsers development tools. You should find “Content-Encoding: gzip” in the response headers for the js and data downloads. If you are hosting your files on an Apache web server, Unity will write an invisible .htaccess file into the build results folder, which tells Apache to compress the transfers, so this should just work. If you are using other web servers, check your servers manual.</p>
+
+<h2>Example Build Errors and Warnings</h2>
+
+<p>Below are some common errors/warnings you may encounter when using the WebGL export. We also have sections on the <a href="http://forum.unity3d.com/forums/">Forums</a> and <a href="http://answers.unity3d.com/">Answers</a> dedicated to WebGL export which may be of help if your error is not listed below.</p>
+
+<p>To do.</p>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="webgl-gettingstarted.html"></a></span><div class="tip">Getting Started with WebGL Development</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="webgl-performance.html"></a></span><div class="tip">WebGL performance considerations</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>

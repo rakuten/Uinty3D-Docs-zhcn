@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en" class="no-js">
+<head>
+<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Unity - Manual: Character Joint</title>
+<meta name="description" content="Develop once, publish everywhere! Unity is the ultimate tool for video game development, architectural visualizations, and interactive media installations - publish to the web, Windows, OS X, Wii, Xbox 360, and iPhone with many more platforms to come.">
+<meta name="author" content="Unity Technologies">
+<link rel="shortcut icon" href="../StaticFilesManual/images/favicons/favicon.ico">
+<link rel="icon" type="image/png" href="../StaticFilesManual/images/favicons/favicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="152x152" href="../StaticFilesManual/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../StaticFilesManual/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon-precomposed" sizes="120x120" href="../StaticFilesManual/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../StaticFilesManual/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../StaticFilesManual/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon-precomposed" href="../StaticFilesManual/images/favicons/apple-touch-icon.png">
+<meta name="msapplication-TileColor" content="#222c37">
+<meta name="msapplication-TileImage" content="../StaticFilesManual/images/favicons/tileicon-144x144.png">
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-2854981-1']);
+  _gaq.push(['_setDomainName', 'unity3d.com']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+  </script><script type="text/javascript" src="../StaticFilesManual/js/jquery.js"></script><script type="text/javascript" src="../StaticFilesManual/js/core.js"></script><script type="text/javascript" src="../StaticFilesManual/js/highlight.js"></script><script type="text/javascript" src="docdata/toc.js"></script><script type="text/javascript" src="docdata/global_toc.js"></script><script>hljs.initHighlightingOnLoad();</script><link href="http://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="../StaticFilesManual/css/core.css">
+</head>
+<body>
+<div class="header-wrapper">
+<div id="header" class="header"><div class="content">
+<div class="spacer"><div class="menu">
+<div class="logo"><a href="http://docs.unity3d.com"></a></div>
+<div class="search-form"><form action="30_search.html" method="get" class="apisearch">
+<input type="text" name="q" placeholder="Search manual..." autosave="Unity Reference" results="5" class="sbox field" id="q"><input type="submit" class="submit">
+</form></div>
+<ul>
+<li><a href="http://docs.unity3d.com">Overview</a></li>
+<li><a href="../Manual/index.html" class="selected">Manual</a></li>
+<li><a href="../ScriptReference/index.html">Scripting API</a></li>
+</ul>
+</div></div>
+<div class="more">
+<div class="filler"></div>
+<ul><li><a href="http://unity3d.com/">unity3d.com</a></li></ul>
+</div>
+</div></div>
+<div class="toolbar"><div class="content"><div class="lang-switcher">
+<div class="current toggle" data-target=".lang-list">
+<div class="lbl">Language: <span class="b">English</span>
+</div>
+<div class="arrow"></div>
+</div>
+<div class="lang-list" style="display:none;"><ul>
+<li><a href="/Manual/class-CharacterJoint.html">English</a></li>
+<li><a href="/es/current/Manual/class-CharacterJoint.html">Español</a></li>
+<li><a href="/ru/current/Manual/class-CharacterJoint.html">Русский</a></li>
+</ul></div>
+</div></div></div>
+</div>
+<div id="master-wrapper" class="master-wrapper clear">
+<div id="sidebar" class="sidebar"><div class="sidebar-wrap"><div class="content"><div class="sidebar-menu"><div class="toc"><h2>Unity Manual</h2></div></div></div></div></div>
+<div id="content-wrap" class="content-wrap"><div class="content-block"><div class="content">
+<div class="section">
+<div class="breadcrumbs clear"><ul>
+<li><a href="UnityManualRestructured.html">Unity Manual</a></li>
+<li><a href="PhysicsSection.html">Physics</a></li>
+<li><a href="Physics3DReference.html">3D Physics Reference</a></li>
+<li>Character Joint</li>
+</ul></div>
+<div class="mb20"><div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-CharacterController.html"></a></span><div class="tip">Character Controller</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConfigurableJoint.html"></a></span><div class="tip">Configurable Joint</div>
+</div>
+</div></div>
+<h1>Character Joint</h1>
+  		        <div class="suggest">
+                <a class="blue-btn sbtn">Suggest a change</a>
+                <div class="suggest-wrap rel hide">
+                  <div class="loading hide">
+<div></div>
+<div></div>
+<div></div>
+</div>
+                  <div class="suggest-success hide">
+                    <h2>Success!</h2>
+                    <p>Thank you for helping us improve the quality of Unity Documentation. Although we cannot accept all submissions, we do read each suggested change from our users and will make updates where applicable.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-failed hide">
+                    <h2>Sumbission failed</h2>
+                    <p>For some reason your suggested change could not be submitted. Please <a>try again</a> in a few minutes. And thank you for taking the time to help us improve the quality of Unity Documentation.</p>
+                    <a class="gray-btn sbtn close">Close</a>
+                  </div>
+                  <div class="suggest-form clear">
+                    <label for="suggest_name">Your name</label>
+                    <input id="suggest_name" type="text">
+                    <label for="suggest_email">Your email</label>
+                    <input id="suggest_email" type="email">
+                    <label for="suggest_body" class="clear">Suggestion <span class="r">*</span></label>
+                    <textarea id="suggest_body" class="req"></textarea>
+                    <button id="suggest_submit" class="blue-btn mr10">Submit suggestion</button>
+                    <p class="mb0"><a class="cancel left lh42 cn">Cancel</a></p>
+                  </div>
+                </div>
+              </div>
+<!--BeginSwitchLink--><a href='../ScriptReference/CharacterJoint.html' title='Go to CharacterJoint page in the Scripting Reference' class='switch-link gray-btn sbtn left'>Switch to Scripting</a><!--EndSwitchLink-->
+<div class="clear"></div>
+
+<p>
+<span class="doc-keyword">Character Joints</span> are mainly used for Ragdoll effects. They are an extended ball-socket joint which allows you to limit the joint on each axis.</p>
+
+<p>If you just want to set up a ragdoll read about <a href="wizard-RagdollWizard.html">Ragdoll Wizard</a>.</p>
+
+<figure>
+<img src="../uploads/Main/Inspector-CharacterJoint.png" alt="">
+<figcaption></figcaption></figure>
+
+<h2>Properties</h2>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Connected Body</span></td>
+	<td style="text-align:left;">Optional reference to the <span class="doc-keyword">Rigidbody</span> that the joint is dependent upon. If not set, the joint connects to the world.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Anchor</span></td>
+	<td style="text-align:left;">The point in the <span class="doc-keyword">GameObject’s</span> local space where the joint rotates around.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Axis</span></td>
+	<td style="text-align:left;">The twist axes. Visualized with the orange gizmo cone.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Auto Configure Connected Anchor</span></td>
+	<td style="text-align:left;">If this is enabled, then the Connected Anchor position will be calculated automatically to match the global position of the anchor property. This is the default behavior. If this is disabled, you can configure the position of the connected anchor manually.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Connected Anchor</span></td>
+	<td style="text-align:left;">Manual configuration of the connected anchor position.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Swing Axis</span></td>
+	<td style="text-align:left;">The swing axis. Visualized with the green gizmo cone.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Low Twist Limit</span></td>
+	<td style="text-align:left;">The lower limit of the joint. See below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">High Twist Limit</span></td>
+	<td style="text-align:left;">The higher limit of the joint. See below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Swing 1 Limit</span></td>
+	<td style="text-align:left;">Lower limit around the defined <span class="doc-prop">Swing Axis</span>. See below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Swing 2 Limit</span></td>
+	<td style="text-align:left;">Upper limit around the defined <span class="doc-prop">Swing Axis</span>. See below.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Force</span></td>
+	<td style="text-align:left;">The force that needs to be applied for this joint to break.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Break Torque</span></td>
+	<td style="text-align:left;">The torque that needs to be applied for this joint to break.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Enable Collision</span></td>
+	<td style="text-align:left;">When checked, this enables collisions between bodies connected with a joint.</td>
+</tr>
+</tbody>
+</table>
+
+<figure>
+<img src="../uploads/Main/CharacterJointWindow.png" alt="The Character Joint on a Ragdoll">
+<figcaption>The Character Joint on a Ragdoll</figcaption></figure>
+
+<h2>Details</h2>
+
+<p>Character joints give you a lot of possibilities for constraining motion like with a universal joint.</p>
+
+<p>The twist axis (visualized with the orange gizmo) gives you most control over the limits as you can specify a lower and upper limit in degrees (the limit angle is measured relative to the starting position). A value of –30 in <span class="doc-prop">Low Twist Limit</span>-&gt;<span class="doc-prop">Limit</span> and 60 in <span class="doc-prop">High Twist Limit</span>-&gt;<span class="doc-prop">Limit</span> limits the rotation around the twist axis (orange gizmo) between –30 and 60 degrees.</p>
+
+<p>The <span class="doc-prop">Swing 1 Limit</span> limits the rotation around the swing axis (green axis). The limit angle is symmetric. Thus a value of eg. 30 will limit the rotation between –30 and 30.</p>
+
+<p>The <span class="doc-prop">Swing 2 Limit</span> axis doesn’t have a gizmo but the axis is orthogonal to the 2 other axes.
+Just like the previous axis the limit is symmetric, thus a value of eg. 40 will limit the rotation around that axis between –40 and 40 degrees.</p>
+
+<p>For each of the limits the following values can be set:</p>
+
+<table>
+<colgroup>
+<col style="text-align:left;">
+<col style="text-align:left;">
+</colgroup>
+
+<thead>
+<tr>
+	<th style="text-align:left;"><strong><em>Property:</em></strong></th>
+	<th style="text-align:left;"><strong><em>Function:</em></strong></th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Bounciness</span></td>
+	<td style="text-align:left;">A value of 0 will not bounce. A value of 1 will bounce without any loss of energy.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Spring</span></td>
+	<td style="text-align:left;">The spring force used to keep the two objects together.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Damper</span></td>
+	<td style="text-align:left;">The damper force used to dampen the spring force.</td>
+</tr>
+<tr>
+	<td style="text-align:left;"><span class="doc-prop">Contact Distance</span></td>
+	<td style="text-align:left;">Within the contact distance from the limit contacts will persist in order to avoid jitter.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Breaking joints</h3>
+
+<p>You can use the <span class="doc-prop">Break Force</span> and <span class="doc-prop">Break Torque</span> properties to set limits for the joint’s strength. If these are less than infinity, and a force/torque greater than these limits are applied to the object, its Fixed Joint will be destroyed and will no longer be confined by its restraints.</p>
+
+<h2>Hints</h2>
+
+<ul>
+<li>You do not need to assign a <span class="doc-prop">Connected Body</span> to your joint for it to work.</li>
+<li>Character Joints require your object to have a Rigidbody attached.</li>
+<li>For Character Joints made with the Ragdoll wizard, take a note that the setup is made such that the joint’s Twist axis corresponds with the limb’s largest swing axis, the joint’s Swing 1 axis corresponds with limb’s smaller swing axis and joint’s Swing 2 is for twisting the limb. This naming scheme is for legacy reasons.</li>
+</ul>
+<div class="nextprev clear">
+<div class="icon tt left mr1" data-distance="-40|-30|top">
+<span class="prev"><a href="class-CharacterController.html"></a></span><div class="tip">Character Controller</div>
+</div>
+<div class="icon tt right" data-distance="-40|-30|top">
+<span class="next"><a href="class-ConfigurableJoint.html"></a></span><div class="tip">Configurable Joint</div>
+</div>
+</div>
+</div>
+<div class="footer-wrapper"><div class="footer clear">
+<div class="copy">Copyright © 2014 Unity Technologies</div>
+<div class="menu">
+<a href="http://unity3d.com/learn">Learn</a><a href="http://unity3d.com/community">Community</a><a href="http://unity3d.com/asset-store">Asset Store</a><a href="https://store.unity3d.com">Buy</a><a href="http://unity3d.com/unity/download">Download</a>
+</div>
+</div></div>
+</div></div></div>
+</div>
+</body>
+</html>
